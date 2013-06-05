@@ -220,24 +220,24 @@ class FacebookJsonParser {
                 }
 
                 String tempcheck = MemberDataFieldNames.getString(fieldIndex);
-
-                for( int x = 0; x < Fields.length; x++ )
+                
+                for( int x = 0; x < Fields.length; x++ ){
                     if( tempcheck.equals(Fields[x]) ){
-
+                    	
                         currentField = trim(currentField);
                         if( currentField != null )
                         MemberDataFieldsArray[x] = currentField;
                         
                         else 
-                        	MemberDataFieldsArray[x] = " ";
+                        	MemberDataFieldsArray[x] = "null";
                         
 
                     }
-                
+                }
                 ID = GroupMemberDataJSONObject.getString("id");
-
+                
             }
-        for(  int j=0; j<MemberDataFieldsArray.length; j++){ System.out.println(MemberDataFieldsArray[j]);}               
+        //for(  int j=0; j<MemberDataFieldsArray.length; j++){ System.out.println(MemberDataFieldsArray[j]);}               
         this.db.executeQuery(ID , MemberDataFieldsArray , GroupID , IDIndex );
     	
         

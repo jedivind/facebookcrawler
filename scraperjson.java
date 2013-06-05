@@ -15,6 +15,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 //import org.JSONException;
 //import org.JSONObject;
 class JsonReader {
@@ -52,14 +56,14 @@ class JsonReader {
   public static void main(String[] args) throws IOException, JSONException, SQLException {
 	  ResultSet rs;
 	  String org = "https://graph.facebook.com/";
-	  String memappend = "?access_token=your_fb_access_token";
-	  String memlistappend = "/members?access_token=your_fb_access_token";
+	  String memappend = "?access_token=CAACEdEose0cBAEhx6YgZA7spxZCgPknLP2YfBZBLI11G3oqyqp5JftCGDE1iUJ2JFAIsDKHVvAnzZCvAmIyYrmsBjTInPkTDRPIzKT5EPggBjmgCM16AakNl5qAfZA9v21MSiCjC3uvLQCRnlS6Ui2qTXnPFZBoOYZD";
+	  String memlistappend = "/members?access_token=CAACEdEose0cBAFKHoKTaQXZCXZBlmGZCfBpWRhpW0rb1ZCdmFxxiotbbJlsNNzgcQ6zlLEHTChy7gxEgrKkn4ZBvUrBKj1EMFBuxGlyLXpk2EbAREKcIA8EE5ZB3uVEeq7bb2XbA9BndbsMHJAvbS8RQTAtDp2M50ZD";
 	 // String GroupID [] = {"119463501490124","239158266136572" , "227089650680923","2214852731","267875486564043","233058263409131","183935261686010","140093246089847","140093246089847","181534605262558","5470017690","67279303232","128324667274339","41084647681"};
 	  //String GroupID []= {"212186883948","110657075652944","114427718571227","128331470602550","146358868726854"};
 	  //"2254756782"//,"2452805792","18733117205",
 	  //"18771832390","22687005489","26075687027","58663571961","60742831043",
 	  //"175010588812","194247758860",
-	  String GroupID [] = {"212186883948","110657075652944","114427718571227","128331470602550","146358868726854","2254756782","2452805792","18771832390","22687005489","26075687027","58663571961","175010588812","119463501490124","239158266136572" , "227089650680923","2214852731","267875486564043","233058263409131","183935261686010","140093246089847","140093246089847","181534605262558","5470017690","67279303232","128324667274339","41084647681"};
+	  String GroupID [] = {"282714248411245"};
 	  String fields [] = {"id","name","first_name","last_name","middle_name","link","username","birthday","hometown","location","bio","quotes","education","work","gender","relationship_status","languages","email","religion"};
 	  String remove ="\'";
 	  Connection conn = null;
@@ -68,7 +72,7 @@ class JsonReader {
 		
 		try{
 			String userName = "root";
-			String password = "root";
+			String password = "AlphaCanisMajoris";
 			String url = "jdbc:mysql://127.0.0.1:3306/facebook";
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(url,userName,password);

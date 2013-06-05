@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-test-sources.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-tests.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/fluent-hc-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/httpclient-cache-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/httpcomponents-client-4.2.5/lib/httpmime-4.2.5.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/jsoup/jsoup-1.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/jsoup/jsoup-1.7.2-sources.jar"/>
+	<classpathentry kind="lib" path="/usr/bin/myjars/jsoup/jsoup-1.7.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

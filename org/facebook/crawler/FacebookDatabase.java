@@ -45,6 +45,7 @@ public class FacebookDatabase {
                 		"','"+arry[5]+"','"+arry[6]+"','"+arry[7]+"','"+arry[8]+"','"+arry[9]+"','"+arry[10]+"','"+arry[11]+"','"+arry[12]+"','"+
                 		arry[13]+"','"+arry[14]+"','"+arry[15]+"','"+arry[16]+"','"+arry[17]+"','"+arry[18]+"')");
                 */
+                
                 count = this.statement.executeUpdate( this.createQueryString( "INSERT" , "user" , arry ) );
             }
             
@@ -59,15 +60,16 @@ public class FacebookDatabase {
 	}
 	
 	public String createQueryString( String SQLCommand , String tableName , String [] Values ){
-		String queryString = null;
-		
+		String queryString = "";
+		String queryVals = "";
 			if( tableName != null )
-			if( SQLCommand.equalsIgnoreCase("INSERT") ){System.out.println();
-				queryString.concat( "INSERT into " + tableName + "VALUES ('" );
-				
-				for( int i = 0; i < Values.length - 1; i++ ) System.out.println(Values[i]);
-					//queryString.concat( Values[i] + "','" );
-				//queryString.concat( "')" );
+			if( SQLCommand.equalsIgnoreCase("INSERT") ){
+				queryString = queryString.concat( "INSERT into " + tableName + " VALUES ('" );
+				System.out.println(Values.length + " Values"); 
+				for( int i = 0; i < Values.length - 1; i++ )
+					queryVals = queryVals.concat( Values[i] + "','" ); 
+				queryString = queryString.concat( queryVals + Values[Values.length - 1] + "')" ); 
+				System.out.println(queryString);
 			}
 		
 		return queryString;
