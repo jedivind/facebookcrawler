@@ -1,0 +1,239 @@
+\hypertarget{classorg_1_1json_1_1_cookie}{\section{org.\-json.\-Cookie Class Reference}
+\label{classorg_1_1json_1_1_cookie}\index{org.\-json.\-Cookie@{org.\-json.\-Cookie}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}{escape} (String string)
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_cookie_aaa6ae4ad2aa1db11eef24362049ce982}{to\-J\-S\-O\-N\-Object} (String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_cookie_a474a31a5f0b4f23d94b11c69e1d62cd1}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} jo)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_cookie_aea680b85e70e5a4bb34279c00b4c4bdd}{unescape} (String string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Convert a web browser cookie specification to a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} and back. J\-S\-O\-N and Cookies are both notations for name/value pairs. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2010-\/12-\/24 
+\end{DoxyVersion}
+
+
+Definition at line 33 of file Cookie.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}{\index{org\-::json\-::\-Cookie@{org\-::json\-::\-Cookie}!escape@{escape}}
+\index{escape@{escape}!org::json::Cookie@{org\-::json\-::\-Cookie}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-Cookie.\-escape (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}
+Produce a copy of a string in which the characters '+', '', '=', ';' and control characters are replaced with \char`\"{}\%hh\char`\"{}. This is a gentle form of U\-R\-L encoding, attempting to cause as little distortion to the string as possible. The characters '=' and ';' are meta characters in cookies. By convention, they are escaped using the U\-R\-L-\/encoding. This is only a convention, not a standard. Often, cookies are expected to have encoded values. We encode '=' and ';' because we must. We encode '' and '+' because they are meta characters in U\-R\-L encoding. 
+\begin{DoxyParams}{Parameters}
+{\em string} & The source string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The escaped result. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file Cookie.\-java.
+
+
+
+Referenced by org.\-json.\-Cookie\-List.\-to\-String(), and org.\-json.\-Cookie.\-to\-String().
+
+
+\begin{DoxyCode}
+47                                                \{
+48         \textcolor{keywordtype}{char}         c;
+49         String       s = \textcolor{keywordtype}{string}.trim();
+50         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+51         \textcolor{keywordtype}{int}          length = s.length();
+52         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; i += 1) \{
+53             c = s.charAt(i);
+54             \textcolor{keywordflow}{if} (c < \textcolor{charliteral}{' '} || c == \textcolor{charliteral}{'+'} || c == \textcolor{charliteral}{'%'} || c == \textcolor{charliteral}{'='} || c == \textcolor{charliteral}{';'}) \{
+55                 sb.append(\textcolor{charliteral}{'%'});
+56                 sb.append(Character.forDigit((\textcolor{keywordtype}{char})((c >>> 4) & 0x0f), 16));
+57                 sb.append(Character.forDigit((\textcolor{keywordtype}{char})(c & 0x0f), 16));
+58             \} \textcolor{keywordflow}{else} \{
+59                 sb.append(c);
+60             \}
+61         \}
+62         \textcolor{keywordflow}{return} sb.toString();
+63     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_cookie_aaa6ae4ad2aa1db11eef24362049ce982}{\index{org\-::json\-::\-Cookie@{org\-::json\-::\-Cookie}!to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}}
+\index{to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}!org::json::Cookie@{org\-::json\-::\-Cookie}}
+\subsubsection[{to\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-Cookie.\-to\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_cookie_aaa6ae4ad2aa1db11eef24362049ce982}
+Convert a cookie specification string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. The string will contain a name value pair separated by '='. The name and the value will be unescaped, possibly converting '+' and '' sequences. The cookie properties may follow, separated by ';', also represented as name=value (except the secure property, which does not have a value). The name will be stored under the key \char`\"{}name\char`\"{}, and the value will be stored under the key \char`\"{}value\char`\"{}. This method does not do checking or validation of the parameters. It only converts the cookie string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. 
+\begin{DoxyParams}{Parameters}
+{\em string} & The cookie specification string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} containing \char`\"{}name\char`\"{}, \char`\"{}value\char`\"{}, and possibly other members. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 81 of file Cookie.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-more(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next\-To(), org.\-json.\-J\-S\-O\-N\-Object.\-put(), org.\-json.\-J\-S\-O\-N\-Tokener.\-syntax\-Error(), and org.\-json.\-Cookie.\-unescape().
+
+
+\begin{DoxyCode}
+81                                                                               \{
+82         String         name;
+83         JSONObject     jo = \textcolor{keyword}{new} JSONObject();
+84         Object         value;
+85         JSONTokener x = \textcolor{keyword}{new} JSONTokener(\textcolor{keywordtype}{string});
+86         jo.put(\textcolor{stringliteral}{"name"}, x.nextTo(\textcolor{charliteral}{'='}));
+87         x.next(\textcolor{charliteral}{'='});
+88         jo.put(\textcolor{stringliteral}{"value"}, x.nextTo(\textcolor{charliteral}{';'}));
+89         x.next();
+90         \textcolor{keywordflow}{while} (x.more()) \{
+91             name = \hyperlink{classorg_1_1json_1_1_cookie_aea680b85e70e5a4bb34279c00b4c4bdd}{unescape}(x.nextTo(\textcolor{stringliteral}{"=;"}));
+92             \textcolor{keywordflow}{if} (x.next() != \textcolor{charliteral}{'='}) \{
+93                 \textcolor{keywordflow}{if} (name.equals(\textcolor{stringliteral}{"secure"})) \{
+94                     value = Boolean.TRUE;
+95                 \} \textcolor{keywordflow}{else} \{
+96                     \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Missing '=' in cookie parameter."});
+97                 \}
+98             \} \textcolor{keywordflow}{else} \{
+99                 value = \hyperlink{classorg_1_1json_1_1_cookie_aea680b85e70e5a4bb34279c00b4c4bdd}{unescape}(x.nextTo(\textcolor{charliteral}{';'}));
+100                 x.next();
+101             \}
+102             jo.put(name, value);
+103         \}
+104         \textcolor{keywordflow}{return} jo;
+105     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_cookie_a474a31a5f0b4f23d94b11c69e1d62cd1}{\index{org\-::json\-::\-Cookie@{org\-::json\-::\-Cookie}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::Cookie@{org\-::json\-::\-Cookie}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-Cookie.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Object}}]{jo}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_cookie_a474a31a5f0b4f23d94b11c69e1d62cd1}
+Convert a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} into a cookie specification string. The \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} must contain \char`\"{}name\char`\"{} and \char`\"{}value\char`\"{} members. If the \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} contains \char`\"{}expires\char`\"{}, \char`\"{}domain\char`\"{}, \char`\"{}path\char`\"{}, or \char`\"{}secure\char`\"{} members, they will be appended to the cookie specification string. All other members are ignored. 
+\begin{DoxyParams}{Parameters}
+{\em jo} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A cookie specification string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 118 of file Cookie.\-java.
+
+
+
+References org.\-json.\-Cookie.\-escape().
+
+
+\begin{DoxyCode}
+118                                                                       \{
+119         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+120 
+121         sb.append(\hyperlink{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}{escape}(jo.getString(\textcolor{stringliteral}{"name"})));
+122         sb.append(\textcolor{stringliteral}{"="});
+123         sb.append(\hyperlink{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}{escape}(jo.getString(\textcolor{stringliteral}{"value"})));
+124         \textcolor{keywordflow}{if} (jo.has(\textcolor{stringliteral}{"expires"})) \{
+125             sb.append(\textcolor{stringliteral}{";expires="});
+126             sb.append(jo.getString(\textcolor{stringliteral}{"expires"}));
+127         \}
+128         \textcolor{keywordflow}{if} (jo.has(\textcolor{stringliteral}{"domain"})) \{
+129             sb.append(\textcolor{stringliteral}{";domain="});
+130             sb.append(\hyperlink{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}{escape}(jo.getString(\textcolor{stringliteral}{"domain"})));
+131         \}
+132         \textcolor{keywordflow}{if} (jo.has(\textcolor{stringliteral}{"path"})) \{
+133             sb.append(\textcolor{stringliteral}{";path="});
+134             sb.append(\hyperlink{classorg_1_1json_1_1_cookie_a4422021192515d995de2cef87d7836f2}{escape}(jo.getString(\textcolor{stringliteral}{"path"})));
+135         \}
+136         \textcolor{keywordflow}{if} (jo.optBoolean(\textcolor{stringliteral}{"secure"})) \{
+137             sb.append(\textcolor{stringliteral}{";secure"});
+138         \}
+139         \textcolor{keywordflow}{return} sb.toString();
+140     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_cookie_aea680b85e70e5a4bb34279c00b4c4bdd}{\index{org\-::json\-::\-Cookie@{org\-::json\-::\-Cookie}!unescape@{unescape}}
+\index{unescape@{unescape}!org::json::Cookie@{org\-::json\-::\-Cookie}}
+\subsubsection[{unescape}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-Cookie.\-unescape (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_cookie_aea680b85e70e5a4bb34279c00b4c4bdd}
+Convert {\ttfamily \%}{\itshape hh} sequences to single characters, and convert plus to space. 
+\begin{DoxyParams}{Parameters}
+{\em string} & A string that may contain {\ttfamily +}~
+\footnotesize (plus)
+\normalsize  and {\ttfamily \%}{\itshape hh} sequences. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unescaped string. 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file Cookie.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-dehexchar().
+
+
+
+Referenced by org.\-json.\-Cookie\-List.\-to\-J\-S\-O\-N\-Object(), and org.\-json.\-Cookie.\-to\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+150                                                  \{
+151         \textcolor{keywordtype}{int} length = \textcolor{keywordtype}{string}.length();
+152         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+153         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; ++i) \{
+154             \textcolor{keywordtype}{char} c = \textcolor{keywordtype}{string}.charAt(i);
+155             \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'+'}) \{
+156                 c = \textcolor{charliteral}{' '};
+157             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'%'} && i + 2 < length) \{
+158                 \textcolor{keywordtype}{int} d = JSONTokener.dehexchar(\textcolor{keywordtype}{string}.charAt(i + 1));
+159                 \textcolor{keywordtype}{int} e = JSONTokener.dehexchar(\textcolor{keywordtype}{string}.charAt(i + 2));
+160                 \textcolor{keywordflow}{if} (d >= 0 && e >= 0) \{
+161                     c = (char)(d * 16 + e);
+162                     i += 2;
+163                 \}
+164             \}
+165             sb.append(c);
+166         \}
+167         \textcolor{keywordflow}{return} sb.toString();
+168     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_cookie_8java}{Cookie.\-java}\end{DoxyCompactItemize}

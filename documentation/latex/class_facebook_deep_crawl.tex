@@ -1,0 +1,350 @@
+\hypertarget{class_facebook_deep_crawl}{\section{Facebook\-Deep\-Crawl Class Reference}
+\label{class_facebook_deep_crawl}\index{Facebook\-Deep\-Crawl@{Facebook\-Deep\-Crawl}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{class_facebook_deep_crawl_a115a735af318b0dd4a1dee957eb23b48}{trim} (String string\-To\-Trim)
+\item 
+static void \hyperlink{class_facebook_deep_crawl_a19c3db375bd70861663694d37ba97100}{main} (String\mbox{[}$\,$\mbox{]} args)  throws Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file scraping.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_facebook_deep_crawl_a19c3db375bd70861663694d37ba97100}{\index{Facebook\-Deep\-Crawl@{Facebook\-Deep\-Crawl}!main@{main}}
+\index{main@{main}!FacebookDeepCrawl@{Facebook\-Deep\-Crawl}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Facebook\-Deep\-Crawl.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [static]}}}\label{class_facebook_deep_crawl_a19c3db375bd70861663694d37ba97100}
+
+
+Definition at line 40 of file scraping.\-java.
+
+
+
+References trim().
+
+
+\begin{DoxyCode}
+40                                                             \{
+41         
+42         String arry [] = \textcolor{keyword}{new} String [7];
+43         String fields [] = \{\textcolor{stringliteral}{"id"},\textcolor{stringliteral}{"music"},\textcolor{stringliteral}{"books"},\textcolor{stringliteral}{"athletes"},\textcolor{stringliteral}{"movies"},\textcolor{stringliteral}{"activities"},\textcolor{stringliteral}{"interested\_in"}\}; 
+44         
+45         
+46         Connection conn = null;
+47         
+48         
+49         DefaultHttpClient httpclient = \textcolor{keyword}{new} DefaultHttpClient();
+50 
+51      HttpGet httpget = \textcolor{keyword}{new} HttpGet(\textcolor{stringliteral}{"http://www.facebook.com/login.php"});
+52 
+53      HttpResponse response = httpclient.execute(httpget);
+54      HttpEntity entity = response.getEntity();
+55 
+56      System.out.println(\textcolor{stringliteral}{"Login form get: "} + response.getStatusLine());
+57      \textcolor{keywordflow}{if} (entity != null) \{
+58          entity.consumeContent();
+59      \}
+60      System.out.println(\textcolor{stringliteral}{"Initial set of cookies:"});
+61      List<Cookie> cookies = httpclient.getCookieStore().getCookies();
+62      \textcolor{keywordflow}{if} (cookies.isEmpty()) \{
+63          System.out.println(\textcolor{stringliteral}{"None"});
+64      \} \textcolor{keywordflow}{else} \{
+65          \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cookies.size(); i++) \{
+66              System.out.println(\textcolor{stringliteral}{"- "} + cookies.get(i).toString());
+67          \}
+68      \}
+69 
+70      HttpPost httpost = \textcolor{keyword}{new} HttpPost(\textcolor{stringliteral}{"http://www.facebook.com/login.php"});
+71 
+72      List <NameValuePair> nvps = \textcolor{keyword}{new} ArrayList <NameValuePair>();
+73      nvps.add(\textcolor{keyword}{new} BasicNameValuePair(\textcolor{stringliteral}{"email"}, \textcolor{stringliteral}{"email@someplace.com"}));
+74      nvps.add(\textcolor{keyword}{new} BasicNameValuePair(\textcolor{stringliteral}{"pass"}, \textcolor{stringliteral}{"password"}));
+75      
+76      httpost.setEntity(\textcolor{keyword}{new} UrlEncodedFormEntity(nvps, HTTP.UTF\_8));
+77 
+78      response = httpclient.execute(httpost);
+79      entity = response.getEntity();
+80      System.out.println(\textcolor{stringliteral}{"Double check we've got right page "} + EntityUtils.toString(entity));
+81 
+82      System.out.println(\textcolor{stringliteral}{"Login form get: "} + response.getStatusLine());
+83      \textcolor{keywordflow}{if} (entity != null) \{
+84          entity.consumeContent();
+85      \}
+86 
+87      System.out.println(\textcolor{stringliteral}{"Post logon cookies:"});
+88      cookies = httpclient.getCookieStore().getCookies();
+89      \textcolor{keywordflow}{if} (cookies.isEmpty()) \{
+90          System.out.println(\textcolor{stringliteral}{"None"});
+91      \} \textcolor{keywordflow}{else} \{
+92          \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cookies.size(); i++) \{
+93              System.out.println(\textcolor{stringliteral}{"- "} + cookies.get(i).toString());
+94          \}
+95      \}
+96 
+97         
+98         \textcolor{keywordflow}{try}\{
+99             \textcolor{comment}{//open db conn}
+100             String userName = \textcolor{stringliteral}{"root"};
+101             String password = \textcolor{stringliteral}{"root"};
+102             String url = \textcolor{stringliteral}{"jdbc:mysql://127.0.0.1:3306/facebook"};
+103                 Class.forName(\textcolor{stringliteral}{"com.mysql.jdbc.Driver"}).newInstance();
+104                 conn = DriverManager.getConnection(url,userName,password);
+105                 System.out.println(\textcolor{stringliteral}{"DB conn established"});
+106         \}
+107         
+108         \textcolor{keywordflow}{catch} (Exception e)\{
+109             System.err.println(\textcolor{stringliteral}{"Cannot connect to DB"});
+110         \}
+111         
+112         Statement s = conn.createStatement();
+113         
+114     
+115         \textcolor{comment}{/*HttpGet nw = new HttpGet("http://facebook.com/56013190");}
+116 \textcolor{comment}{        response = httpclient.execute(nw);}
+117 \textcolor{comment}{        entity = response.getEntity();}
+118 \textcolor{comment}{        System.out.println(EntityUtils.toString(entity));*/}
+119         
+120     
+121         ResultSet rs = s.executeQuery(\textcolor{stringliteral}{"SELECT id from user where id in (SELECT userid from gruid where
+       groupid in (SELECT gid from groups))"});
+122         \textcolor{keywordtype}{int} x=0;
+123         String idarray [] = \textcolor{keyword}{new} String [100000];
+124         \textcolor{keywordflow}{while}(rs.next())
+125         idarray [x++] = rs.getString(1);
+126         
+127         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<=x; k++)\{
+128         FileWriter ofile = \textcolor{keyword}{new} FileWriter(idarray[k]+\textcolor{stringliteral}{".html"});
+129         PrintWriter pw = \textcolor{keyword}{new} PrintWriter(ofile);
+130         entity.consumeContent();
+131         HttpGet nw = \textcolor{keyword}{new} HttpGet(\textcolor{stringliteral}{"https://facebook.com/"}+idarray[k]+\textcolor{stringliteral}{"?sk=info"});
+132     \textcolor{comment}{//  httpclient.getParams().setParameter(ClientPNames.ALLOW\_CIRCULAR\_REDIRECTS, true);}
+133         response = httpclient.execute(nw);
+134         entity = response.getEntity();
+135         pw.println(\textcolor{stringliteral}{"Page check - list"} +EntityUtils.toString(entity));
+136         
+137         \textcolor{comment}{//System.out.println(EntityUtils.toString(entity));}
+138         
+139         
+140         File input = \textcolor{keyword}{new} File(idarray[k]+\textcolor{stringliteral}{".html"});
+141         Document doc = Jsoup.parse(input, \textcolor{stringliteral}{"UTF-8"}, \textcolor{stringliteral}{""});
+142         String dob=\textcolor{stringliteral}{""}, location1=\textcolor{stringliteral}{""} , work=\textcolor{stringliteral}{""} ,study=\textcolor{stringliteral}{""} , workplace=\textcolor{stringliteral}{""};
+143         Elements link = doc.getElementsByClass(\textcolor{stringliteral}{"hidden\_elem"});
+144         \textcolor{keywordflow}{for} (Element links : link)\{
+145             String par = links.html().toString();
+146             par.replaceFirst(\textcolor{stringliteral}{"<!--"},\textcolor{stringliteral}{""});
+147             String result=\textcolor{stringliteral}{""};
+148             \textcolor{keywordflow}{if}(par.length() > 15)\{
+149             result = par.substring(5,par.length()-4);
+150             Document doc1 = Jsoup.parse(result);
+151             Elements location = doc1.getElementsByClass(\textcolor{stringliteral}{"fbProfileBylineLabel"});
+152             \textcolor{comment}{//System.out.println(email);;}
+153             Elements athletes,quotes,musicall,booksall,moviesall,activitiesall;
+154             
+155             Elements otherdata = doc1.getElementsByClass(\textcolor{stringliteral}{"label"});
+156             String temp;
+157             arry[0] = idarray[k];
+158             
+159             \textcolor{keywordflow}{for} (Element data : otherdata)\{
+160                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Favorite Athletes"}))
+161                 \{
+162                     athletes = data.siblingElements();
+163                 \textcolor{keywordflow}{for}(Element newathlete : athletes)\{
+164                     temp = newathlete.getElementsByClass(\textcolor{stringliteral}{"mediaPageName"}).text();
+165                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+166                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+167                     arry[3]=temp;
+168                     System.out.println(temp);
+169                 \}
+170                 \}
+171                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Favorite Quotations"}))
+172                 \{
+173                     quotes = data.siblingElements();
+174                 \textcolor{keywordflow}{for}(Element newquote : quotes)\{
+175                     temp = newquote.getElementsByClass(\textcolor{stringliteral}{"data"}).text();
+176                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+177                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+178                     System.out.println(temp);
+179                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user SET quotes='"}+temp+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+180                     
+181                 \}
+182                 \}
+183                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Music"}))
+184                 \{
+185                     musicall = data.siblingElements();
+186                 \textcolor{keywordflow}{for}(Element newmusic : musicall)\{
+187                     temp = newmusic.getElementsByClass(\textcolor{stringliteral}{"mediaPageName"}).text();
+188                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+189                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+190                     arry[1]=temp;
+191                     System.out.println(temp);
+192                 \}
+193                 \}
+194                 
+195                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Books"}))
+196                 \{
+197                     booksall = data.siblingElements();
+198                 \textcolor{keywordflow}{for}(Element newbook : booksall)\{
+199                     temp = newbook.getElementsByClass(\textcolor{stringliteral}{"mediaPageName"}).text();
+200                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+201                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+202                     arry[2]=temp;
+203                     System.out.println(temp);
+204                 \}
+205                 \}
+206                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Movies"}))
+207                 \{
+208                     moviesall = data.siblingElements();
+209                 \textcolor{keywordflow}{for}(Element newmovie : moviesall)\{
+210                     temp = newmovie.getElementsByClass(\textcolor{stringliteral}{"mediaPageName"}).text();
+211                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+212                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+213                     arry[4]=temp;
+214                     System.out.println(temp);
+215                 \}
+216                 \}
+217                 
+218                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Activities"}))
+219                 \{
+220                     activitiesall = data.siblingElements();
+221                 \textcolor{keywordflow}{for}(Element newactivity : activitiesall)\{
+222                     temp =newactivity.getElementsByClass(\textcolor{stringliteral}{"fwb"}).text();
+223                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+224                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+225                     arry[5]=temp;
+226                     System.out.println(temp);
+227                 \}
+228                 \}
+229                 
+230                 \textcolor{keywordflow}{if}(data.ownText().startsWith(\textcolor{stringliteral}{"About"}))
+231                 \{
+232                     activitiesall = data.siblingElements();
+233                 \textcolor{keywordflow}{for}(Element newactivity : activitiesall)\{
+234                     temp = newactivity.getElementsByClass(\textcolor{stringliteral}{"data"}).text();
+235                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+236                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+237                     System.out.println(temp);
+238                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user SET bio='"}+temp+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+239                     
+240                 \}
+241                 \}
+242                 
+243                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Interested In"}))
+244                 \{
+245                     activitiesall = data.siblingElements();
+246                 \textcolor{keywordflow}{for}(Element newactivity : activitiesall)\{
+247                     temp = newactivity.getElementsByClass(\textcolor{stringliteral}{"data"}).text();
+248                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+249                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+250                     arry[6] = temp;
+251                     System.out.println(temp);
+252                 \}
+253                 \}
+254                 
+255                 \textcolor{keywordflow}{if}(data.ownText().equals(\textcolor{stringliteral}{"Relationship Status"}))
+256                 \{
+257                     activitiesall = data.siblingElements();
+258                 \textcolor{keywordflow}{for}(Element newactivity : activitiesall)\{
+259                     temp = newactivity.getElementsByClass(\textcolor{stringliteral}{"data"}).text();
+260                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+261                     temp = temp.replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\textcolor{charliteral}{' '});
+262                     System.out.println(temp);
+263                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user SET relationship\_status='"}+temp+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{
+      "'"});
+264                 
+265                 \}
+266                 s.executeUpdate(\textcolor{stringliteral}{"INSERT into user\_misc\_data
+       (id,music,books,athletes,movies,activities,interested\_in) VALUES ('"}+arry[0]+\textcolor{stringliteral}{"','"}+arry[1]+\textcolor{stringliteral}{"','"}+arry[2]+\textcolor{stringliteral}{"','"}+arry[3]+\textcolor{stringliteral}{"','"}+arry[4]+\textcolor{stringliteral}{"','"}+arry[5]+\textcolor{stringliteral}{"','"}+
+      arry[6]+\textcolor{stringliteral}{"')"});
+267                 \}
+268                 
+269             \}
+270             
+271             \textcolor{keywordflow}{for}(Element loc : location)\{
+272                 \textcolor{comment}{//System.out.println(loc.text().substring(0, 4));}
+273                 \textcolor{keywordflow}{if}(loc.text().startsWith(\textcolor{stringliteral}{"Born"}))\{
+274                     dob = loc.select(\textcolor{stringliteral}{"a"}).text();
+275                     dob = dob.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+276                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user SET birthday='"}+dob+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+277                 \}
+278                 \textcolor{keywordflow}{if}(loc.text().startsWith(\textcolor{stringliteral}{"Worked"}) || loc.text().startsWith(\textcolor{stringliteral}{"Works"}))\{
+279                     work = loc.select(\textcolor{stringliteral}{"a"}).text();
+280                     work = work.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+281                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user SET work='"}+work+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+282                 \}
+283                 \textcolor{keywordflow}{if}(loc.text().startsWith(\textcolor{stringliteral}{"Studies"}) || loc.text().startsWith(\textcolor{stringliteral}{"Studied"}))\{
+284                     study = loc.select(\textcolor{stringliteral}{"a"}).text();
+285                     study = study.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+286                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user SET education='"}+study+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+287                 \}
+288                 \textcolor{keywordflow}{if}(loc.text().startsWith(\textcolor{stringliteral}{"Lives"}))\{
+289                     workplace = loc.select(\textcolor{stringliteral}{"a"}).text();
+290                     workplace = workplace.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+291                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user set location='"}+workplace+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+292                 \}
+293                 \textcolor{keywordflow}{if}(loc.text().startsWith(\textcolor{stringliteral}{"From"}))\{
+294                     location1 = loc.select(\textcolor{stringliteral}{"a"}).text();
+295                     location1 = location1.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+296                     s.executeUpdate(\textcolor{stringliteral}{"UPDATE user set hometown='"}+location1+\textcolor{stringliteral}{"' WHERE id='"}+idarray[k]+\textcolor{stringliteral}{"'"});
+297                 \}
+298                 System.out.println(dob);
+299                 String dobirth[] = dob.split(\textcolor{stringliteral}{"' '"});
+300                 String date = dob.trim();
+301                 date = \hyperlink{class_facebook_deep_crawl_a115a735af318b0dd4a1dee957eb23b48}{trim}(date);
+302                 System.out.println(date);
+303                 System.out.println(location1);
+304                 System.out.println(workplace);
+305             \}
+306             \}
+307             \textcolor{comment}{//System.out.println(result);}
+308         \}
+309         \}
+310         \textcolor{keywordflow}{try}
+311         \{
+312             conn.close();
+313             System.out.println(\textcolor{stringliteral}{"DB conn closed"});
+314         \}
+315         \textcolor{keywordflow}{catch}(Exception e)\{\}
+316         httpclient.getConnectionManager().shutdown();
+317         
+318     \}
+\end{DoxyCode}
+\hypertarget{class_facebook_deep_crawl_a115a735af318b0dd4a1dee957eb23b48}{\index{Facebook\-Deep\-Crawl@{Facebook\-Deep\-Crawl}!trim@{trim}}
+\index{trim@{trim}!FacebookDeepCrawl@{Facebook\-Deep\-Crawl}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}static String Facebook\-Deep\-Crawl.\-trim (
+\begin{DoxyParamCaption}
+\item[{String}]{string\-To\-Trim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_facebook_deep_crawl_a115a735af318b0dd4a1dee957eb23b48}
+
+
+Definition at line 33 of file scraping.\-java.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+34         \{
+35             String answer = stringToTrim.replace(\textcolor{charliteral}{','}, \textcolor{charliteral}{' '});
+36             
+37             System.out.println(answer);
+38             \textcolor{keywordflow}{return} answer;
+39         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{scraping_8java}{scraping.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,530 @@
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener}{\section{org.\-json.\-X\-M\-L\-Tokener Class Reference}
+\label{classorg_1_1json_1_1_x_m_l_tokener}\index{org.\-json.\-X\-M\-L\-Tokener@{org.\-json.\-X\-M\-L\-Tokener}}
+}
+Inheritance diagram for org.\-json.\-X\-M\-L\-Tokener\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1json_1_1_x_m_l_tokener}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1json_1_1_x_m_l_tokener_a43ba71b6376938f07b4781fb6c66a7ac}{X\-M\-L\-Tokener} (String s)
+\item 
+String \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_a0f321a2fa10eb19c08d05cf17cfa4e54}{next\-C\-D\-A\-T\-A} ()  throws J\-S\-O\-N\-Exception 
+\item 
+Object \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_a356e0c4bb50197720b5eb638783b632c}{next\-Content} ()  throws J\-S\-O\-N\-Exception 
+\item 
+Object \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_aa67ac8eb561a438290fad648fd295fd5}{next\-Entity} (char ampersand)  throws J\-S\-O\-N\-Exception 
+\item 
+Object \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_aa36d5f6baf25f85fef0468fadcc3b8ff}{next\-Meta} ()  throws J\-S\-O\-N\-Exception 
+\item 
+Object \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_a654e38e5abe2ad37e10f968613dab875}{next\-Token} ()  throws J\-S\-O\-N\-Exception 
+\item 
+boolean \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_ac6dd60ff4fa12f0603ac8059f6036810}{skip\-Past} (String to)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final java.\-util.\-Hash\-Map \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_ac0e11bf2c9d16e89993773e8510d44b7}{entity}
+\end{DoxyCompactItemize}
+\subsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1json_1_1_x_m_l_tokener_affe5431a4051cdede936b836296cd059}{\mbox{[}static initializer\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} extends the \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} to provide additional methods for the parsing of \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} texts. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2012-\/11-\/13 
+\end{DoxyVersion}
+
+
+Definition at line 33 of file X\-M\-L\-Tokener.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_a43ba71b6376938f07b4781fb6c66a7ac}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!X\-M\-L\-Tokener@{X\-M\-L\-Tokener}}
+\index{X\-M\-L\-Tokener@{X\-M\-L\-Tokener}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{X\-M\-L\-Tokener}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-X\-M\-L\-Tokener.\-X\-M\-L\-Tokener (
+\begin{DoxyParamCaption}
+\item[{String}]{s}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_x_m_l_tokener_a43ba71b6376938f07b4781fb6c66a7ac}
+Construct an \hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} from a string. 
+\begin{DoxyParams}{Parameters}
+{\em s} & A source string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file X\-M\-L\-Tokener.\-java.
+
+
+\begin{DoxyCode}
+54                                 \{
+55         super(s);
+56     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_affe5431a4051cdede936b836296cd059}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!\mbox{[}static initializer\mbox{]}@{[static initializer]}}
+\index{\mbox{[}static initializer\mbox{]}@{[static initializer]}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{[static initializer]}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-X\-M\-L\-Tokener.\mbox{[}static initializer\mbox{]} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}}\label{classorg_1_1json_1_1_x_m_l_tokener_affe5431a4051cdede936b836296cd059}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_a0f321a2fa10eb19c08d05cf17cfa4e54}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!next\-C\-D\-A\-T\-A@{next\-C\-D\-A\-T\-A}}
+\index{next\-C\-D\-A\-T\-A@{next\-C\-D\-A\-T\-A}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{next\-C\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-json.\-X\-M\-L\-Tokener.\-next\-C\-D\-A\-T\-A (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_x_m_l_tokener_a0f321a2fa10eb19c08d05cf17cfa4e54}
+Get the text in the C\-D\-A\-T\-A block. \begin{DoxyReturn}{Returns}
+The string up to the {\ttfamily \mbox{]}\mbox{]}$>$}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & If the {\ttfamily \mbox{]}\mbox{]}$>$} is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 63 of file X\-M\-L\-Tokener.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-end(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), and org.\-json.\-J\-S\-O\-N\-Tokener.\-syntax\-Error().
+
+
+\begin{DoxyCode}
+63                                                    \{
+64         \textcolor{keywordtype}{char}         c;
+65         \textcolor{keywordtype}{int}          i;
+66         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+67         \textcolor{keywordflow}{for} (;;) \{
+68             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+69             \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a767d3f6c8313e03bc3dfb4fdc495294c}{end}()) \{
+70                 \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Unclosed CDATA"});
+71             \}
+72             sb.append(c);
+73             i = sb.length() - 3;
+74             \textcolor{keywordflow}{if} (i >= 0 && sb.charAt(i) == \textcolor{charliteral}{']'} &&
+75                           sb.charAt(i + 1) == \textcolor{charliteral}{']'} && sb.charAt(i + 2) == \textcolor{charliteral}{'>'}) \{
+76                 sb.setLength(i);
+77                 \textcolor{keywordflow}{return} sb.toString();
+78             \}
+79         \}
+80     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_a356e0c4bb50197720b5eb638783b632c}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!next\-Content@{next\-Content}}
+\index{next\-Content@{next\-Content}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{next\-Content}]{\setlength{\rightskip}{0pt plus 5cm}Object org.\-json.\-X\-M\-L\-Tokener.\-next\-Content (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_x_m_l_tokener_a356e0c4bb50197720b5eb638783b632c}
+Get the next \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} outer token, trimming whitespace. There are two kinds of tokens\-: the '$<$' character which begins a markup tag, and the content text between markup tags.
+
+\begin{DoxyReturn}{Returns}
+A string, or a '$<$' Character, or null if there is no more source text. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 92 of file X\-M\-L\-Tokener.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-back(), org.\-json.\-X\-M\-L.\-L\-T, org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), and org.\-json.\-X\-M\-L\-Tokener.\-next\-Entity().
+
+
+\begin{DoxyCode}
+92                                                      \{
+93         \textcolor{keywordtype}{char}         c;
+94         StringBuffer sb;
+95         \textcolor{keywordflow}{do} \{
+96             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+97         \} \textcolor{keywordflow}{while} (Character.isWhitespace(c));
+98         \textcolor{keywordflow}{if} (c == 0) \{
+99             \textcolor{keywordflow}{return} null;
+100         \}
+101         \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'<'}) \{
+102             \textcolor{keywordflow}{return} XML.LT;
+103         \}
+104         sb = \textcolor{keyword}{new} StringBuffer();
+105         \textcolor{keywordflow}{for} (;;) \{
+106             \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'<'} || c == 0) \{
+107                 \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_aa2eafdef7304777a457f3e66cc0e668b}{back}();
+108                 \textcolor{keywordflow}{return} sb.toString().trim();
+109             \}
+110             \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'&'}) \{
+111                 sb.append(\hyperlink{classorg_1_1json_1_1_x_m_l_tokener_aa67ac8eb561a438290fad648fd295fd5}{nextEntity}(c));
+112             \} \textcolor{keywordflow}{else} \{
+113                 sb.append(c);
+114             \}
+115             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+116         \}
+117     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_aa67ac8eb561a438290fad648fd295fd5}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!next\-Entity@{next\-Entity}}
+\index{next\-Entity@{next\-Entity}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{next\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}Object org.\-json.\-X\-M\-L\-Tokener.\-next\-Entity (
+\begin{DoxyParamCaption}
+\item[{char}]{ampersand}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_x_m_l_tokener_aa67ac8eb561a438290fad648fd295fd5}
+Return the next entity. These entities are translated to Characters\-: {\ttfamily \& ' $>$ $<$ "}. 
+\begin{DoxyParams}{Parameters}
+{\em ampersand} & An ampersand character. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Character or an entity String if the entity is not recognized. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & If missing ';' in \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} entity. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 127 of file X\-M\-L\-Tokener.\-java.
+
+
+
+References org.\-json.\-X\-M\-L\-Tokener.\-entity, org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), and org.\-json.\-J\-S\-O\-N\-Tokener.\-syntax\-Error().
+
+
+
+Referenced by org.\-json.\-X\-M\-L\-Tokener.\-next\-Content(), and org.\-json.\-X\-M\-L\-Tokener.\-next\-Token().
+
+
+\begin{DoxyCode}
+127                                                                   \{
+128         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+129         \textcolor{keywordflow}{for} (;;) \{
+130             \textcolor{keywordtype}{char} c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+131             \textcolor{keywordflow}{if} (Character.isLetterOrDigit(c) || c == \textcolor{charliteral}{'#'}) \{
+132                 sb.append(Character.toLowerCase(c));
+133             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{';'}) \{
+134                 \textcolor{keywordflow}{break};
+135             \} \textcolor{keywordflow}{else} \{
+136                 \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Missing ';' in XML entity: &"} + sb);
+137             \}
+138         \}
+139         String \textcolor{keywordtype}{string} = sb.toString();
+140         Object \textcolor{keywordtype}{object} = \hyperlink{classorg_1_1json_1_1_x_m_l_tokener_ac0e11bf2c9d16e89993773e8510d44b7}{entity}.get(\textcolor{keywordtype}{string});
+141         \textcolor{keywordflow}{return} \textcolor{keywordtype}{object} != null ? \textcolor{keywordtype}{object} : ampersand + \textcolor{keywordtype}{string} + \textcolor{stringliteral}{";"};
+142     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_aa36d5f6baf25f85fef0468fadcc3b8ff}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!next\-Meta@{next\-Meta}}
+\index{next\-Meta@{next\-Meta}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{next\-Meta}]{\setlength{\rightskip}{0pt plus 5cm}Object org.\-json.\-X\-M\-L\-Tokener.\-next\-Meta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_x_m_l_tokener_aa36d5f6baf25f85fef0468fadcc3b8ff}
+Returns the next \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} meta token. This is used for skipping over $<$!...$>$ and $<$?...?$>$ structures. \begin{DoxyReturn}{Returns}
+Syntax characters ({\ttfamily $<$ $>$ / = ! ?}) are returned as Character, and strings and names are returned as Boolean. We don't care what the values actually are. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & If a string is not properly closed or if the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} is badly structured. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 154 of file X\-M\-L\-Tokener.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-back(), org.\-json.\-X\-M\-L.\-B\-A\-N\-G, org.\-json.\-X\-M\-L.\-E\-Q, org.\-json.\-X\-M\-L.\-G\-T, org.\-json.\-X\-M\-L.\-L\-T, org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), org.\-json.\-X\-M\-L.\-Q\-U\-E\-S\-T, org.\-json.\-X\-M\-L.\-S\-L\-A\-S\-H, and org.\-json.\-J\-S\-O\-N\-Tokener.\-syntax\-Error().
+
+
+\begin{DoxyCode}
+154                                                   \{
+155         \textcolor{keywordtype}{char} c;
+156         \textcolor{keywordtype}{char} q;
+157         \textcolor{keywordflow}{do} \{
+158             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+159         \} \textcolor{keywordflow}{while} (Character.isWhitespace(c));
+160         \textcolor{keywordflow}{switch} (c) \{
+161         \textcolor{keywordflow}{case} 0:
+162             \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Misshaped meta tag"});
+163         \textcolor{keywordflow}{case} \textcolor{charliteral}{'<'}:
+164             \textcolor{keywordflow}{return} XML.LT;
+165         \textcolor{keywordflow}{case} \textcolor{charliteral}{'>'}:
+166             \textcolor{keywordflow}{return} XML.GT;
+167         \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+168             \textcolor{keywordflow}{return} XML.SLASH;
+169         \textcolor{keywordflow}{case} \textcolor{charliteral}{'='}:
+170             \textcolor{keywordflow}{return} XML.EQ;
+171         \textcolor{keywordflow}{case} \textcolor{charliteral}{'!'}:
+172             \textcolor{keywordflow}{return} XML.BANG;
+173         \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+174             \textcolor{keywordflow}{return} XML.QUEST;
+175         \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+176         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+177             q = c;
+178             \textcolor{keywordflow}{for} (;;) \{
+179                 c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+180                 \textcolor{keywordflow}{if} (c == 0) \{
+181                     \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Unterminated string"});
+182                 \}
+183                 \textcolor{keywordflow}{if} (c == q) \{
+184                     \textcolor{keywordflow}{return} Boolean.TRUE;
+185                 \}
+186             \}
+187         \textcolor{keywordflow}{default}:
+188             \textcolor{keywordflow}{for} (;;) \{
+189                 c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+190                 \textcolor{keywordflow}{if} (Character.isWhitespace(c)) \{
+191                     \textcolor{keywordflow}{return} Boolean.TRUE;
+192                 \}
+193                 \textcolor{keywordflow}{switch} (c) \{
+194                 \textcolor{keywordflow}{case} 0:
+195                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'<'}:
+196                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'>'}:
+197                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+198                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'='}:
+199                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'!'}:
+200                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+201                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+202                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+203                     \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_aa2eafdef7304777a457f3e66cc0e668b}{back}();
+204                     \textcolor{keywordflow}{return} Boolean.TRUE;
+205                 \}
+206             \}
+207         \}
+208     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_a654e38e5abe2ad37e10f968613dab875}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!next\-Token@{next\-Token}}
+\index{next\-Token@{next\-Token}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{next\-Token}]{\setlength{\rightskip}{0pt plus 5cm}Object org.\-json.\-X\-M\-L\-Tokener.\-next\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_x_m_l_tokener_a654e38e5abe2ad37e10f968613dab875}
+Get the next \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} Token. These tokens are found inside of angle brackets. It may be one of these characters\-: {\ttfamily / $>$ = ! ?} or it may be a string wrapped in single quotes or double quotes, or it may be a name. \begin{DoxyReturn}{Returns}
+a String or a Character. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & If the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} is not well formed. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 219 of file X\-M\-L\-Tokener.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-back(), org.\-json.\-X\-M\-L.\-B\-A\-N\-G, org.\-json.\-X\-M\-L.\-E\-Q, org.\-json.\-X\-M\-L.\-G\-T, org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), org.\-json.\-X\-M\-L\-Tokener.\-next\-Entity(), org.\-json.\-X\-M\-L.\-Q\-U\-E\-S\-T, org.\-json.\-X\-M\-L.\-S\-L\-A\-S\-H, and org.\-json.\-J\-S\-O\-N\-Tokener.\-syntax\-Error().
+
+
+\begin{DoxyCode}
+219                                                    \{
+220         \textcolor{keywordtype}{char} c;
+221         \textcolor{keywordtype}{char} q;
+222         StringBuffer sb;
+223         \textcolor{keywordflow}{do} \{
+224             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+225         \} \textcolor{keywordflow}{while} (Character.isWhitespace(c));
+226         \textcolor{keywordflow}{switch} (c) \{
+227         \textcolor{keywordflow}{case} 0:
+228             \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Misshaped element"});
+229         \textcolor{keywordflow}{case} \textcolor{charliteral}{'<'}:
+230             \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Misplaced '<'"});
+231         \textcolor{keywordflow}{case} \textcolor{charliteral}{'>'}:
+232             \textcolor{keywordflow}{return} XML.GT;
+233         \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+234             \textcolor{keywordflow}{return} XML.SLASH;
+235         \textcolor{keywordflow}{case} \textcolor{charliteral}{'='}:
+236             \textcolor{keywordflow}{return} XML.EQ;
+237         \textcolor{keywordflow}{case} \textcolor{charliteral}{'!'}:
+238             \textcolor{keywordflow}{return} XML.BANG;
+239         \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+240             \textcolor{keywordflow}{return} XML.QUEST;
+241 
+242 \textcolor{comment}{// Quoted string}
+243 
+244         \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+245         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+246             q = c;
+247             sb = \textcolor{keyword}{new} StringBuffer();
+248             \textcolor{keywordflow}{for} (;;) \{
+249                 c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+250                 \textcolor{keywordflow}{if} (c == 0) \{
+251                     \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Unterminated string"});
+252                 \}
+253                 \textcolor{keywordflow}{if} (c == q) \{
+254                     \textcolor{keywordflow}{return} sb.toString();
+255                 \}
+256                 \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'&'}) \{
+257                     sb.append(\hyperlink{classorg_1_1json_1_1_x_m_l_tokener_aa67ac8eb561a438290fad648fd295fd5}{nextEntity}(c));
+258                 \} \textcolor{keywordflow}{else} \{
+259                     sb.append(c);
+260                 \}
+261             \}
+262         \textcolor{keywordflow}{default}:
+263 
+264 \textcolor{comment}{// Name}
+265 
+266             sb = \textcolor{keyword}{new} StringBuffer();
+267             \textcolor{keywordflow}{for} (;;) \{
+268                 sb.append(c);
+269                 c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+270                 \textcolor{keywordflow}{if} (Character.isWhitespace(c)) \{
+271                     \textcolor{keywordflow}{return} sb.toString();
+272                 \}
+273                 \textcolor{keywordflow}{switch} (c) \{
+274                 \textcolor{keywordflow}{case} 0:
+275                     \textcolor{keywordflow}{return} sb.toString();
+276                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'>'}:
+277                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+278                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'='}:
+279                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'!'}:
+280                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'?'}:
+281                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}:
+282                 \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}:
+283                     \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_aa2eafdef7304777a457f3e66cc0e668b}{back}();
+284                     \textcolor{keywordflow}{return} sb.toString();
+285                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'<'}:
+286                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+287                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+288                     \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Bad character in a name"});
+289                 \}
+290             \}
+291         \}
+292     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_ac6dd60ff4fa12f0603ac8059f6036810}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!skip\-Past@{skip\-Past}}
+\index{skip\-Past@{skip\-Past}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{skip\-Past}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-json.\-X\-M\-L\-Tokener.\-skip\-Past (
+\begin{DoxyParamCaption}
+\item[{String}]{to}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_x_m_l_tokener_ac6dd60ff4fa12f0603ac8059f6036810}
+Skip characters until past the requested string. If it is not found, we are left at the end of the source with a result of false. 
+\begin{DoxyParams}{Parameters}
+{\em to} & A string to skip past. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 301 of file X\-M\-L\-Tokener.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-next().
+
+
+
+Referenced by org.\-json.\-X\-M\-L.\-to\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+301                                                             \{
+302         \textcolor{keywordtype}{boolean} b;
+303         \textcolor{keywordtype}{char} c;
+304         \textcolor{keywordtype}{int} i;
+305         \textcolor{keywordtype}{int} j;
+306         \textcolor{keywordtype}{int} offset = 0;
+307         \textcolor{keywordtype}{int} length = to.length();
+308         \textcolor{keywordtype}{char}[] circle = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[length];
+309 
+310         \textcolor{comment}{/*}
+311 \textcolor{comment}{         * First fill the circle buffer with as many characters as are in the}
+312 \textcolor{comment}{         * to string. If we reach an early end, bail.}
+313 \textcolor{comment}{         */}
+314 
+315         \textcolor{keywordflow}{for} (i = 0; i < length; i += 1) \{
+316             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+317             \textcolor{keywordflow}{if} (c == 0) \{
+318                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+319             \}
+320             circle[i] = c;
+321         \}
+322 
+323         \textcolor{comment}{/* We will loop, possibly for all of the remaining characters. */}
+324 
+325         \textcolor{keywordflow}{for} (;;) \{
+326             j = offset;
+327             b = \textcolor{keyword}{true};
+328 
+329             \textcolor{comment}{/* Compare the circle buffer with the to string. */}
+330 
+331             \textcolor{keywordflow}{for} (i = 0; i < length; i += 1) \{
+332                 \textcolor{keywordflow}{if} (circle[j] != to.charAt(i)) \{
+333                     b = \textcolor{keyword}{false};
+334                     \textcolor{keywordflow}{break};
+335                 \}
+336                 j += 1;
+337                 \textcolor{keywordflow}{if} (j >= length) \{
+338                     j -= length;
+339                 \}
+340             \}
+341 
+342             \textcolor{comment}{/* If we exit the loop with b intact, then victory is ours. */}
+343 
+344             \textcolor{keywordflow}{if} (b) \{
+345                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+346             \}
+347 
+348             \textcolor{comment}{/* Get the next character. If there isn't one, then defeat is ours. */}
+349 
+350             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+351             \textcolor{keywordflow}{if} (c == 0) \{
+352                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+353             \}
+354             \textcolor{comment}{/*}
+355 \textcolor{comment}{             * Shove the character in the circle buffer and advance the}
+356 \textcolor{comment}{             * circle offset. The offset is mod n.}
+357 \textcolor{comment}{             */}
+358             circle[offset] = c;
+359             offset += 1;
+360             \textcolor{keywordflow}{if} (offset >= length) \{
+361                 offset -= length;
+362             \}
+363         \}
+364     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1json_1_1_x_m_l_tokener_ac0e11bf2c9d16e89993773e8510d44b7}{\index{org\-::json\-::\-X\-M\-L\-Tokener@{org\-::json\-::\-X\-M\-L\-Tokener}!entity@{entity}}
+\index{entity@{entity}!org::json::XMLTokener@{org\-::json\-::\-X\-M\-L\-Tokener}}
+\subsubsection[{entity}]{\setlength{\rightskip}{0pt plus 5cm}final java.\-util.\-Hash\-Map org.\-json.\-X\-M\-L\-Tokener.\-entity\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_x_m_l_tokener_ac0e11bf2c9d16e89993773e8510d44b7}
+The table of entity values. It initially contains Character values for amp, apos, gt, lt, quot. 
+
+Definition at line 39 of file X\-M\-L\-Tokener.\-java.
+
+
+
+Referenced by org.\-json.\-X\-M\-L\-Tokener.\-next\-Entity().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_x_m_l_tokener_8java}{X\-M\-L\-Tokener.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,147 @@
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_exception}{\section{org.\-json.\-J\-S\-O\-N\-Exception Class Reference}
+\label{classorg_1_1json_1_1_j_s_o_n_exception}\index{org.\-json.\-J\-S\-O\-N\-Exception@{org.\-json.\-J\-S\-O\-N\-Exception}}
+}
+Inheritance diagram for org.\-json.\-J\-S\-O\-N\-Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1json_1_1_j_s_o_n_exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_a8251c83531dd05241eeddcd2eed31bae}{J\-S\-O\-N\-Exception} (String message)
+\item 
+\hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_aa09b706ee690c9a2a4e96b93d64dff9b}{J\-S\-O\-N\-Exception} (Throwable \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{cause})
+\item 
+Throwable \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_a3215d707756f45b63a71728aebf7b918}{get\-Cause} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Throwable \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{cause}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final long \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_afdd64d3f1a75f497c8641f02a49201c9}{serial\-Version\-U\-I\-D} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception} is thrown by the J\-S\-O\-N.\-org classes when things are amiss.
+
+\begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2013-\/02-\/10 
+\end{DoxyVersion}
+
+
+Definition at line 9 of file J\-S\-O\-N\-Exception.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_exception_a8251c83531dd05241eeddcd2eed31bae}{\index{org\-::json\-::\-J\-S\-O\-N\-Exception@{org\-::json\-::\-J\-S\-O\-N\-Exception}!J\-S\-O\-N\-Exception@{J\-S\-O\-N\-Exception}}
+\index{J\-S\-O\-N\-Exception@{J\-S\-O\-N\-Exception}!org::json::JSONException@{org\-::json\-::\-J\-S\-O\-N\-Exception}}
+\subsubsection[{J\-S\-O\-N\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-J\-S\-O\-N\-Exception.\-J\-S\-O\-N\-Exception (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_j_s_o_n_exception_a8251c83531dd05241eeddcd2eed31bae}
+Constructs a \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception} with an explanatory message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Detail about the reason for the exception. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file J\-S\-O\-N\-Exception.\-java.
+
+
+\begin{DoxyCode}
+19                                          \{
+20         super(message);
+21     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_exception_aa09b706ee690c9a2a4e96b93d64dff9b}{\index{org\-::json\-::\-J\-S\-O\-N\-Exception@{org\-::json\-::\-J\-S\-O\-N\-Exception}!J\-S\-O\-N\-Exception@{J\-S\-O\-N\-Exception}}
+\index{J\-S\-O\-N\-Exception@{J\-S\-O\-N\-Exception}!org::json::JSONException@{org\-::json\-::\-J\-S\-O\-N\-Exception}}
+\subsubsection[{J\-S\-O\-N\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-J\-S\-O\-N\-Exception.\-J\-S\-O\-N\-Exception (
+\begin{DoxyParamCaption}
+\item[{Throwable}]{cause}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_j_s_o_n_exception_aa09b706ee690c9a2a4e96b93d64dff9b}
+Constructs a new \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception} with the specified cause. 
+
+Definition at line 26 of file J\-S\-O\-N\-Exception.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Exception.\-cause.
+
+
+\begin{DoxyCode}
+26                                           \{
+27         super(\hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{cause}.getMessage());
+28         this.\hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{cause} = \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{cause};
+29     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_exception_a3215d707756f45b63a71728aebf7b918}{\index{org\-::json\-::\-J\-S\-O\-N\-Exception@{org\-::json\-::\-J\-S\-O\-N\-Exception}!get\-Cause@{get\-Cause}}
+\index{get\-Cause@{get\-Cause}!org::json::JSONException@{org\-::json\-::\-J\-S\-O\-N\-Exception}}
+\subsubsection[{get\-Cause}]{\setlength{\rightskip}{0pt plus 5cm}Throwable org.\-json.\-J\-S\-O\-N\-Exception.\-get\-Cause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_j_s_o_n_exception_a3215d707756f45b63a71728aebf7b918}
+Returns the cause of this exception or null if the cause is nonexistent or unknown.
+
+\begin{DoxyReturn}{Returns}
+the cause of this exception or null if the cause is nonexistent or unknown. 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file J\-S\-O\-N\-Exception.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Exception.\-cause.
+
+
+\begin{DoxyCode}
+38                                 \{
+39         \textcolor{keywordflow}{return} this.\hyperlink{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{cause};
+40     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}{\index{org\-::json\-::\-J\-S\-O\-N\-Exception@{org\-::json\-::\-J\-S\-O\-N\-Exception}!cause@{cause}}
+\index{cause@{cause}!org::json::JSONException@{org\-::json\-::\-J\-S\-O\-N\-Exception}}
+\subsubsection[{cause}]{\setlength{\rightskip}{0pt plus 5cm}Throwable org.\-json.\-J\-S\-O\-N\-Exception.\-cause\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1json_1_1_j_s_o_n_exception_adfaad5c0b7a1d41430d2d1e701520e2b}
+
+
+Definition at line 11 of file J\-S\-O\-N\-Exception.\-java.
+
+
+
+Referenced by org.\-json.\-J\-S\-O\-N\-Exception.\-get\-Cause(), and org.\-json.\-J\-S\-O\-N\-Exception.\-J\-S\-O\-N\-Exception().
+
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_exception_afdd64d3f1a75f497c8641f02a49201c9}{\index{org\-::json\-::\-J\-S\-O\-N\-Exception@{org\-::json\-::\-J\-S\-O\-N\-Exception}!serial\-Version\-U\-I\-D@{serial\-Version\-U\-I\-D}}
+\index{serial\-Version\-U\-I\-D@{serial\-Version\-U\-I\-D}!org::json::JSONException@{org\-::json\-::\-J\-S\-O\-N\-Exception}}
+\subsubsection[{serial\-Version\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}final long org.\-json.\-J\-S\-O\-N\-Exception.\-serial\-Version\-U\-I\-D = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classorg_1_1json_1_1_j_s_o_n_exception_afdd64d3f1a75f497c8641f02a49201c9}
+
+
+Definition at line 10 of file J\-S\-O\-N\-Exception.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_j_s_o_n_exception_8java}{J\-S\-O\-N\-Exception.\-java}\end{DoxyCompactItemize}

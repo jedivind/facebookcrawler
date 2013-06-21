@@ -1,0 +1,217 @@
+\hypertarget{classorg_1_1json_1_1_h_t_t_p}{\section{org.\-json.\-H\-T\-T\-P Class Reference}
+\label{classorg_1_1json_1_1_h_t_t_p}\index{org.\-json.\-H\-T\-T\-P@{org.\-json.\-H\-T\-T\-P}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_h_t_t_p_a9ac2cf295e6a84bfeed1af10dc9dae33}{to\-J\-S\-O\-N\-Object} (String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_h_t_t_p_aee0416336b82e1c7c7941350a2a409d7}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} jo)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classorg_1_1json_1_1_h_t_t_p_a7feb3304ccde0415ee29b8f997fb65b6}{C\-R\-L\-F} = \char`\"{}\textbackslash{}r\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Convert an \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} header to a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} and back. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2010-\/12-\/24 
+\end{DoxyVersion}
+
+
+Definition at line 34 of file H\-T\-T\-P.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_h_t_t_p_a9ac2cf295e6a84bfeed1af10dc9dae33}{\index{org\-::json\-::\-H\-T\-T\-P@{org\-::json\-::\-H\-T\-T\-P}!to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}}
+\index{to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}!org::json::HTTP@{org\-::json\-::\-H\-T\-T\-P}}
+\subsubsection[{to\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-H\-T\-T\-P.\-to\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_h_t_t_p_a9ac2cf295e6a84bfeed1af10dc9dae33}
+Convert an \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} header string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. It can be a request header or a response header. A request header will contain 
+\begin{DoxyPre}\{
+   Method: "POST" (for example),
+   "Request-URI": "/" (for example),
+   "HTTP-Version": "HTTP/1.1" (for example)
+\}\end{DoxyPre}
+ A response header will contain 
+\begin{DoxyPre}\{
+   "HTTP-Version": "HTTP/1.1" (for example),
+   "Status-Code": "200" (for example),
+   "Reason-Phrase": "OK" (for example)
+\}\end{DoxyPre}
+ In addition, the other parameters in the header will be captured, using the \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} field names as J\-S\-O\-N names, so that 
+\begin{DoxyPre}
+   Date: Sun, 26 May 2002 18:06:04 GMT
+   \hyperlink{classorg_1_1json_1_1_cookie}{Cookie}: Q=q2=PPEAsg--; B=677gi6ouf29bn\&b=2\&f=s
+   Cache-Control: no-cache\end{DoxyPre}
+ become 
+\begin{DoxyPre}\{...
+   Date: "Sun, 26 May 2002 18:06:04 GMT",
+   \hyperlink{classorg_1_1json_1_1_cookie}{Cookie}: "Q=q2=PPEAsg--; B=677gi6ouf29bn&b=2&f=s",
+   "Cache-Control": "no-cache",
+...\}\end{DoxyPre}
+ It does no further checking or conversion. It does not parse dates. It does not do '' transforms on U\-R\-Ls. 
+\begin{DoxyParams}{Parameters}
+{\em string} & An \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} header string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} containing the elements and attributes of the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 71 of file H\-T\-T\-P.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-more(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next\-To(), org.\-json.\-H\-T\-T\-P\-Tokener.\-next\-Token(), and org.\-json.\-J\-S\-O\-N\-Object.\-put().
+
+
+\begin{DoxyCode}
+71                                                                               \{
+72         JSONObject     jo = \textcolor{keyword}{new} JSONObject();
+73         HTTPTokener    x = \textcolor{keyword}{new} HTTPTokener(\textcolor{keywordtype}{string});
+74         String         token;
+75 
+76         token = x.nextToken();
+77         \textcolor{keywordflow}{if} (token.toUpperCase().startsWith(\textcolor{stringliteral}{"HTTP"})) \{
+78 
+79 \textcolor{comment}{// Response}
+80 
+81             jo.put(\textcolor{stringliteral}{"HTTP-Version"}, token);
+82             jo.put(\textcolor{stringliteral}{"Status-Code"}, x.nextToken());
+83             jo.put(\textcolor{stringliteral}{"Reason-Phrase"}, x.nextTo(\textcolor{charliteral}{'\(\backslash\)0'}));
+84             x.next();
+85 
+86         \} \textcolor{keywordflow}{else} \{
+87 
+88 \textcolor{comment}{// Request}
+89 
+90             jo.put(\textcolor{stringliteral}{"Method"}, token);
+91             jo.put(\textcolor{stringliteral}{"Request-URI"}, x.nextToken());
+92             jo.put(\textcolor{stringliteral}{"HTTP-Version"}, x.nextToken());
+93         \}
+94 
+95 \textcolor{comment}{// Fields}
+96 
+97         \textcolor{keywordflow}{while} (x.more()) \{
+98             String name = x.nextTo(\textcolor{charliteral}{':'});
+99             x.next(\textcolor{charliteral}{':'});
+100             jo.put(name, x.nextTo(\textcolor{charliteral}{'\(\backslash\)0'}));
+101             x.next();
+102         \}
+103         \textcolor{keywordflow}{return} jo;
+104     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_h_t_t_p_aee0416336b82e1c7c7941350a2a409d7}{\index{org\-::json\-::\-H\-T\-T\-P@{org\-::json\-::\-H\-T\-T\-P}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::HTTP@{org\-::json\-::\-H\-T\-T\-P}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-H\-T\-T\-P.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Object}}]{jo}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_h_t_t_p_aee0416336b82e1c7c7941350a2a409d7}
+Convert a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} into an \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} header. A request header must contain 
+\begin{DoxyPre}\{
+   Method: "POST" (for example),
+   "Request-URI": "/" (for example),
+   "HTTP-Version": "HTTP/1.1" (for example)
+\}\end{DoxyPre}
+ A response header must contain 
+\begin{DoxyPre}\{
+   "HTTP-Version": "HTTP/1.1" (for example),
+   "Status-Code": "200" (for example),
+   "Reason-Phrase": "OK" (for example)
+\}\end{DoxyPre}
+ Any other members of the \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} will be output as \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} fields. The result will end with two C\-R\-L\-F pairs. 
+\begin{DoxyParams}{Parameters}
+{\em jo} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} header string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if the object does not contain enough information. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 127 of file H\-T\-T\-P.\-java.
+
+
+
+References org.\-json.\-H\-T\-T\-P.\-C\-R\-L\-F.
+
+
+\begin{DoxyCode}
+127                                                                       \{
+128         Iterator     keys = jo.keys();
+129         String       string;
+130         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+131         \textcolor{keywordflow}{if} (jo.has(\textcolor{stringliteral}{"Status-Code"}) && jo.has(\textcolor{stringliteral}{"Reason-Phrase"})) \{
+132             sb.append(jo.getString(\textcolor{stringliteral}{"HTTP-Version"}));
+133             sb.append(\textcolor{charliteral}{' '});
+134             sb.append(jo.getString(\textcolor{stringliteral}{"Status-Code"}));
+135             sb.append(\textcolor{charliteral}{' '});
+136             sb.append(jo.getString(\textcolor{stringliteral}{"Reason-Phrase"}));
+137         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (jo.has(\textcolor{stringliteral}{"Method"}) && jo.has(\textcolor{stringliteral}{"Request-URI"})) \{
+138             sb.append(jo.getString(\textcolor{stringliteral}{"Method"}));
+139             sb.append(\textcolor{charliteral}{' '});
+140             sb.append(\textcolor{charliteral}{'"'});
+141             sb.append(jo.getString(\textcolor{stringliteral}{"Request-URI"}));
+142             sb.append(\textcolor{charliteral}{'"'});
+143             sb.append(\textcolor{charliteral}{' '});
+144             sb.append(jo.getString(\textcolor{stringliteral}{"HTTP-Version"}));
+145         \} \textcolor{keywordflow}{else} \{
+146             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} JSONException(\textcolor{stringliteral}{"Not enough material for an HTTP header."});
+147         \}
+148         sb.append(\hyperlink{classorg_1_1json_1_1_h_t_t_p_a7feb3304ccde0415ee29b8f997fb65b6}{CRLF});
+149         \textcolor{keywordflow}{while} (keys.hasNext()) \{
+150             \textcolor{keywordtype}{string} = keys.next().toString();
+151             \textcolor{keywordflow}{if} (!\textcolor{stringliteral}{"HTTP-Version"}.equals(\textcolor{keywordtype}{string})      && !\textcolor{stringliteral}{"Status-Code"}.equals(\textcolor{keywordtype}{string}) &&
+152                     !\textcolor{stringliteral}{"Reason-Phrase"}.equals(\textcolor{keywordtype}{string}) && !\textcolor{stringliteral}{"Method"}.equals(\textcolor{keywordtype}{string}) &&
+153                     !\textcolor{stringliteral}{"Request-URI"}.equals(\textcolor{keywordtype}{string})   && !jo.isNull(\textcolor{keywordtype}{string})) \{
+154                 sb.append(\textcolor{keywordtype}{string});
+155                 sb.append(\textcolor{stringliteral}{": "});
+156                 sb.append(jo.getString(\textcolor{keywordtype}{string}));
+157                 sb.append(\hyperlink{classorg_1_1json_1_1_h_t_t_p_a7feb3304ccde0415ee29b8f997fb65b6}{CRLF});
+158             \}
+159         \}
+160         sb.append(\hyperlink{classorg_1_1json_1_1_h_t_t_p_a7feb3304ccde0415ee29b8f997fb65b6}{CRLF});
+161         \textcolor{keywordflow}{return} sb.toString();
+162     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1json_1_1_h_t_t_p_a7feb3304ccde0415ee29b8f997fb65b6}{\index{org\-::json\-::\-H\-T\-T\-P@{org\-::json\-::\-H\-T\-T\-P}!C\-R\-L\-F@{C\-R\-L\-F}}
+\index{C\-R\-L\-F@{C\-R\-L\-F}!org::json::HTTP@{org\-::json\-::\-H\-T\-T\-P}}
+\subsubsection[{C\-R\-L\-F}]{\setlength{\rightskip}{0pt plus 5cm}final String org.\-json.\-H\-T\-T\-P.\-C\-R\-L\-F = \char`\"{}\textbackslash{}r\textbackslash{}n\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_h_t_t_p_a7feb3304ccde0415ee29b8f997fb65b6}
+Carriage return/line feed. 
+
+Definition at line 37 of file H\-T\-T\-P.\-java.
+
+
+
+Referenced by org.\-json.\-H\-T\-T\-P.\-to\-String().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_h_t_t_p_8java}{H\-T\-T\-P.\-java}\end{DoxyCompactItemize}

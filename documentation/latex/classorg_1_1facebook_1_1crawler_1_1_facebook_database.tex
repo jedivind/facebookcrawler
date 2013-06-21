@@ -1,0 +1,326 @@
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database}{\section{org.\-facebook.\-crawler.\-Facebook\-Database Class Reference}
+\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database}\index{org.\-facebook.\-crawler.\-Facebook\-Database@{org.\-facebook.\-crawler.\-Facebook\-Database}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a5ae64c7e16e90aca4156738255bc676f}{Facebook\-Database} (\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_d_b_params}{Facebook\-D\-B\-Params} \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{db\-Params})
+\item 
+boolean \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae9cc0367023a4ac918a3e875765f2cc4}{create\-Statement} ()
+\item 
+int \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ad897bd9bf770f72c5492a31100506217}{execute\-Query} (String User\-I\-D, String\mbox{[}$\,$\mbox{]} arry, String\mbox{[}$\,$\mbox{]} Group\-I\-D, int Index)
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae79fc854e8901cdcede8cceba7e30704}{create\-Query\-String} (String S\-Q\-L\-Command, String table\-Name, String\mbox{[}$\,$\mbox{]} Values)
+\item 
+void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a4c22cf937429b08d5cdf5d1026660517}{init\-Database\-Connection} ()
+\item 
+void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a51c7bd4f29613d9ab64128d94c3132eb}{destroy\-Database\-Connection} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Connection \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a347debd49d7a2e9b0defa4889482247b}{db\-Conn}
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ac086ee9bb59d45c5bf830f305000ede7}{db\-U\-R\-L}
+\item 
+Statement \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}{statement}
+\item 
+Result\-Set \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_af817784677223d8e6830d7040eb33784}{results}
+\item 
+\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_d_b_params}{Facebook\-D\-B\-Params} \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{db\-Params}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Facebook\-Database.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a5ae64c7e16e90aca4156738255bc676f}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!Facebook\-Database@{Facebook\-Database}}
+\index{Facebook\-Database@{Facebook\-Database}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{Facebook\-Database}]{\setlength{\rightskip}{0pt plus 5cm}org.\-facebook.\-crawler.\-Facebook\-Database.\-Facebook\-Database (
+\begin{DoxyParamCaption}
+\item[{{\bf Facebook\-D\-B\-Params}}]{db\-Params}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a5ae64c7e16e90aca4156738255bc676f}
+
+
+Definition at line 17 of file Facebook\-Database.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Params.
+
+
+\begin{DoxyCode}
+17                                                         \{
+18         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{dbParams} = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{dbParams};
+19         
+20     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae79fc854e8901cdcede8cceba7e30704}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!create\-Query\-String@{create\-Query\-String}}
+\index{create\-Query\-String@{create\-Query\-String}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{create\-Query\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Database.\-create\-Query\-String (
+\begin{DoxyParamCaption}
+\item[{String}]{S\-Q\-L\-Command, }
+\item[{String}]{table\-Name, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{Values}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae79fc854e8901cdcede8cceba7e30704}
+
+
+Definition at line 62 of file Facebook\-Database.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Database.\-execute\-Query().
+
+
+\begin{DoxyCode}
+62                                                                                               \{
+63         String queryString = \textcolor{stringliteral}{""};
+64         String queryVals = \textcolor{stringliteral}{""};
+65             \textcolor{keywordflow}{if}( tableName != null )
+66             \textcolor{keywordflow}{if}( SQLCommand.equalsIgnoreCase(\textcolor{stringliteral}{"INSERT"}) )\{
+67                 queryString = queryString.concat( \textcolor{stringliteral}{"INSERT into "} + tableName + \textcolor{stringliteral}{" VALUES ('"} );
+68                 System.out.println(Values.length + \textcolor{stringliteral}{" Values"}); 
+69                 \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < Values.length - 1; i++ )
+70                     queryVals = queryVals.concat( Values[i] + \textcolor{stringliteral}{"','"} ); 
+71                 queryString = queryString.concat( queryVals + Values[Values.length - 1] + \textcolor{stringliteral}{"')"} ); 
+72                 System.out.println(queryString);
+73             \}
+74         
+75         \textcolor{keywordflow}{return} queryString;
+76             
+77     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae9cc0367023a4ac918a3e875765f2cc4}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!create\-Statement@{create\-Statement}}
+\index{create\-Statement@{create\-Statement}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{create\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-facebook.\-crawler.\-Facebook\-Database.\-create\-Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae9cc0367023a4ac918a3e875765f2cc4}
+
+
+Definition at line 22 of file Facebook\-Database.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Conn, and org.\-facebook.\-crawler.\-Facebook\-Database.\-statement.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json().
+
+
+\begin{DoxyCode}
+22                                     \{
+23         
+24             \textcolor{keywordflow}{try} \{
+25                 this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}{statement} = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a347debd49d7a2e9b0defa4889482247b}{dbConn}.createStatement();
+26             \} \textcolor{keywordflow}{catch} (SQLException e) \{
+27                 \textcolor{comment}{// TODO Auto-generated catch block}
+28                 e.printStackTrace();
+29             \}
+30         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+31     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a51c7bd4f29613d9ab64128d94c3132eb}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!destroy\-Database\-Connection@{destroy\-Database\-Connection}}
+\index{destroy\-Database\-Connection@{destroy\-Database\-Connection}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{destroy\-Database\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-facebook.\-crawler.\-Facebook\-Database.\-destroy\-Database\-Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a51c7bd4f29613d9ab64128d94c3132eb}
+
+
+Definition at line 96 of file Facebook\-Database.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Conn.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json().
+
+
+\begin{DoxyCode}
+96                                            \{
+97         \textcolor{keywordflow}{try} \{
+98             
+99             \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a347debd49d7a2e9b0defa4889482247b}{dbConn}.close();
+100             System.out.println(\textcolor{stringliteral}{"DB conn closed"});
+101         
+102         \} \textcolor{keywordflow}{catch}(Exception e)\{\}
+103     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ad897bd9bf770f72c5492a31100506217}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!execute\-Query@{execute\-Query}}
+\index{execute\-Query@{execute\-Query}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{execute\-Query}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-facebook.\-crawler.\-Facebook\-Database.\-execute\-Query (
+\begin{DoxyParamCaption}
+\item[{String}]{User\-I\-D, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{arry, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{Group\-I\-D, }
+\item[{int}]{Index}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ad897bd9bf770f72c5492a31100506217}
+
+
+Definition at line 33 of file Facebook\-Database.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Database.\-create\-Query\-String(), org.\-facebook.\-crawler.\-Facebook\-Database.\-results, and org.\-facebook.\-crawler.\-Facebook\-Database.\-statement.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User().
+
+
+\begin{DoxyCode}
+33                                                                                              \{
+34         
+35         \textcolor{keywordtype}{int} count = 0;
+36         \textcolor{keywordflow}{try} \{
+37             
+38             this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_af817784677223d8e6830d7040eb33784}{results} = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}{statement}.executeQuery( \textcolor{stringliteral}{"SELECT DISTINCT id from user where
+       id="} + UserID );
+39             
+40             \textcolor{keywordflow}{while}( \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_af817784677223d8e6830d7040eb33784}{results}.next() )
+41                 count = count + 1;
+42             
+43             \textcolor{keywordflow}{if}(count == 0)\{
+44                 \textcolor{comment}{/*count = this.statement.executeUpdate("INSERT into user VALUES
+       ('"+arry[0]+"','"+arry[1]+"','"+arry[2]+"','"+arry[3]+"','"+arry[4]+}
+45 \textcolor{comment}{                        
+      "','"+arry[5]+"','"+arry[6]+"','"+arry[7]+"','"+arry[8]+"','"+arry[9]+"','"+arry[10]+"','"+arry[11]+"','"+arry[12]+"','"+}
+46 \textcolor{comment}{                        
+      arry[13]+"','"+arry[14]+"','"+arry[15]+"','"+arry[16]+"','"+arry[17]+"','"+arry[18]+"')");}
+47 \textcolor{comment}{                */}
+48                 
+49                 count = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}{statement}.executeUpdate( this.
+      \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae79fc854e8901cdcede8cceba7e30704}{createQueryString}( \textcolor{stringliteral}{"INSERT"} , \textcolor{stringliteral}{"user"} , arry ) );
+50             \}
+51             
+52             \textcolor{keywordflow}{if}( Index != -1 )
+53             count = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}{statement}.executeUpdate( \textcolor{stringliteral}{"INSERT into gruid (userid,groupid) VALUES ('"} +
+       UserID + \textcolor{stringliteral}{"','"} + GroupID[Index] + \textcolor{stringliteral}{"')"} );
+54 
+55         \} \textcolor{keywordflow}{catch}(Exception e)\{
+56             e.printStackTrace();    
+57         \}
+58         
+59         \textcolor{keywordflow}{return} count;
+60     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a4c22cf937429b08d5cdf5d1026660517}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!init\-Database\-Connection@{init\-Database\-Connection}}
+\index{init\-Database\-Connection@{init\-Database\-Connection}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{init\-Database\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-facebook.\-crawler.\-Facebook\-Database.\-init\-Database\-Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a4c22cf937429b08d5cdf5d1026660517}
+
+
+Definition at line 79 of file Facebook\-Database.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Conn, org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Params, org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-U\-R\-L, org.\-facebook.\-crawler.\-Facebook\-D\-B\-Params.\-get\-D\-B\-Link(), org.\-facebook.\-crawler.\-Facebook\-D\-B\-Params.\-get\-D\-B\-Pass(), and org.\-facebook.\-crawler.\-Facebook\-D\-B\-Params.\-get\-D\-B\-User().
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json().
+
+
+\begin{DoxyCode}
+79                                          \{
+80         
+81         \textcolor{keywordflow}{try} \{
+82             
+83                 this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ac086ee9bb59d45c5bf830f305000ede7}{dbURL} = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{dbParams}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_d_b_params_af147a42d3fe3420446bb3398ecf83c07}{getDBLink}();
+84                 Class.forName(\textcolor{stringliteral}{"com.mysql.jdbc.Driver"}).newInstance();
+85                 this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a347debd49d7a2e9b0defa4889482247b}{dbConn} = DriverManager.getConnection( this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ac086ee9bb59d45c5bf830f305000ede7}{dbURL}, this.
+      \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{dbParams}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_d_b_params_a97d1092a497da86a58c73c3d3f935e4a}{getDBUser}(), this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{dbParams}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_d_b_params_a4fd5cc4ce5efee2b65b6b09333dc660f}{getDBPass}());
+86                 System.out.println(\textcolor{stringliteral}{"DB conn established"});
+87 
+88         \} \textcolor{keywordflow}{catch}(Exception e) \{
+89             System.err.println(\textcolor{stringliteral}{"Cannot connect to DB"});
+90             System.err.println(\textcolor{stringliteral}{"Connection URL "} + this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{dbParams}.
+      \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_d_b_params_af147a42d3fe3420446bb3398ecf83c07}{getDBLink}());
+91             System.err.println(e.getMessage());
+92         \}
+93         
+94     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a347debd49d7a2e9b0defa4889482247b}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!db\-Conn@{db\-Conn}}
+\index{db\-Conn@{db\-Conn}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{db\-Conn}]{\setlength{\rightskip}{0pt plus 5cm}Connection org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Conn\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a347debd49d7a2e9b0defa4889482247b}
+
+
+Definition at line 11 of file Facebook\-Database.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Database.\-create\-Statement(), org.\-facebook.\-crawler.\-Facebook\-Database.\-destroy\-Database\-Connection(), and org.\-facebook.\-crawler.\-Facebook\-Database.\-init\-Database\-Connection().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!db\-Params@{db\-Params}}
+\index{db\-Params@{db\-Params}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{db\-Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Facebook\-D\-B\-Params} org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-Params\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a34e83032342cbc6e64111e127b123701}
+
+
+Definition at line 15 of file Facebook\-Database.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Database.\-Facebook\-Database(), and org.\-facebook.\-crawler.\-Facebook\-Database.\-init\-Database\-Connection().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ac086ee9bb59d45c5bf830f305000ede7}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!db\-U\-R\-L@{db\-U\-R\-L}}
+\index{db\-U\-R\-L@{db\-U\-R\-L}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{db\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Database.\-db\-U\-R\-L\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ac086ee9bb59d45c5bf830f305000ede7}
+
+
+Definition at line 12 of file Facebook\-Database.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Database.\-init\-Database\-Connection().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_af817784677223d8e6830d7040eb33784}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!results@{results}}
+\index{results@{results}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{results}]{\setlength{\rightskip}{0pt plus 5cm}Result\-Set org.\-facebook.\-crawler.\-Facebook\-Database.\-results\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_af817784677223d8e6830d7040eb33784}
+
+
+Definition at line 14 of file Facebook\-Database.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Database.\-execute\-Query().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Database@{org\-::facebook\-::crawler\-::\-Facebook\-Database}!statement@{statement}}
+\index{statement@{statement}!org::facebook::crawler::FacebookDatabase@{org\-::facebook\-::crawler\-::\-Facebook\-Database}}
+\subsubsection[{statement}]{\setlength{\rightskip}{0pt plus 5cm}Statement org.\-facebook.\-crawler.\-Facebook\-Database.\-statement\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_database_abba52e41f81d0010005388541288096d}
+
+
+Definition at line 13 of file Facebook\-Database.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Database.\-create\-Statement(), and org.\-facebook.\-crawler.\-Facebook\-Database.\-execute\-Query().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/facebook/crawler/\hyperlink{_facebook_database_8java}{Facebook\-Database.\-java}\end{DoxyCompactItemize}

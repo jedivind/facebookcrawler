@@ -1,0 +1,526 @@
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser}{\section{org.\-facebook.\-crawler.\-Facebook\-Json\-Parser Class Reference}
+\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser}\index{org.\-facebook.\-crawler.\-Facebook\-Json\-Parser@{org.\-facebook.\-crawler.\-Facebook\-Json\-Parser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad4a53f8df38730092caf44c7ca5cba3a}{Facebook\-Json\-Parser} (\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database}{Facebook\-Database} \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db}, String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{access\-Token}, String\mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{Fields}, String\mbox{[}$\,$\mbox{]} Group\-I\-Ds)
+\item 
+void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a07aaa6f0ec99b77a81d6f0193b099bfa}{crawl\-Json} (\hyperlink{enumorg_1_1facebook_1_1crawler_1_1_crawl_options}{Crawl\-Options} op)  throws I\-O\-Exception, J\-S\-O\-N\-Exception, S\-Q\-L\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a91fc36b9636b126263163304e84565be}{crawl\-Group} ()  throws I\-O\-Exception, J\-S\-O\-N\-Exception, S\-Q\-L\-Exception 
+\item 
+void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac34111b952612f2142b68a3470e59087}{crawl\-Users} ()  throws I\-O\-Exception, J\-S\-O\-N\-Exception, S\-Q\-L\-Exception 
+\item 
+void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a94c4a859c2d3abd9b7ed95121ae74998}{crawl\-User} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} Group\-Member\-J\-S\-O\-N\-Object, int I\-D\-Index)  throws I\-O\-Exception, J\-S\-O\-N\-Exception, S\-Q\-L\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a17a61b33567c78bc8e726c1df6ede898}{read\-All} (Reader rd)  throws I\-O\-Exception 
+\item 
+static String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_aef196cddd66541bd78f99e543f3fc7bc}{trim} (String string\-To\-Trim)
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad27f29e060383659be657f065bd069c2}{read\-Json\-From\-Url} (String url)  throws I\-O\-Exception, J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{access\-Token}
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a432ef64a6d8e4575ff9e1f03a2fb1ab2}{Graph\-U\-R\-L} = \char`\"{}https\-://graph.\-facebook.\-com/\char`\"{}
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{Group\-I\-D} \mbox{[}$\,$\mbox{]} = \{\}
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}{User\-I\-D} \mbox{[}$\,$\mbox{]} = \{\}
+\item 
+String \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{Fields} \mbox{[}$\,$\mbox{]} = \{\}
+\item 
+\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database}{Facebook\-Database} \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file Facebook\-Json\-Parser.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad4a53f8df38730092caf44c7ca5cba3a}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!Facebook\-Json\-Parser@{Facebook\-Json\-Parser}}
+\index{Facebook\-Json\-Parser@{Facebook\-Json\-Parser}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{Facebook\-Json\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Facebook\-Json\-Parser (
+\begin{DoxyParamCaption}
+\item[{{\bf Facebook\-Database}}]{db, }
+\item[{String}]{access\-Token, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{Fields, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{Group\-I\-Ds}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad4a53f8df38730092caf44c7ca5cba3a}
+
+
+Definition at line 44 of file Facebook\-Json\-Parser.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-access\-Token, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-db, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Fields, and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Group\-I\-D.
+
+
+\begin{DoxyCode}
+44                                                                                                            
+         \{
+45         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db} = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db};
+46         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{accessToken} = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{accessToken};
+47         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{Fields} = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{Fields};
+48         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{GroupID} = GroupIDs;
+49     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a91fc36b9636b126263163304e84565be}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!crawl\-Group@{crawl\-Group}}
+\index{crawl\-Group@{crawl\-Group}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{crawl\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}, S\-Q\-L\-Exception\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a91fc36b9636b126263163304e84565be}
+
+
+Definition at line 86 of file Facebook\-Json\-Parser.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-access\-Token, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-J\-S\-O\-N\-Array(), org.\-json.\-J\-S\-O\-N\-Array.\-get\-J\-S\-O\-N\-Object(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Graph\-U\-R\-L, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Group\-I\-D, org.\-json.\-J\-S\-O\-N\-Array.\-length(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-read\-Json\-From\-Url().
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json().
+
+
+\begin{DoxyCode}
+86                                                                               \{ \textcolor{comment}{// Crawl entire group info,
+       including it's members.}
+87         
+88         
+89         String memberListAppend = \textcolor{stringliteral}{"/members?access\_token="} + this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{accessToken};
+90                 
+91         \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} GroupIDIndex = 0 ; GroupIDIndex < \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{GroupID}.length ; GroupIDIndex++ ) \{
+92             
+93             String GroupURL = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a432ef64a6d8e4575ff9e1f03a2fb1ab2}{GraphURL};
+94             GroupURL = GroupURL.concat( \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{GroupID}[GroupIDIndex] );
+95             GroupURL = GroupURL.concat( memberListAppend ); \textcolor{comment}{//Group members list & id}
+96             System.out.println(GroupURL);  
+97       
+98             JSONObject GroupJSONObject = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad27f29e060383659be657f065bd069c2}{readJsonFromUrl}(GroupURL);
+99             JSONArray GroupMemberListJSONArray = GroupJSONObject.getJSONArray(\textcolor{stringliteral}{"data"});
+100             
+101             \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} MemberCount = 0; MemberCount < GroupMemberListJSONArray.length(); MemberCount++) \{
+102                 this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a94c4a859c2d3abd9b7ed95121ae74998}{crawlUser}( GroupMemberListJSONArray.getJSONObject( MemberCount ) , 
+      GroupIDIndex );
+103                 
+104             \}
+105             
+106             
+107         \}
+108         
+109     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a07aaa6f0ec99b77a81d6f0193b099bfa}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!crawl\-Json@{crawl\-Json}}
+\index{crawl\-Json@{crawl\-Json}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{crawl\-Json}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json (
+\begin{DoxyParamCaption}
+\item[{{\bf Crawl\-Options}}]{op}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}, S\-Q\-L\-Exception}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a07aaa6f0ec99b77a81d6f0193b099bfa}
+
+
+Definition at line 246 of file Facebook\-Json\-Parser.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Users(), org.\-facebook.\-crawler.\-Facebook\-Database.\-create\-Statement(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-db, org.\-facebook.\-crawler.\-Facebook\-Database.\-destroy\-Database\-Connection(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Group\-I\-D, and org.\-facebook.\-crawler.\-Facebook\-Database.\-init\-Database\-Connection().
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Crawler\-Client.\-main().
+
+
+\begin{DoxyCode}
+246                                                                                              \{       
+247         
+248         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a4c22cf937429b08d5cdf5d1026660517}{initDatabaseConnection}();
+249         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ae9cc0367023a4ac918a3e875765f2cc4}{createStatement}();
+250         
+251         \textcolor{comment}{//If Group Crawl}
+252         \textcolor{keywordflow}{if}( op.toString().equals( \textcolor{stringliteral}{"GROUP"} ) && \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{GroupID}.length > 0 )
+253             this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a91fc36b9636b126263163304e84565be}{crawlGroup}();
+254         
+255         \textcolor{comment}{//If Users Crawl}
+256         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( op.toString().equalsIgnoreCase( \textcolor{stringliteral}{"USER"} ) )\{
+257             this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac34111b952612f2142b68a3470e59087}{crawlUsers}();
+258         \}
+259         
+260         \textcolor{keywordflow}{else} \{
+261             System.err.println(\textcolor{stringliteral}{"Parameters missing."});
+262         \}
+263         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_a51c7bd4f29613d9ab64128d94c3132eb}{destroyDatabaseConnection}();
+264          
+265         
+266     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a94c4a859c2d3abd9b7ed95121ae74998}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!crawl\-User@{crawl\-User}}
+\index{crawl\-User@{crawl\-User}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{crawl\-User}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Object}}]{Group\-Member\-J\-S\-O\-N\-Object, }
+\item[{int}]{I\-D\-Index}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}, S\-Q\-L\-Exception\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a94c4a859c2d3abd9b7ed95121ae74998}
+
+
+Definition at line 130 of file Facebook\-Json\-Parser.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-access\-Token, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-db, org.\-facebook.\-crawler.\-Facebook\-Database.\-execute\-Query(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Fields, org.\-json.\-J\-S\-O\-N\-Object.\-get\-J\-S\-O\-N\-Array(), org.\-json.\-J\-S\-O\-N\-Array.\-get\-J\-S\-O\-N\-Object(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-J\-S\-O\-N\-Object(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-Names(), org.\-json.\-J\-S\-O\-N\-Array.\-get\-String(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-String(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Graph\-U\-R\-L, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Group\-I\-D, org.\-json.\-J\-S\-O\-N\-Array.\-length(), org.\-json.\-J\-S\-O\-N\-Object.\-names(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-read\-Json\-From\-Url(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-trim().
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Users().
+
+
+\begin{DoxyCode}
+130                                                                                                            
+                        \{ \textcolor{comment}{// Crawl individual user info. Pass list of userIDs to crawl.}
+131         
+132         String accessTokenAppend = \textcolor{stringliteral}{"?access\_token="} + \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{accessToken};
+133         String MemberURL;
+134         String ID = \textcolor{stringliteral}{""};
+135         JSONObject GroupMemberDataJSONObject;
+136         
+137         MemberURL = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a432ef64a6d8e4575ff9e1f03a2fb1ab2}{GraphURL};
+138         MemberURL = MemberURL.concat(GroupMemberJSONObject.getString(\textcolor{stringliteral}{"id"}));
+139         MemberURL = MemberURL.concat(accessTokenAppend);
+140         
+141         GroupMemberDataJSONObject = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad27f29e060383659be657f065bd069c2}{readJsonFromUrl}(MemberURL); \textcolor{comment}{// Member info}
+142         \textcolor{comment}{//System.out.println(GroupMemberDataJSONObject.get("name"));}
+143 
+144         String MemberDataFieldsArray[] = \textcolor{keyword}{new} String[19];
+145         String currentField = \textcolor{stringliteral}{""};
+146         JSONArray MemberDataFieldNames = GroupMemberDataJSONObject.names();
+147 
+148             \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} fieldIndex = 0; fieldIndex < MemberDataFieldNames.length(); fieldIndex++ ) \{
+149                 String check = MemberDataFieldNames.getString(fieldIndex);
+150                 \textcolor{comment}{//TODO Need to clean & compact this code section. Crawler will expand support for every
+       field in the User object, but}
+151                 \textcolor{comment}{// database schema must be updated first to include all the fields.}
+152                 \textcolor{keywordflow}{if}( check.equals(\textcolor{stringliteral}{"id"}) || check.equals(\textcolor{stringliteral}{"name"}) || check.equals(\textcolor{stringliteral}{"first\_name"}) || check.
+      equals(\textcolor{stringliteral}{"middle\_name"}) || check.equals(\textcolor{stringliteral}{"last\_name"}) || check.equals(\textcolor{stringliteral}{"link"}) ||check.equals(\textcolor{stringliteral}{"username"}) ||check.
+      equals(\textcolor{stringliteral}{"birthday"}) ||check.equals(\textcolor{stringliteral}{"gender"}) ||check.equals(\textcolor{stringliteral}{"relationship\_status"}) ||check.equals(\textcolor{stringliteral}{"bio"}) ||check
+      .equals(\textcolor{stringliteral}{"quotes"}) ||check.equals(\textcolor{stringliteral}{"email"}) ||check.equals(\textcolor{stringliteral}{"religion"})) \{
+153                     
+154                           currentField = GroupMemberDataJSONObject.getString( MemberDataFieldNames.
+      getString(fieldIndex) );
+155                 \}
+156 
+157                 \textcolor{keywordflow}{if}( MemberDataFieldNames.getString(fieldIndex).equals(\textcolor{stringliteral}{"location"}) ) \{
+158 
+159                     String locarr[] = JSONObject.getNames(GroupMemberDataJSONObject.getJSONObject(\textcolor{stringliteral}{"location
+      "}));
+160 
+161                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} z=0; z<locarr.length; z++)
+162                         \textcolor{keywordflow}{if}(locarr[z].equals(\textcolor{stringliteral}{"name"}))
+163                             currentField = GroupMemberDataJSONObject.getString(locarr[z]);
+164     
+165                 \}
+166 
+167                 \textcolor{keywordflow}{if}( MemberDataFieldNames.getString(fieldIndex).equals(\textcolor{stringliteral}{"hometown"}) ) \{
+168 
+169                     String homearr[] = JSONObject.getNames(GroupMemberDataJSONObject.getJSONObject(\textcolor{stringliteral}{"
+      hometown"}));
+170 
+171                     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} z = 0; z < homearr.length; z++ )
+172                         \textcolor{keywordflow}{if}( homearr[z].equals(\textcolor{stringliteral}{"name"}) )
+173                             currentField = GroupMemberDataJSONObject.getString( homearr[z] );
+174                 \}
+175 
+176                 \textcolor{keywordflow}{if}( MemberDataFieldNames.getString(fieldIndex).equals(\textcolor{stringliteral}{"languages"}) ) \{
+177                     String langs = \textcolor{stringliteral}{""};
+178                     JSONArray langarry = GroupMemberDataJSONObject.getJSONArray(\textcolor{stringliteral}{"languages"});
+179                     JSONObject langnames;
+180 
+181                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} y=0; y<langarry.length(); y++)\{
+182                         langnames = langarry.getJSONObject(y);
+183                         langs = langs.concat( \textcolor{stringliteral}{" "} + langnames.getString(\textcolor{stringliteral}{"name"}) + \textcolor{stringliteral}{" "} );
+184                     \}
+185                     currentField = langs;
+186                 \}
+187 
+188                 \textcolor{keywordflow}{if}( MemberDataFieldNames.getString(fieldIndex).equals(\textcolor{stringliteral}{"education"}) ) \{
+189                     String education = \textcolor{stringliteral}{""};
+190                     JSONArray eduarry = GroupMemberDataJSONObject.getJSONArray(\textcolor{stringliteral}{"education"});
+191                     JSONObject eduname;
+192                     String scharry[] = JSONObject.getNames( GroupMemberDataJSONObject.getJSONObject(\textcolor{stringliteral}{"
+      education"}) );
+193 
+194                     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} x = 0; x < eduarry.length(); x++ )\{
+195                         \textcolor{keywordflow}{if}( scharry[x].equals(\textcolor{stringliteral}{"school"}) )
+196                         \{
+197                             eduname = eduarry.getJSONObject(x);
+198                             education = education.concat( \textcolor{stringliteral}{" "} + eduname.getString(\textcolor{stringliteral}{"name"}) + \textcolor{stringliteral}{" "} );
+199                         \}
+200     
+201                     \}
+202                     currentField = education;
+203                 \}
+204                 
+205                 \textcolor{keywordflow}{if}( MemberDataFieldNames.getString(fieldIndex).equals(\textcolor{stringliteral}{"work"}) ) \{
+206                     String work = \textcolor{stringliteral}{""};
+207                     JSONArray workarry = GroupMemberDataJSONObject.getJSONArray(\textcolor{stringliteral}{"work"});
+208                     JSONObject workname;
+209                     String wrkarry[] = JSONObject.getNames( GroupMemberDataJSONObject.getJSONObject(\textcolor{stringliteral}{"work"})
+       );
+210 
+211                     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} w=0; w<workarry.length(); w++ )\{
+212                         \textcolor{keywordflow}{if}( wrkarry[w].equals(\textcolor{stringliteral}{"employer"}) )
+213                         \{
+214                             workname = workarry.getJSONObject(w);
+215                             work = work.concat( \textcolor{stringliteral}{" "} + workname.getString(\textcolor{stringliteral}{"name"}) + \textcolor{stringliteral}{" "} );
+216                         \}
+217     
+218                     \}
+219                     currentField = work;
+220                 \}
+221 
+222                 String tempcheck = MemberDataFieldNames.getString(fieldIndex);
+223                 
+224                 \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} x = 0; x < \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{Fields}.length; x++ )\{
+225                     \textcolor{keywordflow}{if}( tempcheck.equals(\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{Fields}[x]) )\{
+226                         
+227                         currentField = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_aef196cddd66541bd78f99e543f3fc7bc}{trim}(currentField);
+228                         \textcolor{keywordflow}{if}( currentField != null )
+229                         MemberDataFieldsArray[x] = currentField;
+230                         
+231                         \textcolor{keywordflow}{else} 
+232                             MemberDataFieldsArray[x] = \textcolor{stringliteral}{"null"};
+233                         
+234 
+235                     \}
+236                 \}
+237                 ID = GroupMemberDataJSONObject.getString(\textcolor{stringliteral}{"id"});
+238                 
+239             \}
+240         \textcolor{comment}{//for(  int j=0; j<MemberDataFieldsArray.length; j++)\{
+       System.out.println(MemberDataFieldsArray[j]);\}               }
+241         this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{db}.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_database_ad897bd9bf770f72c5492a31100506217}{executeQuery}(ID , MemberDataFieldsArray , \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{GroupID} , IDIndex );
+242         
+243         
+244     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac34111b952612f2142b68a3470e59087}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!crawl\-Users@{crawl\-Users}}
+\index{crawl\-Users@{crawl\-Users}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{crawl\-Users}]{\setlength{\rightskip}{0pt plus 5cm}void org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Users (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}, S\-Q\-L\-Exception\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac34111b952612f2142b68a3470e59087}
+
+
+Definition at line 111 of file Facebook\-Json\-Parser.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-access\-Token, org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Graph\-U\-R\-L, org.\-json.\-J\-S\-O\-N\-Object.\-put(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-User\-I\-D.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json().
+
+
+\begin{DoxyCode}
+111                                                                               \{
+112     
+113         String accessTokenAppend = \textcolor{stringliteral}{"?access\_token="} + \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{accessToken};
+114                 
+115         \textcolor{keywordflow}{if}( \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}{UserID}.length > 0 )
+116         \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} UserIDIndex = 0; UserIDIndex < \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}{UserID}.length; UserIDIndex++ )\{
+117             
+118             String UserURL = this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a432ef64a6d8e4575ff9e1f03a2fb1ab2}{GraphURL};
+119             UserURL = UserURL.concat( \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}{UserID}[ UserIDIndex ]);
+120             UserURL = UserURL.concat( accessTokenAppend );
+121             
+122             JSONObject UserObject = \textcolor{keyword}{new} JSONObject();
+123             UserObject.put(\textcolor{stringliteral}{"id"} , \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}{UserID}[UserIDIndex]);
+124             this.\hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a94c4a859c2d3abd9b7ed95121ae74998}{crawlUser}( UserObject , -1 );
+125             
+126         \}
+127             
+128     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a17a61b33567c78bc8e726c1df6ede898}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!read\-All@{read\-All}}
+\index{read\-All@{read\-All}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{read\-All}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-read\-All (
+\begin{DoxyParamCaption}
+\item[{Reader}]{rd}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a17a61b33567c78bc8e726c1df6ede898}
+
+
+Definition at line 51 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-read\-Json\-From\-Url().
+
+
+\begin{DoxyCode}
+51                                                                 \{
+52         StringBuilder sb = \textcolor{keyword}{new} StringBuilder();
+53         \textcolor{keywordtype}{int} cp;
+54     
+55         \textcolor{keywordflow}{while} ((cp = rd.read()) != -1) \{
+56             sb.append((\textcolor{keywordtype}{char}) cp);
+57         \}
+58     
+59         \textcolor{keywordflow}{return} sb.toString();
+60     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad27f29e060383659be657f065bd069c2}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!read\-Json\-From\-Url@{read\-Json\-From\-Url}}
+\index{read\-Json\-From\-Url@{read\-Json\-From\-Url}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{read\-Json\-From\-Url}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-read\-Json\-From\-Url (
+\begin{DoxyParamCaption}
+\item[{String}]{url}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ad27f29e060383659be657f065bd069c2}
+
+
+Definition at line 70 of file Facebook\-Json\-Parser.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-read\-All().
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User().
+
+
+\begin{DoxyCode}
+70                                                                                             \{
+71     
+72         InputStream is = \textcolor{keyword}{new} URL(url).openStream();
+73    
+74         \textcolor{keywordflow}{try} \{
+75         
+76             BufferedReader rd = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(is, Charset.forName(\textcolor{stringliteral}{"UTF-8"})));
+77             String jsonText = \hyperlink{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a17a61b33567c78bc8e726c1df6ede898}{readAll}(rd);
+78             JSONObject json = \textcolor{keyword}{new} JSONObject(jsonText);
+79             \textcolor{keywordflow}{return} json;
+80         
+81         \} \textcolor{keywordflow}{finally} \{
+82             is.close();
+83         \}
+84     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_aef196cddd66541bd78f99e543f3fc7bc}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!trim@{trim}}
+\index{trim@{trim}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-trim (
+\begin{DoxyParamCaption}
+\item[{String}]{string\-To\-Trim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_aef196cddd66541bd78f99e543f3fc7bc}
+
+
+Definition at line 63 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User().
+
+
+\begin{DoxyCode}
+63                                                       \{
+64         
+65         \textcolor{keywordflow}{return} stringToTrim.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+66     
+67     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!access\-Token@{access\-Token}}
+\index{access\-Token@{access\-Token}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{access\-Token}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-access\-Token\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a31fa96aed58c0b5ab6a156224d88cc19}
+
+
+Definition at line 32 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Users(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Facebook\-Json\-Parser().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!db@{db}}
+\index{db@{db}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{db}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Facebook\-Database} org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-db\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a0411f79e4986d72a4274a775d54ed42e}
+
+
+Definition at line 41 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Facebook\-Json\-Parser().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!Fields@{Fields}}
+\index{Fields@{Fields}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{Fields}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Fields\mbox{[}$\,$\mbox{]} = \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a5e950f9470c73a8ee7cfdafbe95ab100}
+
+
+Definition at line 37 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Facebook\-Json\-Parser().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a432ef64a6d8e4575ff9e1f03a2fb1ab2}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!Graph\-U\-R\-L@{Graph\-U\-R\-L}}
+\index{Graph\-U\-R\-L@{Graph\-U\-R\-L}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{Graph\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Graph\-U\-R\-L = \char`\"{}https\-://graph.\-facebook.\-com/\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a432ef64a6d8e4575ff9e1f03a2fb1ab2}
+
+
+Definition at line 33 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Users().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!Group\-I\-D@{Group\-I\-D}}
+\index{Group\-I\-D@{Group\-I\-D}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{Group\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Group\-I\-D\mbox{[}$\,$\mbox{]} = \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_a648157fbf1ba62f4197ce78c35a4a5da}
+
+
+Definition at line 35 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Group(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json(), org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-User(), and org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-Facebook\-Json\-Parser().
+
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}{\index{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}!User\-I\-D@{User\-I\-D}}
+\index{User\-I\-D@{User\-I\-D}!org::facebook::crawler::FacebookJsonParser@{org\-::facebook\-::crawler\-::\-Facebook\-Json\-Parser}}
+\subsubsection[{User\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-User\-I\-D\mbox{[}$\,$\mbox{]} = \{\}\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1facebook_1_1crawler_1_1_facebook_json_parser_ac872d203f33324d357f697597cc51da0}
+
+
+Definition at line 36 of file Facebook\-Json\-Parser.\-java.
+
+
+
+Referenced by org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Users().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/facebook/crawler/\hyperlink{_facebook_json_parser_8java}{Facebook\-Json\-Parser.\-java}\end{DoxyCompactItemize}

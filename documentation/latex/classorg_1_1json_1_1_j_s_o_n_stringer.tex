@@ -1,0 +1,99 @@
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_stringer}{\section{org.\-json.\-J\-S\-O\-N\-Stringer Class Reference}
+\label{classorg_1_1json_1_1_j_s_o_n_stringer}\index{org.\-json.\-J\-S\-O\-N\-Stringer@{org.\-json.\-J\-S\-O\-N\-Stringer}}
+}
+Inheritance diagram for org.\-json.\-J\-S\-O\-N\-Stringer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1json_1_1_j_s_o_n_stringer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer_a36d3accdcf3f40434edd9c33b414d3f9}{J\-S\-O\-N\-Stringer} ()
+\item 
+String \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer_a2e7f28e99eb46f767b5df8a669e774b4}{to\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer}{J\-S\-O\-N\-Stringer} provides a quick and convenient way of producing J\-S\-O\-N text. The texts produced strictly conform to J\-S\-O\-N syntax rules. No whitespace is added, so the results are ready for transmission or storage. Each instance of \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer}{J\-S\-O\-N\-Stringer} can produce one J\-S\-O\-N text. 
+
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer}{J\-S\-O\-N\-Stringer} instance provides a {\ttfamily value} method for appending values to the text, and a {\ttfamily key} method for adding keys before values in objects. There are {\ttfamily array} and {\ttfamily end\-Array} methods that make and bound array values, and {\ttfamily object} and {\ttfamily end\-Object} methods which make and bound object values. All of these methods return the \hyperlink{classorg_1_1json_1_1_j_s_o_n_writer}{J\-S\-O\-N\-Writer} instance, permitting cascade style. For example, 
+\begin{DoxyPre}
+myString = new \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer_a36d3accdcf3f40434edd9c33b414d3f9}{JSONStringer()}
+    .\hyperlink{classorg_1_1json_1_1_j_s_o_n_writer_a50ed212b9c8c9f6a57c3ddfc6bf3126a}{object()}
+        .key("JSON")
+        .value("Hello, World!")
+    .\hyperlink{classorg_1_1json_1_1_j_s_o_n_writer_a25cc931ef86998c61f08b1d5eff22146}{endObject()}
+    .\hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer_a2e7f28e99eb46f767b5df8a669e774b4}{toString()};\end{DoxyPre}
+ which produces the string 
+\begin{DoxyPre}
+\{"JSON":"Hello, World!"\}\end{DoxyPre}
+ 
+
+The first method called must be {\ttfamily array} or {\ttfamily object}. There are no methods for adding commas or colons. \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer}{J\-S\-O\-N\-Stringer} adds them for you. Objects and arrays can be nested up to 20 levels deep. 
+
+This can sometimes be easier than using a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} to build a string. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2008-\/09-\/18 
+\end{DoxyVersion}
+
+
+Definition at line 59 of file J\-S\-O\-N\-Stringer.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_stringer_a36d3accdcf3f40434edd9c33b414d3f9}{\index{org\-::json\-::\-J\-S\-O\-N\-Stringer@{org\-::json\-::\-J\-S\-O\-N\-Stringer}!J\-S\-O\-N\-Stringer@{J\-S\-O\-N\-Stringer}}
+\index{J\-S\-O\-N\-Stringer@{J\-S\-O\-N\-Stringer}!org::json::JSONStringer@{org\-::json\-::\-J\-S\-O\-N\-Stringer}}
+\subsubsection[{J\-S\-O\-N\-Stringer}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-J\-S\-O\-N\-Stringer.\-J\-S\-O\-N\-Stringer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_j_s_o_n_stringer_a36d3accdcf3f40434edd9c33b414d3f9}
+Make a fresh \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer}{J\-S\-O\-N\-Stringer}. It can be used to build one J\-S\-O\-N text. 
+
+Definition at line 63 of file J\-S\-O\-N\-Stringer.\-java.
+
+
+\begin{DoxyCode}
+63                           \{
+64         super(\textcolor{keyword}{new} StringWriter());
+65     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_stringer_a2e7f28e99eb46f767b5df8a669e774b4}{\index{org\-::json\-::\-J\-S\-O\-N\-Stringer@{org\-::json\-::\-J\-S\-O\-N\-Stringer}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::JSONStringer@{org\-::json\-::\-J\-S\-O\-N\-Stringer}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-json.\-J\-S\-O\-N\-Stringer.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_j_s_o_n_stringer_a2e7f28e99eb46f767b5df8a669e774b4}
+Return the J\-S\-O\-N text. This method is used to obtain the product of the \hyperlink{classorg_1_1json_1_1_j_s_o_n_stringer}{J\-S\-O\-N\-Stringer} instance. It will return {\ttfamily null} if there was a problem in the construction of the J\-S\-O\-N text (such as the calls to {\ttfamily array} were not properly balanced with calls to {\ttfamily end\-Array}). \begin{DoxyReturn}{Returns}
+The J\-S\-O\-N text. 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file J\-S\-O\-N\-Stringer.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Writer.\-mode, and org.\-json.\-J\-S\-O\-N\-Writer.\-writer.
+
+
+\begin{DoxyCode}
+75                              \{
+76         \textcolor{keywordflow}{return} this.\hyperlink{classorg_1_1json_1_1_j_s_o_n_writer_acabe6b245b148eabfaa3cf975f98073f}{mode} == \textcolor{charliteral}{'d'} ? this.\hyperlink{classorg_1_1json_1_1_j_s_o_n_writer_ae5398a9b83a17ab31c993c52fc1c8e06}{writer}.toString() : null;
+77     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_j_s_o_n_stringer_8java}{J\-S\-O\-N\-Stringer.\-java}\end{DoxyCompactItemize}

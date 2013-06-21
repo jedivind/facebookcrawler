@@ -1,0 +1,619 @@
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l}{\section{org.\-json.\-J\-S\-O\-N\-M\-L Class Reference}
+\label{classorg_1_1json_1_1_j_s_o_n_m_l}\index{org.\-json.\-J\-S\-O\-N\-M\-L@{org.\-json.\-J\-S\-O\-N\-M\-L}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a97e622e1f610e21ba5cbd3167d4fb5a1}{to\-J\-S\-O\-N\-Array} (String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a82cc8221f4feee054e12a5689a2186f4}{to\-J\-S\-O\-N\-Array} (\hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a9075449699e2ebca8721a6bdf04ee35f}{to\-J\-S\-O\-N\-Object} (\hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aa517a2c5f1930ae22619425098e55f41}{to\-J\-S\-O\-N\-Object} (String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} ja)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aa436f0b8577f68314e12f23f803437c2}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} jo)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Object \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a3c36aa36d0d65f7d3f5aef426750faec}{parse} (\hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} x, boolean array\-Form, \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} ja)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This provides static methods to convert an \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} text into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} or \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}, and to covert a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} or \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} into an \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} text using the Json\-M\-L transform.
+
+\begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2012-\/03-\/28 
+\end{DoxyVersion}
+
+
+Definition at line 38 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_a3c36aa36d0d65f7d3f5aef426750faec}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!parse@{parse}}
+\index{parse@{parse}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}static Object org.\-json.\-J\-S\-O\-N\-M\-L.\-parse (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-M\-L\-Tokener}}]{x, }
+\item[{boolean}]{array\-Form, }
+\item[{{\bf J\-S\-O\-N\-Array}}]{ja}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_a3c36aa36d0d65f7d3f5aef426750faec}
+Parse \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} values and store them in a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array}. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The \hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} containing the source string. \\
+\hline
+{\em array\-Form} & true if array form, false if object form. \\
+\hline
+{\em ja} & The \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} that is containing the current tag or null if we are at the outermost level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} if the value is the outermost tag, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 49 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Object.\-accumulate(), org.\-json.\-X\-M\-L.\-B\-A\-N\-G, org.\-json.\-X\-M\-L.\-E\-Q, org.\-json.\-X\-M\-L.\-G\-T, org.\-json.\-J\-S\-O\-N\-Array.\-length(), org.\-json.\-J\-S\-O\-N\-Object.\-length(), org.\-json.\-X\-M\-L.\-L\-T, org.\-json.\-J\-S\-O\-N\-Array.\-put(), org.\-json.\-J\-S\-O\-N\-Object.\-put(), org.\-json.\-X\-M\-L.\-Q\-U\-E\-S\-T, org.\-json.\-X\-M\-L.\-S\-L\-A\-S\-H, and org.\-json.\-X\-M\-L.\-string\-To\-Value().
+
+
+
+Referenced by org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Array(), and org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+53                            \{
+54         String     attribute;
+55         \textcolor{keywordtype}{char}       c;
+56         String       closeTag = null;
+57         \textcolor{keywordtype}{int}        i;
+58         JSONArray  newja = null;
+59         JSONObject newjo = null;
+60         Object     token;
+61         String       tagName = null;
+62 
+63 \textcolor{comment}{// Test for and skip past these forms:}
+64 \textcolor{comment}{//      <!-- ... -->}
+65 \textcolor{comment}{//      <![  ... ]]>}
+66 \textcolor{comment}{//      <!   ...   >}
+67 \textcolor{comment}{//      <?   ...  ?>}
+68 
+69         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+70             \textcolor{keywordflow}{if} (!x.more()) \{
+71                 \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Bad XML"});
+72             \}
+73             token = x.nextContent();
+74             \textcolor{keywordflow}{if} (token == XML.LT) \{
+75                 token = x.nextToken();
+76                 \textcolor{keywordflow}{if} (token instanceof Character) \{
+77                     \textcolor{keywordflow}{if} (token == XML.SLASH) \{
+78 
+79 \textcolor{comment}{// Close tag </}
+80 
+81                         token = x.nextToken();
+82                         \textcolor{keywordflow}{if} (!(token instanceof String)) \{
+83                             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} JSONException(
+84                                     \textcolor{stringliteral}{"Expected a closing name instead of '"} +
+85                                     token + \textcolor{stringliteral}{"'."});
+86                         \}
+87                         \textcolor{keywordflow}{if} (x.nextToken() != XML.GT) \{
+88                             \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Misshaped close tag"});
+89                         \}
+90                         \textcolor{keywordflow}{return} token;
+91                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token == XML.BANG) \{
+92 
+93 \textcolor{comment}{// <!}
+94 
+95                         c = x.next();
+96                         \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'-'}) \{
+97                             \textcolor{keywordflow}{if} (x.next() == \textcolor{charliteral}{'-'}) \{
+98                                 x.skipPast(\textcolor{stringliteral}{"-->"});
+99                             \} \textcolor{keywordflow}{else} \{
+100                                 x.back();
+101                             \}
+102                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'['}) \{
+103                             token = x.nextToken();
+104                             \textcolor{keywordflow}{if} (token.equals(\textcolor{stringliteral}{"CDATA"}) && x.next() == \textcolor{charliteral}{'['}) \{
+105                                 \textcolor{keywordflow}{if} (ja != null) \{
+106                                     ja.put(x.nextCDATA());
+107                                 \}
+108                             \} \textcolor{keywordflow}{else} \{
+109                                 \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Expected 'CDATA['"});
+110                             \}
+111                         \} \textcolor{keywordflow}{else} \{
+112                             i = 1;
+113                             \textcolor{keywordflow}{do} \{
+114                                 token = x.nextMeta();
+115                                 \textcolor{keywordflow}{if} (token == null) \{
+116                                     \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Missing '>' after '<!'."});
+117                                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token == XML.LT) \{
+118                                     i += 1;
+119                                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token == XML.GT) \{
+120                                     i -= 1;
+121                                 \}
+122                             \} \textcolor{keywordflow}{while} (i > 0);
+123                         \}
+124                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token == XML.QUEST) \{
+125 
+126 \textcolor{comment}{// <?}
+127 
+128                         x.skipPast(\textcolor{stringliteral}{"?>"});
+129                     \} \textcolor{keywordflow}{else} \{
+130                         \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Misshaped tag"});
+131                     \}
+132 
+133 \textcolor{comment}{// Open tag <}
+134 
+135                 \} \textcolor{keywordflow}{else} \{
+136                     \textcolor{keywordflow}{if} (!(token instanceof String)) \{
+137                         \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Bad tagName '"} + token + \textcolor{stringliteral}{"'."});
+138                     \}
+139                     tagName = (String)token;
+140                     newja = \textcolor{keyword}{new} JSONArray();
+141                     newjo = \textcolor{keyword}{new} JSONObject();
+142                     \textcolor{keywordflow}{if} (arrayForm) \{
+143                         newja.put(tagName);
+144                         \textcolor{keywordflow}{if} (ja != null) \{
+145                             ja.put(newja);
+146                         \}
+147                     \} \textcolor{keywordflow}{else} \{
+148                         newjo.put(\textcolor{stringliteral}{"tagName"}, tagName);
+149                         \textcolor{keywordflow}{if} (ja != null) \{
+150                             ja.put(newjo);
+151                         \}
+152                     \}
+153                     token = null;
+154                     \textcolor{keywordflow}{for} (;;) \{
+155                         \textcolor{keywordflow}{if} (token == null) \{
+156                             token = x.nextToken();
+157                         \}
+158                         \textcolor{keywordflow}{if} (token == null) \{
+159                             \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Misshaped tag"});
+160                         \}
+161                         \textcolor{keywordflow}{if} (!(token instanceof String)) \{
+162                             \textcolor{keywordflow}{break};
+163                         \}
+164 
+165 \textcolor{comment}{// attribute = value}
+166 
+167                         attribute = (String)token;
+168                         \textcolor{keywordflow}{if} (!arrayForm && (\textcolor{stringliteral}{"tagName"}.equals(attribute) || \textcolor{stringliteral}{"childNode"}.equals(attribute))) \{
+169                             \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Reserved attribute."});
+170                         \}
+171                         token = x.nextToken();
+172                         \textcolor{keywordflow}{if} (token == XML.EQ) \{
+173                             token = x.nextToken();
+174                             \textcolor{keywordflow}{if} (!(token instanceof String)) \{
+175                                 \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Missing value"});
+176                             \}
+177                             newjo.accumulate(attribute, XML.stringToValue((String)token));
+178                             token = null;
+179                         \} \textcolor{keywordflow}{else} \{
+180                             newjo.accumulate(attribute, \textcolor{stringliteral}{""});
+181                         \}
+182                     \}
+183                     \textcolor{keywordflow}{if} (arrayForm && newjo.length() > 0) \{
+184                         newja.put(newjo);
+185                     \}
+186 
+187 \textcolor{comment}{// Empty tag <.../>}
+188 
+189                     \textcolor{keywordflow}{if} (token == XML.SLASH) \{
+190                         \textcolor{keywordflow}{if} (x.nextToken() != XML.GT) \{
+191                             \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Misshaped tag"});
+192                         \}
+193                         \textcolor{keywordflow}{if} (ja == null) \{
+194                             \textcolor{keywordflow}{if} (arrayForm) \{
+195                                 \textcolor{keywordflow}{return} newja;
+196                             \} \textcolor{keywordflow}{else} \{
+197                                 \textcolor{keywordflow}{return} newjo;
+198                             \}
+199                         \}
+200 
+201 \textcolor{comment}{// Content, between <...> and </...>}
+202 
+203                     \} \textcolor{keywordflow}{else} \{
+204                         \textcolor{keywordflow}{if} (token != XML.GT) \{
+205                             \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Misshaped tag"});
+206                         \}
+207                         closeTag = (String)\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a3c36aa36d0d65f7d3f5aef426750faec}{parse}(x, arrayForm, newja);
+208                         \textcolor{keywordflow}{if} (closeTag != null) \{
+209                             \textcolor{keywordflow}{if} (!closeTag.equals(tagName)) \{
+210                                 \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Mismatched '"} + tagName +
+211                                         \textcolor{stringliteral}{"' and '"} + closeTag + \textcolor{stringliteral}{"'"});
+212                             \}
+213                             tagName = null;
+214                             \textcolor{keywordflow}{if} (!arrayForm && newja.length() > 0) \{
+215                                 newjo.put(\textcolor{stringliteral}{"childNodes"}, newja);
+216                             \}
+217                             \textcolor{keywordflow}{if} (ja == null) \{
+218                                 \textcolor{keywordflow}{if} (arrayForm) \{
+219                                     \textcolor{keywordflow}{return} newja;
+220                                 \} \textcolor{keywordflow}{else} \{
+221                                     \textcolor{keywordflow}{return} newjo;
+222                                 \}
+223                             \}
+224                         \}
+225                     \}
+226                 \}
+227             \} \textcolor{keywordflow}{else} \{
+228                 \textcolor{keywordflow}{if} (ja != null) \{
+229                     ja.put(token instanceof String
+230                         ? XML.stringToValue((String)token)
+231                         : token);
+232                 \}
+233             \}
+234         \}
+235     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_a97e622e1f610e21ba5cbd3167d4fb5a1}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}}
+\index{to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_a97e622e1f610e21ba5cbd3167d4fb5a1}
+Convert a well-\/formed (but not necessarily valid) \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} using the Json\-M\-L transform. Each \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} tag is represented as a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} in which the first element is the tag name. If the tag has attributes, then the second element will be \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} containing the name/value pairs. If the tag contains children, then strings and J\-S\-O\-N\-Arrays will represent the child tags. Comments, prologs, D\-T\-Ds, and {\ttfamily $<$\mbox{[} \mbox{[} \mbox{]}\mbox{]}$>$} are ignored. 
+\begin{DoxyParams}{Parameters}
+{\em string} & The source string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} containing the structured data from the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 250 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+\begin{DoxyCode}
+250                                                                             \{
+251         \textcolor{keywordflow}{return} \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a97e622e1f610e21ba5cbd3167d4fb5a1}{toJSONArray}(\textcolor{keyword}{new} XMLTokener(\textcolor{keywordtype}{string}));
+252     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_a82cc8221f4feee054e12a5689a2186f4}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}}
+\index{to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-M\-L\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_a82cc8221f4feee054e12a5689a2186f4}
+Convert a well-\/formed (but not necessarily valid) \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} using the Json\-M\-L transform. Each \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} tag is represented as a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} in which the first element is the tag name. If the tag has attributes, then the second element will be \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} containing the name/value pairs. If the tag contains children, then strings and J\-S\-O\-N\-Arrays will represent the child content and tags. Comments, prologs, D\-T\-Ds, and {\ttfamily $<$\mbox{[} \mbox{[} \mbox{]}\mbox{]}$>$} are ignored. 
+\begin{DoxyParams}{Parameters}
+{\em x} & An \hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} containing the structured data from the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 267 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-M\-L.\-parse().
+
+
+\begin{DoxyCode}
+267                                                                            \{
+268         \textcolor{keywordflow}{return} (JSONArray)\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a3c36aa36d0d65f7d3f5aef426750faec}{parse}(x, \textcolor{keyword}{true}, null);
+269     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_a9075449699e2ebca8721a6bdf04ee35f}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}}
+\index{to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf X\-M\-L\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_a9075449699e2ebca8721a6bdf04ee35f}
+Convert a well-\/formed (but not necessarily valid) \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} using the Json\-M\-L transform. Each \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} tag is represented as a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} with a \char`\"{}tag\-Name\char`\"{} property. If the tag has attributes, then the attributes will be in the \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} as properties. If the tag contains children, the object will have a \char`\"{}child\-Nodes\char`\"{} property which will be an array of strings and Json\-M\-L J\-S\-O\-N\-Objects.
+
+Comments, prologs, D\-T\-Ds, and {\ttfamily $<$\mbox{[} \mbox{[} \mbox{]}\mbox{]}$>$} are ignored. 
+\begin{DoxyParams}{Parameters}
+{\em x} & An \hyperlink{classorg_1_1json_1_1_x_m_l_tokener}{X\-M\-L\-Tokener} of the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} source text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} containing the structured data from the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 285 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-M\-L.\-parse().
+
+
+
+Referenced by org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+285                                                                              \{
+286            \textcolor{keywordflow}{return} (JSONObject)\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a3c36aa36d0d65f7d3f5aef426750faec}{parse}(x, \textcolor{keyword}{false}, null);
+287     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_aa517a2c5f1930ae22619425098e55f41}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}}
+\index{to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_aa517a2c5f1930ae22619425098e55f41}
+Convert a well-\/formed (but not necessarily valid) \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} using the Json\-M\-L transform. Each \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} tag is represented as a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} with a \char`\"{}tag\-Name\char`\"{} property. If the tag has attributes, then the attributes will be in the \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} as properties. If the tag contains children, the object will have a \char`\"{}child\-Nodes\char`\"{} property which will be an array of strings and Json\-M\-L J\-S\-O\-N\-Objects.
+
+Comments, prologs, D\-T\-Ds, and {\ttfamily $<$\mbox{[} \mbox{[} \mbox{]}\mbox{]}$>$} are ignored. 
+\begin{DoxyParams}{Parameters}
+{\em string} & The \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} source text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} containing the structured data from the \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 303 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+303                                                                               \{
+304         \textcolor{keywordflow}{return} \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_a9075449699e2ebca8721a6bdf04ee35f}{toJSONObject}(\textcolor{keyword}{new} XMLTokener(\textcolor{keywordtype}{string}));
+305     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{ja}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}
+Reverse the \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l}{J\-S\-O\-N\-M\-L} transformation, making an \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} text from a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array}. 
+\begin{DoxyParams}{Parameters}
+{\em ja} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 314 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+References org.\-json.\-X\-M\-L.\-escape(), org.\-json.\-J\-S\-O\-N\-Object.\-keys(), org.\-json.\-X\-M\-L.\-no\-Space(), and org.\-json.\-J\-S\-O\-N\-Object.\-opt\-String().
+
+
+
+Referenced by org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-String().
+
+
+\begin{DoxyCode}
+314                                                                      \{
+315         \textcolor{keywordtype}{int}             i;
+316         JSONObject   jo;
+317         String       key;
+318         Iterator     keys;
+319         \textcolor{keywordtype}{int}             length;
+320         Object         object;
+321         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+322         String       tagName;
+323         String       value;
+324 
+325 \textcolor{comment}{// Emit <tagName}
+326 
+327         tagName = ja.getString(0);
+328         XML.noSpace(tagName);
+329         tagName = XML.escape(tagName);
+330         sb.append(\textcolor{charliteral}{'<'});
+331         sb.append(tagName);
+332 
+333         \textcolor{keywordtype}{object} = ja.opt(1);
+334         \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof JSONObject) \{
+335             i = 2;
+336             jo = (JSONObject)\textcolor{keywordtype}{object};
+337 
+338 \textcolor{comment}{// Emit the attributes}
+339 
+340             keys = jo.keys();
+341             \textcolor{keywordflow}{while} (keys.hasNext()) \{
+342                 key = keys.next().toString();
+343                 XML.noSpace(key);
+344                 value = jo.optString(key);
+345                 \textcolor{keywordflow}{if} (value != null) \{
+346                     sb.append(\textcolor{charliteral}{' '});
+347                     sb.append(XML.escape(key));
+348                     sb.append(\textcolor{charliteral}{'='});
+349                     sb.append(\textcolor{charliteral}{'"'});
+350                     sb.append(XML.escape(value));
+351                     sb.append(\textcolor{charliteral}{'"'});
+352                 \}
+353             \}
+354         \} \textcolor{keywordflow}{else} \{
+355             i = 1;
+356         \}
+357 
+358 \textcolor{comment}{//Emit content in body}
+359 
+360         length = ja.length();
+361         \textcolor{keywordflow}{if} (i >= length) \{
+362             sb.append(\textcolor{charliteral}{'/'});
+363             sb.append(\textcolor{charliteral}{'>'});
+364         \} \textcolor{keywordflow}{else} \{
+365             sb.append(\textcolor{charliteral}{'>'});
+366             \textcolor{keywordflow}{do} \{
+367                 \textcolor{keywordtype}{object} = ja.get(i);
+368                 i += 1;
+369                 \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} != null) \{
+370                     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof String) \{
+371                         sb.append(XML.escape(\textcolor{keywordtype}{object}.toString()));
+372                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof JSONObject) \{
+373                         sb.append(\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{toString}((JSONObject)\textcolor{keywordtype}{object}));
+374                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof JSONArray) \{
+375                         sb.append(\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{toString}((JSONArray)\textcolor{keywordtype}{object}));
+376                     \}
+377                 \}
+378             \} \textcolor{keywordflow}{while} (i < length);
+379             sb.append(\textcolor{charliteral}{'<'});
+380             sb.append(\textcolor{charliteral}{'/'});
+381             sb.append(tagName);
+382             sb.append(\textcolor{charliteral}{'>'});
+383         \}
+384         \textcolor{keywordflow}{return} sb.toString();
+385     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_j_s_o_n_m_l_aa436f0b8577f68314e12f23f803437c2}{\index{org\-::json\-::\-J\-S\-O\-N\-M\-L@{org\-::json\-::\-J\-S\-O\-N\-M\-L}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::JSONML@{org\-::json\-::\-J\-S\-O\-N\-M\-L}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Object}}]{jo}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_j_s_o_n_m_l_aa436f0b8577f68314e12f23f803437c2}
+Reverse the \hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l}{J\-S\-O\-N\-M\-L} transformation, making an \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} text from a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. The \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} must contain a \char`\"{}tag\-Name\char`\"{} property. If it has children, then it must have a \char`\"{}child\-Nodes\char`\"{} property containing an array of objects. The other properties are attributes with string values. 
+\begin{DoxyParams}{Parameters}
+{\em jo} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{classorg_1_1json_1_1_x_m_l}{X\-M\-L} string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 396 of file J\-S\-O\-N\-M\-L.\-java.
+
+
+
+References org.\-json.\-X\-M\-L.\-escape(), org.\-json.\-J\-S\-O\-N\-Array.\-get(), org.\-json.\-J\-S\-O\-N\-Array.\-length(), org.\-json.\-X\-M\-L.\-no\-Space(), org.\-json.\-J\-S\-O\-N\-Array.\-opt\-J\-S\-O\-N\-Array(), org.\-json.\-J\-S\-O\-N\-Array.\-opt\-String(), and org.\-json.\-J\-S\-O\-N\-M\-L.\-to\-String().
+
+
+\begin{DoxyCode}
+396                                                                       \{
+397         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+398         \textcolor{keywordtype}{int}          i;
+399         JSONArray    ja;
+400         String       key;
+401         Iterator     keys;
+402         \textcolor{keywordtype}{int}          length;
+403         Object         object;
+404         String       tagName;
+405         String       value;
+406 
+407 \textcolor{comment}{//Emit <tagName}
+408 
+409         tagName = jo.optString(\textcolor{stringliteral}{"tagName"});
+410         \textcolor{keywordflow}{if} (tagName == null) \{
+411             \textcolor{keywordflow}{return} XML.escape(jo.toString());
+412         \}
+413         XML.noSpace(tagName);
+414         tagName = XML.escape(tagName);
+415         sb.append(\textcolor{charliteral}{'<'});
+416         sb.append(tagName);
+417 
+418 \textcolor{comment}{//Emit the attributes}
+419 
+420         keys = jo.keys();
+421         \textcolor{keywordflow}{while} (keys.hasNext()) \{
+422             key = keys.next().toString();
+423             \textcolor{keywordflow}{if} (!\textcolor{stringliteral}{"tagName"}.equals(key) && !\textcolor{stringliteral}{"childNodes"}.equals(key)) \{
+424                 XML.noSpace(key);
+425                 value = jo.optString(key);
+426                 \textcolor{keywordflow}{if} (value != null) \{
+427                     sb.append(\textcolor{charliteral}{' '});
+428                     sb.append(XML.escape(key));
+429                     sb.append(\textcolor{charliteral}{'='});
+430                     sb.append(\textcolor{charliteral}{'"'});
+431                     sb.append(XML.escape(value));
+432                     sb.append(\textcolor{charliteral}{'"'});
+433                 \}
+434             \}
+435         \}
+436 
+437 \textcolor{comment}{//Emit content in body}
+438 
+439         ja = jo.optJSONArray(\textcolor{stringliteral}{"childNodes"});
+440         \textcolor{keywordflow}{if} (ja == null) \{
+441             sb.append(\textcolor{charliteral}{'/'});
+442             sb.append(\textcolor{charliteral}{'>'});
+443         \} \textcolor{keywordflow}{else} \{
+444             sb.append(\textcolor{charliteral}{'>'});
+445             length = ja.length();
+446             \textcolor{keywordflow}{for} (i = 0; i < length; i += 1) \{
+447                 \textcolor{keywordtype}{object} = ja.get(i);
+448                 \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} != null) \{
+449                     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof String) \{
+450                         sb.append(XML.escape(\textcolor{keywordtype}{object}.toString()));
+451                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof JSONObject) \{
+452                         sb.append(\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{toString}((JSONObject)\textcolor{keywordtype}{object}));
+453                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} instanceof JSONArray) \{
+454                         sb.append(\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{toString}((JSONArray)\textcolor{keywordtype}{object}));
+455                     \} \textcolor{keywordflow}{else} \{
+456                         sb.append(\textcolor{keywordtype}{object}.\hyperlink{classorg_1_1json_1_1_j_s_o_n_m_l_aeb4921c45210936fbcd3a527e1df88fd}{toString}());
+457                     \}
+458                 \}
+459             \}
+460             sb.append(\textcolor{charliteral}{'<'});
+461             sb.append(\textcolor{charliteral}{'/'});
+462             sb.append(tagName);
+463             sb.append(\textcolor{charliteral}{'>'});
+464         \}
+465         \textcolor{keywordflow}{return} sb.toString();
+466     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_j_s_o_n_m_l_8java}{J\-S\-O\-N\-M\-L.\-java}\end{DoxyCompactItemize}

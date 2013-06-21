@@ -1,0 +1,335 @@
+\hypertarget{class_json_reader}{\section{Json\-Reader Class Reference}
+\label{class_json_reader}\index{Json\-Reader@{Json\-Reader}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{class_json_reader_a1e66d7d6d5a663c69d3eb60c9a81839a}{trim} (String string\-To\-Trim)
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{class_json_reader_a3775f51fc2a7f68a3ac711dc256283de}{read\-Json\-From\-Url} (String url)  throws I\-O\-Exception, J\-S\-O\-N\-Exception 
+\item 
+static void \hyperlink{class_json_reader_a62dfede5b4ae4c301b749dc787e055a5}{main} (String\mbox{[}$\,$\mbox{]} args)  throws I\-O\-Exception, J\-S\-O\-N\-Exception, S\-Q\-L\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{class_json_reader_abd73909d8a863125008f429b112fc880}{read\-All} (Reader rd)  throws I\-O\-Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file scraperjson.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_json_reader_a62dfede5b4ae4c301b749dc787e055a5}{\index{Json\-Reader@{Json\-Reader}!main@{main}}
+\index{main@{main}!JsonReader@{Json\-Reader}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void Json\-Reader.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}, S\-Q\-L\-Exception\hspace{0.3cm}{\ttfamily [static]}}}\label{class_json_reader_a62dfede5b4ae4c301b749dc787e055a5}
+
+
+Definition at line 56 of file scraperjson.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Object.\-get\-J\-S\-O\-N\-Array(), org.\-json.\-J\-S\-O\-N\-Array.\-get\-J\-S\-O\-N\-Object(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-J\-S\-O\-N\-Object(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-Names(), org.\-json.\-J\-S\-O\-N\-Array.\-get\-String(), org.\-json.\-J\-S\-O\-N\-Object.\-get\-String(), org.\-json.\-J\-S\-O\-N\-Array.\-length(), org.\-json.\-J\-S\-O\-N\-Object.\-names(), read\-Json\-From\-Url(), and trim().
+
+
+\begin{DoxyCode}
+56                                                                                          \{
+57       ResultSet rs;
+58       String org = \textcolor{stringliteral}{"https://graph.facebook.com/"};
+59       String memappend = \textcolor{stringliteral}{"
+      ?access\_token=CAACEdEose0cBAEhx6YgZA7spxZCgPknLP2YfBZBLI11G3oqyqp5JftCGDE1iUJ2JFAIsDKHVvAnzZCvAmIyYrmsBjTInPkTDRPIzKT5EPggBjmgCM16AakNl5qAfZA9v21MSiCjC3uvLQCRnlS6Ui2qTXnPFZBoOYZD"};
+60       String memlistappend = \textcolor{stringliteral}{"
+      /members?access\_token=CAACEdEose0cBAFKHoKTaQXZCXZBlmGZCfBpWRhpW0rb1ZCdmFxxiotb
+      bJlsNNzgcQ6zlLEHTChy7gxEgrKkn4ZBvUrBKj1EMFBuxGlyLXpk2EbAREKcIA8EE5ZB3uVEeq7bb2XbA9BndbsMHJAvbS8RQTAtDp2M50ZD"};
+61      \textcolor{comment}{// String GroupID [] = \{"119463501490124","239158266136572" ,
+       "227089650680923","2214852731","267875486
+      564043","233058263409131","183935261686010","140093246089847","140093246089847","181534605262558","5470017690","67279303232","128324667274339","41084647681"\};}
+62       \textcolor{comment}{//String GroupID []=
+       \{"212186883948","110657075652944","114427718571227","128331470602550","146358868726854"\};}
+63       \textcolor{comment}{//"2254756782"//,"2452805792","18733117205",}
+64       \textcolor{comment}{//"18771832390","22687005489","26075687027","58663571961","60742831043",}
+65       \textcolor{comment}{//"175010588812","194247758860",}
+66       String GroupID [] = \{\textcolor{stringliteral}{"282714248411245"}\};
+67       String fields [] = \{\textcolor{stringliteral}{"id"},\textcolor{stringliteral}{"name"},\textcolor{stringliteral}{"first\_name"},\textcolor{stringliteral}{"last\_name"},\textcolor{stringliteral}{"middle\_name"},\textcolor{stringliteral}{"link"},\textcolor{stringliteral}{"username"},\textcolor{stringliteral}{"birthday"},\textcolor{stringliteral}{"
+      hometown"},\textcolor{stringliteral}{"location"},\textcolor{stringliteral}{"bio"},\textcolor{stringliteral}{"quotes"},\textcolor{stringliteral}{"education"},\textcolor{stringliteral}{"work"},\textcolor{stringliteral}{"gender"},\textcolor{stringliteral}{"relationship\_status"},\textcolor{stringliteral}{"languages"},\textcolor{stringliteral}{"email"},\textcolor{stringliteral}{"
+      religion"}\};
+68       String \textcolor{keyword}{remove} =\textcolor{stringliteral}{"\(\backslash\)'"};
+69       Connection conn = null;
+70 
+71         \textcolor{keywordtype}{int} count=0;
+72         
+73         \textcolor{keywordflow}{try}\{
+74             String userName = \textcolor{stringliteral}{"root"};
+75             String password = \textcolor{stringliteral}{"AlphaCanisMajoris"};
+76             String url = \textcolor{stringliteral}{"jdbc:mysql://127.0.0.1:3306/facebook"};
+77                 Class.forName(\textcolor{stringliteral}{"com.mysql.jdbc.Driver"}).newInstance();
+78                 conn = DriverManager.getConnection(url,userName,password);
+79                 System.out.println(\textcolor{stringliteral}{"DB conn established"});
+80 
+81         \}
+82     
+83         \textcolor{keywordflow}{catch}(Exception e)
+84         \{
+85             System.err.println(\textcolor{stringliteral}{"Cannot connect to DB"});
+86         \}
+87         
+88         
+89         Statement s;
+90         
+91         s = conn.createStatement();
+92         
+93         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<GroupID.length ; i++)
+94         \{
+95             String new\_org = org;
+96             new\_org = new\_org.concat(GroupID[i]);
+97             new\_org = new\_org.concat(memlistappend); \textcolor{comment}{//Group members list & id}
+98             System.out.println(new\_org);  
+99             String mem\_org;
+100             
+101       
+102     \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} jsongrp = \hyperlink{class_json_reader_a3775f51fc2a7f68a3ac711dc256283de}{readJsonFromUrl}(new\_org);
+103     \textcolor{comment}{//JSONObject jsonusr = readJsonFromUrl()}
+104     \textcolor{comment}{//System.out.println(json.toString());}
+105     \textcolor{comment}{//System.out.println(jsongrp.get("id"));}
+106    \textcolor{comment}{// System.out.println(json.get("birthday"));}
+107    \textcolor{comment}{// System.out.println(json.get("location"));}
+108     
+109     \textcolor{comment}{//String array[] = JSONObject.getNames(json.getJSONObject("location"));}
+110     \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{JSONArray} array = jsongrp.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a884ee44fe958e9ea737d6c5e1180cb62}{getJSONArray}(\textcolor{stringliteral}{"data"});
+111     \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} jsongrpmemb;
+112     \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} jsongrpmembinfo;
+113     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<array.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a8382a78090007f650a02895ecbf3c8ec}{length}(); k++)\{
+114     jsongrpmemb = (array.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a7f3e6fc64826daba30f40964cd92e57e}{getJSONObject}(k));
+115     mem\_org = org;
+116     mem\_org = mem\_org.concat(jsongrpmemb.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(\textcolor{stringliteral}{"id"}));
+117     mem\_org = mem\_org.concat(memappend);
+118     jsongrpmembinfo = \hyperlink{class_json_reader_a3775f51fc2a7f68a3ac711dc256283de}{readJsonFromUrl}(mem\_org); \textcolor{comment}{// Member info}
+119     \textcolor{comment}{//System.out.println(jsongrpmembinfo.get("name"));}
+120     String arry[] = \textcolor{keyword}{new} String[20];
+121     String temp = \textcolor{stringliteral}{""};
+122     \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{JSONArray} temparry = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a02e83de70e290231527d1760c4dd30fc}{names}();
+123     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} l=0; l<temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a8382a78090007f650a02895ecbf3c8ec}{length}(); l++)\{
+124    \textcolor{comment}{// System.out.println(jsongrpmembinfo.get(temparry.getString(l)));}
+125         String check = temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l);
+126         \textcolor{keywordflow}{if}(check.equals(\textcolor{stringliteral}{"id"}) || check.equals(\textcolor{stringliteral}{"name"}) || check.equals(\textcolor{stringliteral}{"first\_name"}) || check.equals(\textcolor{stringliteral}{"
+      middle\_name"}) || check.equals(\textcolor{stringliteral}{"last\_name"}) || check.equals(\textcolor{stringliteral}{"link"}) ||check.equals(\textcolor{stringliteral}{"username"}) ||check.equals(\textcolor{stringliteral}{"
+      birthday"}) ||check.equals(\textcolor{stringliteral}{"gender"}) ||check.equals(\textcolor{stringliteral}{"relationship\_status"}) ||check.equals(\textcolor{stringliteral}{"bio"}) ||check.equals(\textcolor{stringliteral}{"
+      quotes"}) ||check.equals(\textcolor{stringliteral}{"email"}) ||check.equals(\textcolor{stringliteral}{"religion"}))
+127         temp = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l));
+128         
+129     \textcolor{keywordflow}{if}(temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l).equals(\textcolor{stringliteral}{"location"}))
+130     \{
+131         
+132         String locarr[] = \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject}.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a30d4e44e4c8e03341c346970a00ba283}{getNames}(jsongrpmembinfo.
+      \hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a6011679cb15a3aac5944bb4a8af9f7fb}{getJSONObject}(\textcolor{stringliteral}{"location"}));
+133         
+134         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} z=0; z<locarr.length; z++)
+135         \textcolor{keywordflow}{if}(locarr[z].equals(\textcolor{stringliteral}{"name"}))
+136             temp = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(locarr[z]);
+137             
+138     \}
+139     
+140     \textcolor{keywordflow}{if}(temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l).equals(\textcolor{stringliteral}{"hometown"}))
+141     \{
+142         String homearr[] = \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject}.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a30d4e44e4c8e03341c346970a00ba283}{getNames}(jsongrpmembinfo.
+      \hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a6011679cb15a3aac5944bb4a8af9f7fb}{getJSONObject}(\textcolor{stringliteral}{"hometown"}));
+143         
+144         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} z=0; z<homearr.length; z++)
+145             \textcolor{keywordflow}{if}(homearr[z].equals(\textcolor{stringliteral}{"name"}))
+146                 temp = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(homearr[z]);
+147     \}
+148         
+149     \textcolor{keywordflow}{if}(temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l).equals(\textcolor{stringliteral}{"languages"}))
+150     \{   String langs = \textcolor{stringliteral}{""};
+151         \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{JSONArray} langarry = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a884ee44fe958e9ea737d6c5e1180cb62}{getJSONArray}(\textcolor{stringliteral}{"languages"});
+152         \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} langnames;
+153         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} y=0; y<langarry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a8382a78090007f650a02895ecbf3c8ec}{length}(); y++)\{
+154             langnames = langarry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a7f3e6fc64826daba30f40964cd92e57e}{getJSONObject}(y);
+155             langs = langs.concat(\textcolor{stringliteral}{" "}+langnames.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(\textcolor{stringliteral}{"name"})+\textcolor{stringliteral}{" "});
+156         \}
+157         temp = langs;
+158     \}
+159     
+160     \textcolor{keywordflow}{if}(temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l).equals(\textcolor{stringliteral}{"education"}))
+161     \{   String education = \textcolor{stringliteral}{""};
+162         \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{JSONArray} eduarry = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a884ee44fe958e9ea737d6c5e1180cb62}{getJSONArray}(\textcolor{stringliteral}{"education"});
+163         \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} eduname;
+164         String scharry[] = \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject}.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a30d4e44e4c8e03341c346970a00ba283}{getNames}(jsongrpmembinfo.
+      \hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a6011679cb15a3aac5944bb4a8af9f7fb}{getJSONObject}(\textcolor{stringliteral}{"education"}));;
+165         
+166         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x=0; x<eduarry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a8382a78090007f650a02895ecbf3c8ec}{length}(); x++)\{
+167             \textcolor{keywordflow}{if}(scharry[x].equals(\textcolor{stringliteral}{"school"}))
+168             \{
+169                 eduname = eduarry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a7f3e6fc64826daba30f40964cd92e57e}{getJSONObject}(x);
+170                 education = education.concat(\textcolor{stringliteral}{" "}+eduname.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(\textcolor{stringliteral}{"name"})+\textcolor{stringliteral}{" "});
+171             \}
+172             
+173         \}
+174         temp = education;
+175     \}
+176     
+177     \textcolor{keywordflow}{if}(temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l).equals(\textcolor{stringliteral}{"work"}))
+178     \{   String work = \textcolor{stringliteral}{""};
+179         \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{JSONArray} workarry = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a884ee44fe958e9ea737d6c5e1180cb62}{getJSONArray}(\textcolor{stringliteral}{"work"});
+180         \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} workname;
+181         String wrkarry[] = \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject}.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a30d4e44e4c8e03341c346970a00ba283}{getNames}(jsongrpmembinfo.
+      \hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a6011679cb15a3aac5944bb4a8af9f7fb}{getJSONObject}(\textcolor{stringliteral}{"work"}));;
+182         
+183         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} w=0; w<workarry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a8382a78090007f650a02895ecbf3c8ec}{length}(); w++)\{
+184             \textcolor{keywordflow}{if}(wrkarry[w].equals(\textcolor{stringliteral}{"employer"}))
+185             \{
+186                 workname = workarry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a7f3e6fc64826daba30f40964cd92e57e}{getJSONObject}(w);
+187                 work = work.concat(\textcolor{stringliteral}{" "}+workname.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(\textcolor{stringliteral}{"name"})+\textcolor{stringliteral}{" "});
+188             \}
+189             
+190         \}
+191         temp = work;
+192     \}
+193     
+194     String tempcheck = temparry.\hyperlink{classorg_1_1json_1_1_j_s_o_n_array_a3b52ac3d94f48cdddf503e7872653591}{getString}(l);
+195     \textcolor{comment}{//System.out.println(temp);}
+196     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x=0; x<fields.length; x++)
+197     \textcolor{keywordflow}{if}(tempcheck.equals(fields[x]))\{
+198         \textcolor{comment}{//System.out.println(fields[x]);}
+199         \textcolor{comment}{//System.out.println(temp);}
+200          temp = \hyperlink{class_json_reader_a1e66d7d6d5a663c69d3eb60c9a81839a}{trim}(temp);
+201         arry[x] = temp;
+202         \textcolor{comment}{//count = s.executeUpdate("INSERT into facebook.user ("+fields[x]+") VALUES ("+temp+")");}
+203         
+204     \}
+205     
+206     temp = jsongrpmembinfo.\hyperlink{classorg_1_1json_1_1_j_s_o_n_object_a7140df2bac96f4d75a3f338ed16d1212}{getString}(\textcolor{stringliteral}{"id"});
+207     \textcolor{comment}{//if(temparry.getString(l).equals("id"));}
+208       \textcolor{comment}{//count = s.executeUpdate("INSERT into gruid (userid,groupid) VALUES ("+temp+","+GroupID[i]+")"); }
+209     
+210     
+211     \}
+212     \textcolor{keywordflow}{try}\{
+213     rs = s.executeQuery(\textcolor{stringliteral}{"SELECT DISTINCT id from user where id="}+temp);
+214     count=0;
+215     \textcolor{keywordflow}{while}(rs.next())
+216     count = count + 1;
+217     \textcolor{comment}{//System.out.println(count);}
+218     \textcolor{keywordflow}{if}(count == 0)
+219     count = s.executeUpdate(\textcolor{stringliteral}{"INSERT into user VALUES ('"}+arry[0]+\textcolor{stringliteral}{"','"}+arry[1]+\textcolor{stringliteral}{"','"}+arry[2]+\textcolor{stringliteral}{"','"}+arry[3]+\textcolor{stringliteral}{
+      "','"}+arry[4]+\textcolor{stringliteral}{"','"}+arry[5]+\textcolor{stringliteral}{"','"}+arry[6]+\textcolor{stringliteral}{"','"}+arry[7]+\textcolor{stringliteral}{"','"}+arry[8]+\textcolor{stringliteral}{"','"}+arry[9]+\textcolor{stringliteral}{"','"}+arry[10]+\textcolor{stringliteral}{"','"}+
+      arry[11]+\textcolor{stringliteral}{"','"}+arry[12]+\textcolor{stringliteral}{"','"}+arry[13]+\textcolor{stringliteral}{"','"}+arry[14]+\textcolor{stringliteral}{"','"}+arry[15]+\textcolor{stringliteral}{"','"}+arry[16]+\textcolor{stringliteral}{"','"}+arry[17]+\textcolor{stringliteral}{"','"}+arry[1
+      8]+\textcolor{stringliteral}{"')"});
+220     count = s.executeUpdate(\textcolor{stringliteral}{"INSERT into gruid (userid,groupid) VALUES ('"}+temp+\textcolor{stringliteral}{"','"}+GroupID[i]+\textcolor{stringliteral}{"')"}); 
+221     \textcolor{comment}{//\}}
+222     \}
+223     \textcolor{keywordflow}{catch}(Exception e)\{
+224     \}
+225     \}
+226     \textcolor{comment}{//for(int k=0;k<array.length;k++)}
+227     \textcolor{comment}{//  System.out.println(array[k]);}
+228     \textcolor{comment}{//System.out.println(a);}
+229     \textcolor{comment}{//System.out.println(namearray);}
+230     \textcolor{comment}{//System.out.println(jsongrp.get("data"));}
+231 \}
+232         \textcolor{keywordflow}{try}
+233         \{
+234             conn.close();
+235             System.out.println(\textcolor{stringliteral}{"DB conn closed"});
+236         \}
+237         \textcolor{keywordflow}{catch}(Exception e)\{\}
+238   \}
+\end{DoxyCode}
+\hypertarget{class_json_reader_abd73909d8a863125008f429b112fc880}{\index{Json\-Reader@{Json\-Reader}!read\-All@{read\-All}}
+\index{read\-All@{read\-All}!JsonReader@{Json\-Reader}}
+\subsubsection[{read\-All}]{\setlength{\rightskip}{0pt plus 5cm}static String Json\-Reader.\-read\-All (
+\begin{DoxyParamCaption}
+\item[{Reader}]{rd}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{class_json_reader_abd73909d8a863125008f429b112fc880}
+
+
+Definition at line 26 of file scraperjson.\-java.
+
+
+
+Referenced by read\-Json\-From\-Url().
+
+
+\begin{DoxyCode}
+26                                                               \{
+27     StringBuilder sb = \textcolor{keyword}{new} StringBuilder();
+28     \textcolor{keywordtype}{int} cp;
+29     \textcolor{keywordflow}{while} ((cp = rd.read()) != -1) \{
+30       sb.append((\textcolor{keywordtype}{char}) cp);
+31     \}
+32     \textcolor{keywordflow}{return} sb.toString();
+33     
+34   \}
+\end{DoxyCode}
+\hypertarget{class_json_reader_a3775f51fc2a7f68a3ac711dc256283de}{\index{Json\-Reader@{Json\-Reader}!read\-Json\-From\-Url@{read\-Json\-From\-Url}}
+\index{read\-Json\-From\-Url@{read\-Json\-From\-Url}!JsonReader@{Json\-Reader}}
+\subsubsection[{read\-Json\-From\-Url}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} Json\-Reader.\-read\-Json\-From\-Url (
+\begin{DoxyParamCaption}
+\item[{String}]{url}
+\end{DoxyParamCaption}
+) throws I\-O\-Exception, {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{class_json_reader_a3775f51fc2a7f68a3ac711dc256283de}
+
+
+Definition at line 44 of file scraperjson.\-java.
+
+
+
+References read\-All().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+44                                                                                          \{
+45     InputStream is = \textcolor{keyword}{new} URL(url).openStream();
+46     \textcolor{keywordflow}{try} \{
+47       BufferedReader rd = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(is, Charset.forName(\textcolor{stringliteral}{"UTF-8"})));
+48       String jsonText = \hyperlink{class_json_reader_abd73909d8a863125008f429b112fc880}{readAll}(rd);
+49       \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject} json = \textcolor{keyword}{new} \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{JSONObject}(jsonText);
+50       \textcolor{keywordflow}{return} json;
+51     \} \textcolor{keywordflow}{finally} \{
+52       is.close();
+53     \}
+54   \}
+\end{DoxyCode}
+\hypertarget{class_json_reader_a1e66d7d6d5a663c69d3eb60c9a81839a}{\index{Json\-Reader@{Json\-Reader}!trim@{trim}}
+\index{trim@{trim}!JsonReader@{Json\-Reader}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}static String Json\-Reader.\-trim (
+\begin{DoxyParamCaption}
+\item[{String}]{string\-To\-Trim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_json_reader_a1e66d7d6d5a663c69d3eb60c9a81839a}
+
+
+Definition at line 36 of file scraperjson.\-java.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+37     \{
+38         String answer = stringToTrim.replace(\textcolor{charliteral}{'\(\backslash\)''}, \textcolor{charliteral}{' '});
+39         
+40         System.out.println(answer);
+41         \textcolor{keywordflow}{return} answer;
+42     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{scraperjson_8java}{scraperjson.\-java}\end{DoxyCompactItemize}

@@ -1,0 +1,125 @@
+\hypertarget{classorg_1_1json_1_1_cookie_list}{\section{org.\-json.\-Cookie\-List Class Reference}
+\label{classorg_1_1json_1_1_cookie_list}\index{org.\-json.\-Cookie\-List@{org.\-json.\-Cookie\-List}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_cookie_list_a3f79cd0dadd831ff9bdfb6afd41cd081}{to\-J\-S\-O\-N\-Object} (String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_cookie_list_a40f938404f28eda8b66bc17dfcd2261f}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} jo)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Convert a web browser cookie list string to a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} and back. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2010-\/12-\/24 
+\end{DoxyVersion}
+
+
+Definition at line 34 of file Cookie\-List.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_cookie_list_a3f79cd0dadd831ff9bdfb6afd41cd081}{\index{org\-::json\-::\-Cookie\-List@{org\-::json\-::\-Cookie\-List}!to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}}
+\index{to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}!org::json::CookieList@{org\-::json\-::\-Cookie\-List}}
+\subsubsection[{to\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-Cookie\-List.\-to\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_cookie_list_a3f79cd0dadd831ff9bdfb6afd41cd081}
+Convert a cookie list into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. A cookie list is a sequence of name/value pairs. The names are separated from the values by '='. The pairs are separated by ';'. The names and the values will be unescaped, possibly converting '+' and '' sequences.
+
+To add a cookie to a cooklist, cookielist\-J\-S\-O\-N\-Object.\-put(cookie\-J\-S\-O\-N\-Object.\-get\-String(\char`\"{}name\char`\"{}), cookie\-J\-S\-O\-N\-Object.\-get\-String(\char`\"{}value\char`\"{})); 
+\begin{DoxyParams}{Parameters}
+{\em string} & A cookie list string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 49 of file Cookie\-List.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-more(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), org.\-json.\-J\-S\-O\-N\-Tokener.\-next\-To(), org.\-json.\-J\-S\-O\-N\-Object.\-put(), and org.\-json.\-Cookie.\-unescape().
+
+
+\begin{DoxyCode}
+49                                                                               \{
+50         JSONObject jo = \textcolor{keyword}{new} JSONObject();
+51         JSONTokener x = \textcolor{keyword}{new} JSONTokener(\textcolor{keywordtype}{string});
+52         \textcolor{keywordflow}{while} (x.more()) \{
+53             String name = Cookie.unescape(x.nextTo(\textcolor{charliteral}{'='}));
+54             x.next(\textcolor{charliteral}{'='});
+55             jo.put(name, Cookie.unescape(x.nextTo(\textcolor{charliteral}{';'})));
+56             x.next();
+57         \}
+58         \textcolor{keywordflow}{return} jo;
+59     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_cookie_list_a40f938404f28eda8b66bc17dfcd2261f}{\index{org\-::json\-::\-Cookie\-List@{org\-::json\-::\-Cookie\-List}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::CookieList@{org\-::json\-::\-Cookie\-List}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-Cookie\-List.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Object}}]{jo}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_cookie_list_a40f938404f28eda8b66bc17dfcd2261f}
+Convert a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} into a cookie list. A cookie list is a sequence of name/value pairs. The names are separated from the values by '='. The pairs are separated by ';'. The characters '', '+', '=', and ';' in the names and values are replaced by \char`\"{}\%hh\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em jo} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A cookie list string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 71 of file Cookie\-List.\-java.
+
+
+
+References org.\-json.\-Cookie.\-escape().
+
+
+\begin{DoxyCode}
+71                                                                       \{
+72         \textcolor{keywordtype}{boolean}      b = \textcolor{keyword}{false};
+73         Iterator     keys = jo.keys();
+74         String       string;
+75         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+76         \textcolor{keywordflow}{while} (keys.hasNext()) \{
+77             \textcolor{keywordtype}{string} = keys.next().toString();
+78             \textcolor{keywordflow}{if} (!jo.isNull(\textcolor{keywordtype}{string})) \{
+79                 \textcolor{keywordflow}{if} (b) \{
+80                     sb.append(\textcolor{charliteral}{';'});
+81                 \}
+82                 sb.append(Cookie.escape(\textcolor{keywordtype}{string}));
+83                 sb.append(\textcolor{stringliteral}{"="});
+84                 sb.append(Cookie.escape(jo.getString(\textcolor{keywordtype}{string})));
+85                 b = \textcolor{keyword}{true};
+86             \}
+87         \}
+88         \textcolor{keywordflow}{return} sb.toString();
+89     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_cookie_list_8java}{Cookie\-List.\-java}\end{DoxyCompactItemize}

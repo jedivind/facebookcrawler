@@ -1,0 +1,525 @@
+\hypertarget{classorg_1_1json_1_1_c_d_l}{\section{org.\-json.\-C\-D\-L Class Reference}
+\label{classorg_1_1json_1_1_c_d_l}\index{org.\-json.\-C\-D\-L@{org.\-json.\-C\-D\-L}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_c_d_l_acecd36f26ee8966dea2cd9dcd5683331}{row\-To\-J\-S\-O\-N\-Array} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_c_d_l_a1903e6355ac99487c50bac0c70a618ff}{row\-To\-J\-S\-O\-N\-Object} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} names, \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_c_d_l_ad428294b24ca60b441e60fa6b7b168bc}{row\-To\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} ja)
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_c_d_l_a0d7e17e87f97c37d9326e3347a8abf2b}{to\-J\-S\-O\-N\-Array} (String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_c_d_l_ace400a8f91feb12d6d823757a7641f8b}{to\-J\-S\-O\-N\-Array} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_c_d_l_ae2085eaedac675d9fa3e151d5d8de607}{to\-J\-S\-O\-N\-Array} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} names, String string)  throws J\-S\-O\-N\-Exception 
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} \hyperlink{classorg_1_1json_1_1_c_d_l_af55973f9de779acb04e33b0198a5525c}{to\-J\-S\-O\-N\-Array} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} names, \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_c_d_l_a4a90929f59ce156378c84830d5f341ad}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} ja)  throws J\-S\-O\-N\-Exception 
+\item 
+static String \hyperlink{classorg_1_1json_1_1_c_d_l_a85fc54efa24cb7dad1f615b1d659772f}{to\-String} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} names, \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} ja)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classorg_1_1json_1_1_c_d_l_ae6e426872b630a6e090e3471e29df112}{get\-Value} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} x)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This provides static methods to convert comma delimited text into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array}, and to covert a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} into comma delimited text. Comma delimited text is a very popular format for data interchange. It is understood by most database, spreadsheet, and organizer programs. 
+
+Each row of text represents a row in a table or a data record. Each row ends with a N\-E\-W\-L\-I\-N\-E character. Each row contains one or more values. Values are separated by commas. A value can contain any character except for comma, unless is is wrapped in single quotes or double quotes. 
+
+The first row usually contains the names of the columns. 
+
+A comma delimited list can be converted into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. The names for the elements in the J\-S\-O\-N\-Objects can be taken from the names in the first row. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2012-\/11-\/13 
+\end{DoxyVersion}
+
+
+Definition at line 46 of file C\-D\-L.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_c_d_l_ae6e426872b630a6e090e3471e29df112}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-C\-D\-L.\-get\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classorg_1_1json_1_1_c_d_l_ae6e426872b630a6e090e3471e29df112}
+Get the next value. The value can be wrapped in quotes. The value can be empty. 
+\begin{DoxyParams}{Parameters}
+{\em x} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} of the source text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value string, or null if empty. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if the quoted string is badly formed. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 55 of file C\-D\-L.\-java.
+
+
+
+Referenced by org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Array().
+
+
+\begin{DoxyCode}
+55                                                                        \{
+56         \textcolor{keywordtype}{char} c;
+57         \textcolor{keywordtype}{char} q;
+58         StringBuffer sb;
+59         \textcolor{keywordflow}{do} \{
+60             c = x.next();
+61         \} \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{' '} || c == \textcolor{charliteral}{'\(\backslash\)t'});
+62         \textcolor{keywordflow}{switch} (c) \{
+63         \textcolor{keywordflow}{case} 0:
+64             \textcolor{keywordflow}{return} null;
+65         \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+66         \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+67             q = c;
+68             sb = \textcolor{keyword}{new} StringBuffer();
+69             \textcolor{keywordflow}{for} (;;) \{
+70                 c = x.next();
+71                 \textcolor{keywordflow}{if} (c == q) \{
+72                     \textcolor{keywordflow}{break};
+73                 \}
+74                 \textcolor{keywordflow}{if} (c == 0 || c == \textcolor{charliteral}{'\(\backslash\)n'} || c == \textcolor{charliteral}{'\(\backslash\)r'}) \{
+75                     \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Missing close quote '"} + q + \textcolor{stringliteral}{"'."});
+76                 \}
+77                 sb.append(c);
+78             \}
+79             \textcolor{keywordflow}{return} sb.toString();
+80         \textcolor{keywordflow}{case} \textcolor{charliteral}{','}:
+81             x.back();
+82             \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+83         \textcolor{keywordflow}{default}:
+84             x.back();
+85             \textcolor{keywordflow}{return} x.nextTo(\textcolor{charliteral}{','});
+86         \}
+87     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_acecd36f26ee8966dea2cd9dcd5683331}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!row\-To\-J\-S\-O\-N\-Array@{row\-To\-J\-S\-O\-N\-Array}}
+\index{row\-To\-J\-S\-O\-N\-Array@{row\-To\-J\-S\-O\-N\-Array}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{row\-To\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_acecd36f26ee8966dea2cd9dcd5683331}
+Produce a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings from a row of comma delimited values. 
+\begin{DoxyParams}{Parameters}
+{\em x} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} of the source text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 95 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-C\-D\-L.\-get\-Value(), org.\-json.\-J\-S\-O\-N\-Array.\-length(), and org.\-json.\-J\-S\-O\-N\-Array.\-put().
+
+
+
+Referenced by org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Object(), and org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array().
+
+
+\begin{DoxyCode}
+95                                                                                \{
+96         JSONArray ja = \textcolor{keyword}{new} JSONArray();
+97         \textcolor{keywordflow}{for} (;;) \{
+98             String value = \hyperlink{classorg_1_1json_1_1_c_d_l_ae6e426872b630a6e090e3471e29df112}{getValue}(x);
+99             \textcolor{keywordtype}{char} c = x.next();
+100             \textcolor{keywordflow}{if} (value == null ||
+101                     (ja.length() == 0 && value.length() == 0 && c != \textcolor{charliteral}{','})) \{
+102                 \textcolor{keywordflow}{return} null;
+103             \}
+104             ja.put(value);
+105             \textcolor{keywordflow}{for} (;;) \{
+106                 \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{','}) \{
+107                     \textcolor{keywordflow}{break};
+108                 \}
+109                 \textcolor{keywordflow}{if} (c != \textcolor{charliteral}{' '}) \{
+110                     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)n'} || c == \textcolor{charliteral}{'\(\backslash\)r'} || c == 0) \{
+111                         \textcolor{keywordflow}{return} ja;
+112                     \}
+113                     \textcolor{keywordflow}{throw} x.syntaxError(\textcolor{stringliteral}{"Bad character '"} + c + \textcolor{stringliteral}{"' ("} +
+114                             (\textcolor{keywordtype}{int})c + \textcolor{stringliteral}{")."});
+115                 \}
+116                 c = x.next();
+117             \}
+118         \}
+119     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_a1903e6355ac99487c50bac0c70a618ff}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!row\-To\-J\-S\-O\-N\-Object@{row\-To\-J\-S\-O\-N\-Object}}
+\index{row\-To\-J\-S\-O\-N\-Object@{row\-To\-J\-S\-O\-N\-Object}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{row\-To\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{names, }
+\item[{{\bf J\-S\-O\-N\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_a1903e6355ac99487c50bac0c70a618ff}
+Produce a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} from a row of comma delimited text, using a parallel \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings to provides the names of the elements. 
+\begin{DoxyParams}{Parameters}
+{\em names} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of names. This is commonly obtained from the first row of a comma delimited text file using the row\-To\-J\-S\-O\-N\-Array method. \\
+\hline
+{\em x} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} of the source text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} combining the names and values. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 131 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Array(), and org.\-json.\-J\-S\-O\-N\-Array.\-to\-J\-S\-O\-N\-Object().
+
+
+
+Referenced by org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array().
+
+
+\begin{DoxyCode}
+132                                  \{
+133         JSONArray ja = \hyperlink{classorg_1_1json_1_1_c_d_l_acecd36f26ee8966dea2cd9dcd5683331}{rowToJSONArray}(x);
+134         \textcolor{keywordflow}{return} ja != null ? ja.toJSONObject(names) :  null;
+135     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_ad428294b24ca60b441e60fa6b7b168bc}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!row\-To\-String@{row\-To\-String}}
+\index{row\-To\-String@{row\-To\-String}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{row\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-C\-D\-L.\-row\-To\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{ja}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_ad428294b24ca60b441e60fa6b7b168bc}
+Produce a comma delimited text row from a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array}. Values containing the comma character will be quoted. Troublesome characters may be removed. 
+\begin{DoxyParams}{Parameters}
+{\em ja} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string ending in N\-E\-W\-L\-I\-N\-E. 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Array.\-length(), and org.\-json.\-J\-S\-O\-N\-Array.\-opt().
+
+
+
+Referenced by org.\-json.\-C\-D\-L.\-to\-String().
+
+
+\begin{DoxyCode}
+144                                                    \{
+145         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+146         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ja.length(); i += 1) \{
+147             \textcolor{keywordflow}{if} (i > 0) \{
+148                 sb.append(\textcolor{charliteral}{','});
+149             \}
+150             Object \textcolor{keywordtype}{object} = ja.opt(i);
+151             \textcolor{keywordflow}{if} (\textcolor{keywordtype}{object} != null) \{
+152                 String \textcolor{keywordtype}{string} = \textcolor{keywordtype}{object}.toString();
+153                 \textcolor{keywordflow}{if} (\textcolor{keywordtype}{string}.length() > 0 && (\textcolor{keywordtype}{string}.indexOf(\textcolor{charliteral}{','}) >= 0 ||
+154                         \textcolor{keywordtype}{string}.indexOf(\textcolor{charliteral}{'\(\backslash\)n'}) >= 0 || \textcolor{keywordtype}{string}.indexOf(\textcolor{charliteral}{'\(\backslash\)r'}) >= 0 ||
+155                         \textcolor{keywordtype}{string}.indexOf(0) >= 0 || \textcolor{keywordtype}{string}.charAt(0) == \textcolor{charliteral}{'"'})) \{
+156                     sb.append(\textcolor{charliteral}{'"'});
+157                     \textcolor{keywordtype}{int} length = \textcolor{keywordtype}{string}.length();
+158                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < length; j += 1) \{
+159                         \textcolor{keywordtype}{char} c = \textcolor{keywordtype}{string}.charAt(j);
+160                         \textcolor{keywordflow}{if} (c >= \textcolor{charliteral}{' '} && c != \textcolor{charliteral}{'"'}) \{
+161                             sb.append(c);
+162                         \}
+163                     \}
+164                     sb.append(\textcolor{charliteral}{'"'});
+165                 \} \textcolor{keywordflow}{else} \{
+166                     sb.append(\textcolor{keywordtype}{string});
+167                 \}
+168             \}
+169         \}
+170         sb.append(\textcolor{charliteral}{'\(\backslash\)n'});
+171         \textcolor{keywordflow}{return} sb.toString();
+172     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_a0d7e17e87f97c37d9326e3347a8abf2b}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}}
+\index{to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_a0d7e17e87f97c37d9326e3347a8abf2b}
+Produce a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects from a comma delimited text string, using the first row as a source of names. 
+\begin{DoxyParams}{Parameters}
+{\em string} & The comma delimited text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 181 of file C\-D\-L.\-java.
+
+
+
+Referenced by org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array().
+
+
+\begin{DoxyCode}
+181                                                                             \{
+182         \textcolor{keywordflow}{return} \hyperlink{classorg_1_1json_1_1_c_d_l_a0d7e17e87f97c37d9326e3347a8abf2b}{toJSONArray}(\textcolor{keyword}{new} JSONTokener(\textcolor{keywordtype}{string}));
+183     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_ace400a8f91feb12d6d823757a7641f8b}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}}
+\index{to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_ace400a8f91feb12d6d823757a7641f8b}
+Produce a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects from a comma delimited text string, using the first row as a source of names. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} containing the comma delimited text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 192 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Array(), and org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array().
+
+
+\begin{DoxyCode}
+192                                                                             \{
+193         \textcolor{keywordflow}{return} \hyperlink{classorg_1_1json_1_1_c_d_l_a0d7e17e87f97c37d9326e3347a8abf2b}{toJSONArray}(\hyperlink{classorg_1_1json_1_1_c_d_l_acecd36f26ee8966dea2cd9dcd5683331}{rowToJSONArray}(x), x);
+194     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_ae2085eaedac675d9fa3e151d5d8de607}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}}
+\index{to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{names, }
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_ae2085eaedac675d9fa3e151d5d8de607}
+Produce a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects from a comma delimited text string using a supplied \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} as the source of element names. 
+\begin{DoxyParams}{Parameters}
+{\em names} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings. \\
+\hline
+{\em string} & The comma delimited text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 204 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array().
+
+
+\begin{DoxyCode}
+205                                  \{
+206         \textcolor{keywordflow}{return} \hyperlink{classorg_1_1json_1_1_c_d_l_a0d7e17e87f97c37d9326e3347a8abf2b}{toJSONArray}(names, \textcolor{keyword}{new} JSONTokener(\textcolor{keywordtype}{string}));
+207     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_af55973f9de779acb04e33b0198a5525c}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}}
+\index{to\-J\-S\-O\-N\-Array@{to\-J\-S\-O\-N\-Array}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{to\-J\-S\-O\-N\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Array} org.\-json.\-C\-D\-L.\-to\-J\-S\-O\-N\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{names, }
+\item[{{\bf J\-S\-O\-N\-Tokener}}]{x}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_af55973f9de779acb04e33b0198a5525c}
+Produce a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects from a comma delimited text string using a supplied \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} as the source of element names. 
+\begin{DoxyParams}{Parameters}
+{\em names} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings. \\
+\hline
+{\em x} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} of the source text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 217 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Array.\-length(), org.\-json.\-J\-S\-O\-N\-Array.\-put(), and org.\-json.\-C\-D\-L.\-row\-To\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+218                                  \{
+219         \textcolor{keywordflow}{if} (names == null || names.length() == 0) \{
+220             \textcolor{keywordflow}{return} null;
+221         \}
+222         JSONArray ja = \textcolor{keyword}{new} JSONArray();
+223         \textcolor{keywordflow}{for} (;;) \{
+224             JSONObject jo = \hyperlink{classorg_1_1json_1_1_c_d_l_a1903e6355ac99487c50bac0c70a618ff}{rowToJSONObject}(names, x);
+225             \textcolor{keywordflow}{if} (jo == null) \{
+226                 \textcolor{keywordflow}{break};
+227             \}
+228             ja.put(jo);
+229         \}
+230         \textcolor{keywordflow}{if} (ja.length() == 0) \{
+231             \textcolor{keywordflow}{return} null;
+232         \}
+233         \textcolor{keywordflow}{return} ja;
+234     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_a4a90929f59ce156378c84830d5f341ad}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-C\-D\-L.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{ja}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_a4a90929f59ce156378c84830d5f341ad}
+Produce a comma delimited text from a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. The first row will be a list of names obtained by inspecting the first \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. 
+\begin{DoxyParams}{Parameters}
+{\em ja} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A comma delimited text. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 245 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Object.\-names(), org.\-json.\-J\-S\-O\-N\-Object.\-opt\-J\-S\-O\-N\-Object(), and org.\-json.\-C\-D\-L.\-row\-To\-String().
+
+
+\begin{DoxyCode}
+245                                                                      \{
+246         JSONObject jo = ja.optJSONObject(0);
+247         \textcolor{keywordflow}{if} (jo != null) \{
+248             JSONArray names = jo.names();
+249             \textcolor{keywordflow}{if} (names != null) \{
+250                 \textcolor{keywordflow}{return} \hyperlink{classorg_1_1json_1_1_c_d_l_ad428294b24ca60b441e60fa6b7b168bc}{rowToString}(names) + \hyperlink{classorg_1_1json_1_1_c_d_l_a4a90929f59ce156378c84830d5f341ad}{toString}(names, ja);
+251             \}
+252         \}
+253         \textcolor{keywordflow}{return} null;
+254     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_c_d_l_a85fc54efa24cb7dad1f615b1d659772f}{\index{org\-::json\-::\-C\-D\-L@{org\-::json\-::\-C\-D\-L}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::CDL@{org\-::json\-::\-C\-D\-L}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}static String org.\-json.\-C\-D\-L.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Array}}]{names, }
+\item[{{\bf J\-S\-O\-N\-Array}}]{ja}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_c_d_l_a85fc54efa24cb7dad1f615b1d659772f}
+Produce a comma delimited text from a \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects using a provided list of names. The list of names is not included in the output. 
+\begin{DoxyParams}{Parameters}
+{\em names} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of strings. \\
+\hline
+{\em ja} & A \hyperlink{classorg_1_1json_1_1_j_s_o_n_array}{J\-S\-O\-N\-Array} of J\-S\-O\-N\-Objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A comma delimited text. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 265 of file C\-D\-L.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Object.\-append(), org.\-json.\-J\-S\-O\-N\-Object.\-opt\-J\-S\-O\-N\-Object(), org.\-json.\-C\-D\-L.\-row\-To\-String(), org.\-json.\-J\-S\-O\-N\-Object.\-to\-J\-S\-O\-N\-Array(), and org.\-json.\-J\-S\-O\-N\-Object.\-to\-String().
+
+
+\begin{DoxyCode}
+266                                  \{
+267         \textcolor{keywordflow}{if} (names == null || names.length() == 0) \{
+268             \textcolor{keywordflow}{return} null;
+269         \}
+270         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+271         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < ja.length(); i += 1) \{
+272             JSONObject jo = ja.optJSONObject(i);
+273             \textcolor{keywordflow}{if} (jo != null) \{
+274                 sb.append(\hyperlink{classorg_1_1json_1_1_c_d_l_ad428294b24ca60b441e60fa6b7b168bc}{rowToString}(jo.toJSONArray(names)));
+275             \}
+276         \}
+277         \textcolor{keywordflow}{return} sb.toString();
+278     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_c_d_l_8java}{C\-D\-L.\-java}\end{DoxyCompactItemize}

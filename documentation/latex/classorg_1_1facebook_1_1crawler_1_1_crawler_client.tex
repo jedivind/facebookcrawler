@@ -1,0 +1,63 @@
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_crawler_client}{\section{org.\-facebook.\-crawler.\-Crawler\-Client Class Reference}
+\label{classorg_1_1facebook_1_1crawler_1_1_crawler_client}\index{org.\-facebook.\-crawler.\-Crawler\-Client@{org.\-facebook.\-crawler.\-Crawler\-Client}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classorg_1_1facebook_1_1crawler_1_1_crawler_client_a0647ec11f309ae8bd6f0e040e57e18d3}{main} (String\mbox{[}$\,$\mbox{]} args)  throws Exception
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Crawler\-Client.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1facebook_1_1crawler_1_1_crawler_client_a0647ec11f309ae8bd6f0e040e57e18d3}{\index{org\-::facebook\-::crawler\-::\-Crawler\-Client@{org\-::facebook\-::crawler\-::\-Crawler\-Client}!main@{main}}
+\index{main@{main}!org::facebook::crawler::CrawlerClient@{org\-::facebook\-::crawler\-::\-Crawler\-Client}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void org.\-facebook.\-crawler.\-Crawler\-Client.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1facebook_1_1crawler_1_1_crawler_client_a0647ec11f309ae8bd6f0e040e57e18d3}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file Crawler\-Client.\-java.
+
+
+
+References org.\-facebook.\-crawler.\-Facebook\-Json\-Parser.\-crawl\-Json(), and org.\-facebook.\-crawler.\-Crawl\-Options.\-G\-R\-O\-U\-P.
+
+
+\begin{DoxyCode}
+8                                                            \{
+9         \textcolor{comment}{// TODO Auto-generated method stub}
+10         FacebookDBParams dbParams = \textcolor{keyword}{new} FacebookDBParams(\textcolor{stringliteral}{"127.0.0.1"} , \textcolor{stringliteral}{"root"} , \textcolor{stringliteral}{""}, \textcolor{stringliteral}{"facebook"}
+11                                     , \textcolor{stringliteral}{"jdbc"} , \textcolor{stringliteral}{"mysql"} , \textcolor{stringliteral}{"3306"});
+12         FacebookDatabase DB = \textcolor{keyword}{new} FacebookDatabase( dbParams );
+13         String accessToken = \textcolor{stringliteral}{"
+      CAACEdEose0cBAJQmX7VwQajxecQ7EcEcqnUuVUZAlw6g1NVM4ZBCPJ3ZCHMahArRtfmqy7kscx6OOhTG0PSGNbihikN8hjufo52t3n6JmJ1gAKeNOqxRNRfoPQqhjD8B0Og72CTftXa4YksSPGF482xub6gIuUZD"};
+14         String [] fields = \{\textcolor{stringliteral}{"id"},\textcolor{stringliteral}{"name"},\textcolor{stringliteral}{"first\_name"},\textcolor{stringliteral}{"last\_name"},\textcolor{stringliteral}{"middle\_name"},\textcolor{stringliteral}{"link"},\textcolor{stringliteral}{"username"},\textcolor{stringliteral}{"birthday"}
+      ,\textcolor{stringliteral}{"hometown"},
+15             \textcolor{stringliteral}{"location"},\textcolor{stringliteral}{"bio"},\textcolor{stringliteral}{"quotes"},\textcolor{stringliteral}{"education"},\textcolor{stringliteral}{"work"},\textcolor{stringliteral}{"gender"},\textcolor{stringliteral}{"relationship\_status"},\textcolor{stringliteral}{"languages"},\textcolor{stringliteral}{"email"}
+      ,\textcolor{stringliteral}{"religion"}\}; \textcolor{comment}{//Fields to fetch.}
+16             ;
+17         String [] groupIDs = \{ \textcolor{stringliteral}{"2452805792"} \};
+18         FacebookJsonParser crawlFB = \textcolor{keyword}{new} FacebookJsonParser( DB , accessToken, fields , groupIDs);
+19         
+20         crawlFB.crawlJson(CrawlOptions.GROUP);
+21     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/facebook/crawler/\hyperlink{_crawler_client_8java}{Crawler\-Client.\-java}\end{DoxyCompactItemize}

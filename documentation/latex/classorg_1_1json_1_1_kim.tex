@@ -1,0 +1,633 @@
+\hypertarget{classorg_1_1json_1_1_kim}{\section{org.\-json.\-Kim Class Reference}
+\label{classorg_1_1json_1_1_kim}\index{org.\-json.\-Kim@{org.\-json.\-Kim}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1json_1_1_kim_a44b367e21f41746f63b7fc61c32ed259}{Kim} (byte\mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, int from, int thru)
+\item 
+\hyperlink{classorg_1_1json_1_1_kim_a397d63cbb42efcb488dd5fc6c7815fa1}{Kim} (byte\mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, int \hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length})
+\item 
+\hyperlink{classorg_1_1json_1_1_kim_a798dc70a0b04e45bf2afce778c7151c3}{Kim} (\hyperlink{classorg_1_1json_1_1_kim}{Kim} kim, int from, int thru)
+\item 
+\hyperlink{classorg_1_1json_1_1_kim_a652b4e6a919d52344c0e324348b577c4}{Kim} (String \hyperlink{classorg_1_1json_1_1_kim_ab3c21a745d0601eb36105ec3769a310a}{string})  throws J\-S\-O\-N\-Exception 
+\item 
+int \hyperlink{classorg_1_1json_1_1_kim_ac3c5fafa8f35357441582a217e2288ff}{character\-At} (int at)  throws J\-S\-O\-N\-Exception 
+\item 
+int \hyperlink{classorg_1_1json_1_1_kim_a2fee1848d7208b970312e02549323ef7}{copy} (byte\mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, int at)
+\item 
+boolean \hyperlink{classorg_1_1json_1_1_kim_a1ccd8538e3fa847b407f2192f54b71c4}{equals} (Object obj)
+\item 
+int \hyperlink{classorg_1_1json_1_1_kim_aef6fa7d8ec3cf6fc01858405479251d7}{get} (int at)  throws J\-S\-O\-N\-Exception 
+\item 
+int \hyperlink{classorg_1_1json_1_1_kim_aba38c33cd6a7b21a039c888b092763c2}{hash\-Code} ()
+\item 
+String \hyperlink{classorg_1_1json_1_1_kim_aebfdbe281cc48dd341c1a24e389d5b89}{to\-String} ()  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classorg_1_1json_1_1_kim_a8d2ebca093fcc820ae233af45fb2ab75}{character\-Size} (int character)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} = 0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte\mbox{[}$\,$\mbox{]} \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes} = null
+\item 
+int \hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} = 0
+\item 
+String \hyperlink{classorg_1_1json_1_1_kim_ab3c21a745d0601eb36105ec3769a310a}{string} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classorg_1_1json_1_1_kim}{Kim} makes immutable eight bit Unicode strings. If the M\-S\-B of a byte is set, then the next byte is a continuation byte. The last byte of a character never has the M\-S\-B reset. Every byte that is not the last byte has the M\-S\-B set. \hyperlink{classorg_1_1json_1_1_kim}{Kim} stands for \char`\"{}\-Keep it minimal\char`\"{}. A Unicode character is never longer than 3 bytes. Every byte contributes 7 bits to the character. A\-S\-C\-I\-I is unmodified. \begin{DoxyVerb}             Kim             UTF-8
+\end{DoxyVerb}
+ one byte U+007\-F U+007\-F two bytes U+3\-F\-F\-F U+07\-F\-F three bytes U+10\-F\-F\-F U+\-F\-F\-F\-F four bytes U+10\-F\-F\-F\-F
+
+Characters in the ranges U+0800..U+3\-F\-F\-F and U+10000..U+10\-F\-F\-F\-F will be one byte smaller when encoded in \hyperlink{classorg_1_1json_1_1_kim}{Kim} compared to U\-T\-F-\/8.
+
+\hyperlink{classorg_1_1json_1_1_kim}{Kim} is beneficial when using scripts such as Old South Arabian, Aramaic, Avestan, Balinese, Batak, Bopomofo, Buginese, Buhid, Carian, Cherokee, Coptic, Cyrillic, Deseret, Egyptian Hieroglyphs, Ethiopic, Georgian, Glagolitic, Gothic, Hangul Jamo, Hanunoo, Hiragana, Kanbun, Kaithi, Kannada, Katakana, Kharoshthi, Khmer, Lao, Lepcha, Limbu, Lycian, Lydian, Malayalam, Mandaic, Meroitic, Miao, Mongolian, Myanmar, New Tai Lue, Ol Chiki, Old Turkic, Oriya, Osmanya, Pahlavi, Parthian, Phags-\/\-Pa, Phoenician, Samaritan, Sharada, Sinhala, Sora Sompeng, Tagalog, Tagbanwa, Takri, Tai Le, Tai Tham, Tamil, Telugu, Thai, Tibetan, Tifinagh, U\-C\-A\-S.
+
+A kim object can be constructed from an ordinary U\-T\-F-\/16 string, or from a byte array. A kim object can produce a U\-T\-F-\/16 string.
+
+As with U\-T\-F-\/8, it is possible to detect character boundaries within a byte sequence. U\-T\-F-\/8 is one of the world's great inventions. While \hyperlink{classorg_1_1json_1_1_kim}{Kim} is more efficient, it is not clear that it is worth the expense of transition.
+
+\begin{DoxyVersion}{Version}
+2013-\/04-\/18 
+\end{DoxyVersion}
+
+
+Definition at line 64 of file Kim.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1json_1_1_kim_a44b367e21f41746f63b7fc61c32ed259}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!Kim@{Kim}}
+\index{Kim@{Kim}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{Kim}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-Kim.\-Kim (
+\begin{DoxyParamCaption}
+\item[{byte\mbox{[}$\,$\mbox{]}}]{bytes, }
+\item[{int}]{from, }
+\item[{int}]{thru}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_kim_a44b367e21f41746f63b7fc61c32ed259}
+Make a kim from a portion of a byte array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & A byte array. \\
+\hline
+{\em from} & The index of the first byte. \\
+\hline
+{\em thru} & The index of the last byte plus one. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-hashcode, and org.\-json.\-Kim.\-length.
+
+
+
+Referenced by org.\-json.\-Kim.\-equals().
+
+
+\begin{DoxyCode}
+97                                                  \{
+98 
+99 \textcolor{comment}{// As the bytes are copied into the new kim, a hashcode is computed using a}
+100 \textcolor{comment}{// modified Fletcher code.}
+101 
+102         \textcolor{keywordtype}{int} sum = 1;
+103         \textcolor{keywordtype}{int} value;
+104         this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} = 0;
+105         this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} = thru - from;
+106         \textcolor{keywordflow}{if} (this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} > 0) \{
+107             this.\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes} = \textcolor{keyword}{new} byte[this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}];
+108             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} at = 0; at < this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}; at += 1) \{
+109                 value = (int) \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at + from] & 0xFF;
+110                 sum += value;
+111                 this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+112                 this.\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) value;
+113             \}
+114             this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum << 16;
+115         \}
+116     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_a397d63cbb42efcb488dd5fc6c7815fa1}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!Kim@{Kim}}
+\index{Kim@{Kim}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{Kim}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-Kim.\-Kim (
+\begin{DoxyParamCaption}
+\item[{byte\mbox{[}$\,$\mbox{]}}]{bytes, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_kim_a397d63cbb42efcb488dd5fc6c7815fa1}
+Make a kim from a byte array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & The byte array. \\
+\hline
+{\em length} & The number of bytes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-bytes, and org.\-json.\-Kim.\-length.
+
+
+\begin{DoxyCode}
+126                                          \{
+127         \textcolor{keyword}{this}(\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, 0, \hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length});
+128     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_a798dc70a0b04e45bf2afce778c7151c3}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!Kim@{Kim}}
+\index{Kim@{Kim}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{Kim}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-Kim.\-Kim (
+\begin{DoxyParamCaption}
+\item[{{\bf Kim}}]{kim, }
+\item[{int}]{from, }
+\item[{int}]{thru}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_kim_a798dc70a0b04e45bf2afce778c7151c3}
+Make a new kim from a substring of an existing kim. The coordinates are in byte units, not character units.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kim} & The source of bytes. \\
+\hline
+{\em from} & The point at which to take bytes. \\
+\hline
+{\em thru} & The point at which to stop taking bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the substring 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-bytes.
+
+
+\begin{DoxyCode}
+142                                             \{
+143         \textcolor{keyword}{this}(kim.bytes, from, thru);
+144     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_a652b4e6a919d52344c0e324348b577c4}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!Kim@{Kim}}
+\index{Kim@{Kim}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{Kim}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-Kim.\-Kim (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_kim_a652b4e6a919d52344c0e324348b577c4}
+Make a kim from a string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if surrogate pair mismatch. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 154 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-bytes, org.\-json.\-Kim.\-hashcode, and org.\-json.\-Kim.\-length.
+
+
+\begin{DoxyCode}
+154                                                    \{
+155         \textcolor{keywordtype}{int} stringLength = \textcolor{keywordtype}{string}.length();
+156         this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} = 0;
+157         this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} = 0;
+158 
+159 \textcolor{comment}{// First pass: Determine the length of the kim, allowing for the UTF-16}
+160 \textcolor{comment}{// to UTF-32 conversion, and then the UTF-32 to Kim conversion.}
+161 
+162         \textcolor{keywordflow}{if} (stringLength > 0) \{
+163             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < stringLength; i += 1) \{
+164                 \textcolor{keywordtype}{int} c = \textcolor{keywordtype}{string}.charAt(i);
+165                 \textcolor{keywordflow}{if} (c <= 0x7F) \{
+166                     this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} += 1;
+167                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c <= 0x3FFF) \{
+168                     this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} += 2;
+169                 \} \textcolor{keywordflow}{else} \{
+170                     \textcolor{keywordflow}{if} (c >= 0xD800 && c <= 0xDFFF) \{
+171                         i += 1;
+172                         \textcolor{keywordtype}{int} d = \textcolor{keywordtype}{string}.charAt(i);
+173                         \textcolor{keywordflow}{if} (c > 0xDBFF || d < 0xDC00 || d > 0xDFFF) \{
+174                             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} JSONException(\textcolor{stringliteral}{"Bad UTF16"});
+175                         \}
+176                     \}
+177                     this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} += 3;
+178                 \}
+179             \}
+180 
+181 \textcolor{comment}{// Second pass: Allocate a byte array and fill that array with the conversion}
+182 \textcolor{comment}{// while computing the hashcode.}
+183 
+184             this.\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes} = \textcolor{keyword}{new} byte[\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}];
+185             \textcolor{keywordtype}{int} at = 0;
+186             \textcolor{keywordtype}{int} b;
+187             \textcolor{keywordtype}{int} sum = 1;
+188             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < stringLength; i += 1) \{
+189                 \textcolor{keywordtype}{int} character = \textcolor{keywordtype}{string}.charAt(i);
+190                 \textcolor{keywordflow}{if} (character <= 0x7F) \{
+191                     \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) character;
+192                     sum += character;
+193                     this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+194                     at += 1;
+195                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (character <= 0x3FFF) \{
+196                     b = 0x80 | (character >>> 7);
+197                     \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) b;
+198                     sum += b;
+199                     this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+200                     at += 1;
+201                     b = character & 0x7F;
+202                     \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) b;
+203                     sum += b;
+204                     this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+205                     at += 1;
+206                 \} \textcolor{keywordflow}{else} \{
+207                     \textcolor{keywordflow}{if} (character >= 0xD800 && character <= 0xDBFF) \{
+208                         i += 1;
+209                         character = (((character & 0x3FF) << 10) | (\textcolor{keywordtype}{string}
+210                                 .charAt(i) & 0x3FF)) + 65536;
+211                     \}
+212                     b = 0x80 | (character >>> 14);
+213                     \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) b;
+214                     sum += b;
+215                     this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+216                     at += 1;
+217                     b = 0x80 | ((character >>> 7) & 0xFF);
+218                     \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) b;
+219                     sum += b;
+220                     this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+221                     at += 1;
+222                     b = character & 0x7F;
+223                     \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at] = (byte) b;
+224                     sum += b;
+225                     this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum;
+226                     at += 1;
+227                 \}
+228             \}
+229             this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} += sum << 16;
+230         \}
+231     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_kim_ac3c5fafa8f35357441582a217e2288ff}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!character\-At@{character\-At}}
+\index{character\-At@{character\-At}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{character\-At}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-json.\-Kim.\-character\-At (
+\begin{DoxyParamCaption}
+\item[{int}]{at}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_kim_ac3c5fafa8f35357441582a217e2288ff}
+Returns the character at the specified index. The index refers to byte values and ranges from 0 to length -\/ 1. The index of the next character is at index + \hyperlink{classorg_1_1json_1_1_kim_a8d2ebca093fcc820ae233af45fb2ab75}{Kim.\-character\-Size}(kim.\-character\-At(index)).
+
+
+\begin{DoxyParams}{Parameters}
+{\em at} & the index of the char value. The first character is at 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Unicode character between 0 and 0x10\-F\-F\-F\-F. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if at does not point to a valid character. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 244 of file Kim.\-java.
+
+
+
+Referenced by org.\-json.\-Kim.\-to\-String().
+
+
+\begin{DoxyCode}
+244                                                         \{
+245         \textcolor{keywordtype}{int} c = \textcolor{keyword}{get}(at);
+246         \textcolor{keywordflow}{if} ((c & 0x80) == 0) \{
+247             \textcolor{keywordflow}{return} c;
+248         \}
+249         \textcolor{keywordtype}{int} character;
+250         \textcolor{keywordtype}{int} c1 = \textcolor{keyword}{get}(at + 1);
+251         \textcolor{keywordflow}{if} ((c1 & 0x80) == 0) \{
+252             character = ((c & 0x7F) << 7) | c1;
+253             \textcolor{keywordflow}{if} (character > 0x7F) \{
+254                 \textcolor{keywordflow}{return} character;
+255             \}
+256         \} \textcolor{keywordflow}{else} \{
+257             \textcolor{keywordtype}{int} c2 = \textcolor{keyword}{get}(at + 2);
+258             character = ((c & 0x7F) << 14) | ((c1 & 0x7F) << 7) | c2;
+259             \textcolor{keywordflow}{if} ((c2 & 0x80) == 0 && character > 0x3FFF && character <= 0x10FFFF
+260                     && (character < 0xD800 || character > 0xDFFF)) \{
+261                 \textcolor{keywordflow}{return} character;
+262             \}
+263         \}
+264         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} JSONException(\textcolor{stringliteral}{"Bad character at "} + at);
+265     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_a8d2ebca093fcc820ae233af45fb2ab75}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!character\-Size@{character\-Size}}
+\index{character\-Size@{character\-Size}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{character\-Size}]{\setlength{\rightskip}{0pt plus 5cm}static int org.\-json.\-Kim.\-character\-Size (
+\begin{DoxyParamCaption}
+\item[{int}]{character}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_kim_a8d2ebca093fcc820ae233af45fb2ab75}
+Returns the number of bytes needed to contain the character in \hyperlink{classorg_1_1json_1_1_kim}{Kim} format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & a Unicode character between 0 and 0x10\-F\-F\-F\-F. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1, 2, or 3 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if the character is not representable in a kim. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 277 of file Kim.\-java.
+
+
+
+Referenced by org.\-json.\-Kim.\-to\-String().
+
+
+\begin{DoxyCode}
+277                                                                         \{
+278         \textcolor{keywordflow}{if} (character < 0 || character > 0x10FFFF) \{
+279             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} JSONException(\textcolor{stringliteral}{"Bad character "} + character);
+280         \}
+281         \textcolor{keywordflow}{return} character <= 0x7F ? 1 : character <= 0x3FFF ? 2 : 3;
+282     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_a2fee1848d7208b970312e02549323ef7}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!copy@{copy}}
+\index{copy@{copy}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-json.\-Kim.\-copy (
+\begin{DoxyParamCaption}
+\item[{byte\mbox{[}$\,$\mbox{]}}]{bytes, }
+\item[{int}]{at}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_kim_a2fee1848d7208b970312e02549323ef7}
+Copy the contents of this kim to a byte array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & A byte array of sufficient size. \\
+\hline
+{\em at} & The position within the byte array to take the byes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position immediately after the copy. 
+\end{DoxyReturn}
+
+
+Definition at line 293 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-length.
+
+
+\begin{DoxyCode}
+293                                           \{
+294         System.arraycopy(this.\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, 0, \hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, at, this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length});
+295         \textcolor{keywordflow}{return} at + this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length};
+296     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_a1ccd8538e3fa847b407f2192f54b71c4}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!equals@{equals}}
+\index{equals@{equals}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}boolean org.\-json.\-Kim.\-equals (
+\begin{DoxyParamCaption}
+\item[{Object}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_kim_a1ccd8538e3fa847b407f2192f54b71c4}
+Two kim objects containing exactly the same bytes in the same order are equal to each other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the other kim with which to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this and obj are both kim objects containing identical byte sequences. 
+\end{DoxyReturn}
+
+
+Definition at line 307 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-bytes, org.\-json.\-Kim.\-hashcode, and org.\-json.\-Kim.\-Kim().
+
+
+\begin{DoxyCode}
+307                                       \{
+308         \textcolor{keywordflow}{if} (!(obj instanceof \hyperlink{classorg_1_1json_1_1_kim_a44b367e21f41746f63b7fc61c32ed259}{Kim})) \{
+309             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+310         \}
+311         Kim that = (\hyperlink{classorg_1_1json_1_1_kim_a44b367e21f41746f63b7fc61c32ed259}{Kim}) obj;
+312         \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == that) \{
+313             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+314         \}
+315         \textcolor{keywordflow}{if} (this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode} != that.hashcode) \{
+316             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+317         \}
+318         \textcolor{keywordflow}{return} java.util.Arrays.equals(this.\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}, that.bytes);
+319     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_aef6fa7d8ec3cf6fc01858405479251d7}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!get@{get}}
+\index{get@{get}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-json.\-Kim.\-get (
+\begin{DoxyParamCaption}
+\item[{int}]{at}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_kim_aef6fa7d8ec3cf6fc01858405479251d7}
+Get a byte from a kim. 
+\begin{DoxyParams}{Parameters}
+{\em at} & The position of the byte. The first byte is at 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The byte. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if there is no byte at that position. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 329 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-bytes, and org.\-json.\-Kim.\-length.
+
+
+\begin{DoxyCode}
+329                                                 \{
+330         \textcolor{keywordflow}{if} (at < 0 || at > this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}) \{
+331             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} JSONException(\textcolor{stringliteral}{"Bad character at "} + at);
+332         \}
+333         \textcolor{keywordflow}{return} ((\textcolor{keywordtype}{int}) this.\hyperlink{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{bytes}[at]) & 0xFF;
+334     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_aba38c33cd6a7b21a039c888b092763c2}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!hash\-Code@{hash\-Code}}
+\index{hash\-Code@{hash\-Code}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{hash\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-json.\-Kim.\-hash\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_kim_aba38c33cd6a7b21a039c888b092763c2}
+Returns a hash code value for the kim. 
+
+Definition at line 339 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-hashcode.
+
+
+\begin{DoxyCode}
+339                           \{
+340         \textcolor{keywordflow}{return} this.\hyperlink{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{hashcode};
+341     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_kim_aebfdbe281cc48dd341c1a24e389d5b89}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-json.\-Kim.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_kim_aebfdbe281cc48dd341c1a24e389d5b89}
+Produce a U\-T\-F-\/16 String from this kim. The number of codepoints in the string will not be greater than the number of bytes in the kim, although it could be less.
+
+\begin{DoxyReturn}{Returns}
+The string. A kim memoizes its string representation. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & if the kim is not valid. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 352 of file Kim.\-java.
+
+
+
+References org.\-json.\-Kim.\-character\-At(), org.\-json.\-Kim.\-character\-Size(), org.\-json.\-Kim.\-length, and org.\-json.\-Kim.\-string.
+
+
+\begin{DoxyCode}
+352                                                   \{
+353         \textcolor{keywordflow}{if} (this.\textcolor{keywordtype}{string} == null) \{
+354             \textcolor{keywordtype}{int} c;
+355             \textcolor{keywordtype}{int} \hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length} = 0;
+356             \textcolor{keywordtype}{char} chars[] = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}];
+357             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} at = 0; at < this.\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}; at += \hyperlink{classorg_1_1json_1_1_kim_a8d2ebca093fcc820ae233af45fb2ab75}{characterSize}(c)) \{
+358                 c = this.\hyperlink{classorg_1_1json_1_1_kim_ac3c5fafa8f35357441582a217e2288ff}{characterAt}(at);
+359                 \textcolor{keywordflow}{if} (c < 0x10000) \{
+360                     chars[\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}] = (char) c;
+361                     length += 1;
+362                 \} \textcolor{keywordflow}{else} \{
+363                     chars[\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}] = (char) (0xD800 | ((c - 0x10000) >>> 10));
+364                     length += 1;
+365                     chars[\hyperlink{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{length}] = (char) (0xDC00 | (c & 0x03FF));
+366                     length += 1;
+367                 \}
+368             \}
+369             this.\textcolor{keywordtype}{string} = \textcolor{keyword}{new} String(chars, 0, length);
+370         \}
+371         \textcolor{keywordflow}{return} this.\hyperlink{classorg_1_1json_1_1_kim_ab3c21a745d0601eb36105ec3769a310a}{string};
+372     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!bytes@{bytes}}
+\index{bytes@{bytes}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{bytes}]{\setlength{\rightskip}{0pt plus 5cm}byte \mbox{[}$\,$\mbox{]} org.\-json.\-Kim.\-bytes = null\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1json_1_1_kim_aca37e9b2f118afc91bc8d1f37512819b}
+The byte array containing the kim's content. 
+
+Definition at line 69 of file Kim.\-java.
+
+
+
+Referenced by org.\-json.\-Kim.\-equals(), org.\-json.\-Kim.\-get(), and org.\-json.\-Kim.\-Kim().
+
+\hypertarget{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!hashcode@{hashcode}}
+\index{hashcode@{hashcode}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{hashcode}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-json.\-Kim.\-hashcode = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1json_1_1_kim_aab8a2339df2bbc09510350775572ecf2}
+The kim's hashcode, conforming to Java's hashcode conventions. 
+
+Definition at line 74 of file Kim.\-java.
+
+
+
+Referenced by org.\-json.\-Kim.\-equals(), org.\-json.\-Kim.\-hash\-Code(), and org.\-json.\-Kim.\-Kim().
+
+\hypertarget{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!length@{length}}
+\index{length@{length}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}int org.\-json.\-Kim.\-length = 0}}\label{classorg_1_1json_1_1_kim_a6caa186b493021e083e4efbf734e3a40}
+The number of bytes in the kim. The number of bytes can be as much as three times the number of characters. 
+
+Definition at line 80 of file Kim.\-java.
+
+
+
+Referenced by org.\-json.\-Kim.\-copy(), org.\-json.\-Kim.\-get(), org.\-json.\-Kim.\-Kim(), and org.\-json.\-Kim.\-to\-String().
+
+\hypertarget{classorg_1_1json_1_1_kim_ab3c21a745d0601eb36105ec3769a310a}{\index{org\-::json\-::\-Kim@{org\-::json\-::\-Kim}!string@{string}}
+\index{string@{string}!org::json::Kim@{org\-::json\-::\-Kim}}
+\subsubsection[{string}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-json.\-Kim.\-string = null\hspace{0.3cm}{\ttfamily [private]}}}\label{classorg_1_1json_1_1_kim_ab3c21a745d0601eb36105ec3769a310a}
+The memoization of \hyperlink{classorg_1_1json_1_1_kim_aebfdbe281cc48dd341c1a24e389d5b89}{to\-String()}. 
+
+Definition at line 85 of file Kim.\-java.
+
+
+
+Referenced by org.\-json.\-Kim.\-to\-String().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_kim_8java}{Kim.\-java}\end{DoxyCompactItemize}

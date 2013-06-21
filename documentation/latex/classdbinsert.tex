@@ -1,0 +1,111 @@
+\hypertarget{classdbinsert}{\section{dbinsert Class Reference}
+\label{classdbinsert}\index{dbinsert@{dbinsert}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classdbinsert_a9e042e946f045d0ec325ea5077ea4237}{main} (String\mbox{[}$\,$\mbox{]} args)  throws Exception 	
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file dbinsert.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdbinsert_a9e042e946f045d0ec325ea5077ea4237}{\index{dbinsert@{dbinsert}!main@{main}}
+\index{main@{main}!dbinsert@{dbinsert}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void dbinsert.\-main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [static]}}}\label{classdbinsert_a9e042e946f045d0ec325ea5077ea4237}
+
+
+Definition at line 17 of file dbinsert.\-java.
+
+
+\begin{DoxyCode}
+18     \{
+19         Connection conn = null;
+20         Statement s;
+21         
+22         \textcolor{keywordflow}{try}\{
+23             String userName = \textcolor{stringliteral}{"root"};
+24             String password = \textcolor{stringliteral}{"root"};
+25             String url = \textcolor{stringliteral}{"jdbc:mysql://127.0.0.1:3306/facebook"};
+26                 Class.forName(\textcolor{stringliteral}{"com.mysql.jdbc.Driver"}).newInstance();
+27                 conn = DriverManager.getConnection(url,userName,password);
+28                 System.out.println(\textcolor{stringliteral}{"DB conn established"});
+29         \}
+30         
+31         \textcolor{keywordflow}{catch}(Exception e)
+32         \{
+33             System.err.println(\textcolor{stringliteral}{"Cannot connect to DB"});
+34         \}
+35         s = conn.createStatement();
+36         ResultSet rs;
+37         \textcolor{keywordtype}{int} idcount=0;
+38         String \textcolor{keywordtype}{id}[] = \textcolor{keyword}{new} String[2000]; 
+39         rs = s.executeQuery(\textcolor{stringliteral}{"select id from user where location like '%washington' or hometown like
+       '%washington'"});
+40         \textcolor{keywordflow}{while}(rs.next())
+41             \textcolor{keywordtype}{id}[idcount++]=rs.getString(1);
+42         \textcolor{comment}{//String dob[]=  (select birthdate from voter\_db\_wa);}
+43         \textcolor{comment}{//String sex[] = (select gender from user where location like %washington or hometown like
+       %washington);}
+44         \textcolor{comment}{//String }
+45         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} len=0;len<\textcolor{keywordtype}{id}.length;len++)
+46         \{   String hometown[] = \textcolor{keyword}{new} String[2];
+47             String location[] = \textcolor{keyword}{new} String[2];
+48             String details[] = \textcolor{keyword}{new} String[10]; 
+49             rs = s.executeQuery(\textcolor{stringliteral}{"select name,gender,hometown,location,relationship\_status,
+       first\_name,middle\_name,last\_name from user where id='"}+\textcolor{keywordtype}{id}[len]+\textcolor{stringliteral}{"'"});
+50             \textcolor{keywordflow}{while}(rs.next())\{
+51                 details[0] = rs.getString(1);
+52                 details[1] = rs.getString(2);
+53                 details[2] = rs.getString(3); \textcolor{comment}{//ht}
+54                 details[3] = rs.getString(4); \textcolor{comment}{//loc}
+55                 hometown  = details[2].split(\textcolor{stringliteral}{","});
+56                 location  = details[3].split(\textcolor{stringliteral}{","});
+57                 details[4] = rs.getString(5);
+58                 details[5] = rs.getString(6); \textcolor{comment}{//first}
+59                 details[6] = rs.getString(7); \textcolor{comment}{//mid}
+60                 details[7] = rs.getString(8); \textcolor{comment}{//last}
+61             \}
+62             String disease = null;
+63             rs = s.executeQuery(\textcolor{stringliteral}{"select disease from groups where gid in (select groupid from gruid where
+       userid ='"}+\textcolor{keywordtype}{id}[len]+\textcolor{stringliteral}{"')"});
+64             \textcolor{keywordflow}{while}(rs.next())
+65                 disease = rs.getString(1);
+66             
+67             String dob = null;
+68             rs = s.executeQuery(\textcolor{stringliteral}{"select birthdate from voter\_db\_wa where first\_name ='"}+details[6]+\textcolor{stringliteral}{"' and
+       last\_name = '"}+details[8]+\textcolor{stringliteral}{"' and city like '"}+hometown[0]+\textcolor{stringliteral}{"%' or city like '"}+location[0]+\textcolor{stringliteral}{"%'"});
+69             \textcolor{keywordflow}{while}(rs.next())
+70                 dob = rs.getString(1);
+71             
+72             s.executeUpdate(\textcolor{stringliteral}{"insert into
+       anonymized\_ds(dob,sex,hometown,location,disease,relationship\_status) values('"}+dob+\textcolor{stringliteral}{"','"}+details[1]+\textcolor{stringliteral}{"','"}+details[2]+\textcolor{stringliteral}{"','"}+details[3]+\textcolor{stringliteral}{"','"}+disease+\textcolor{stringliteral}{"','"}+details[4]+\textcolor{stringliteral}{"')"});
+73         \}
+74         
+75         
+76             
+77                 \textcolor{keywordflow}{try}
+78                 \{
+79                     conn.close();
+80                     System.out.println(\textcolor{stringliteral}{"DB conn closed"});
+81                 \}
+82                 \textcolor{keywordflow}{catch}(Exception e)\{\}
+83             
+84         
+85     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbinsert_8java}{dbinsert.\-java}\end{DoxyCompactItemize}

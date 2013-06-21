@@ -1,0 +1,121 @@
+\hypertarget{classorg_1_1json_1_1_h_t_t_p_tokener}{\section{org.\-json.\-H\-T\-T\-P\-Tokener Class Reference}
+\label{classorg_1_1json_1_1_h_t_t_p_tokener}\index{org.\-json.\-H\-T\-T\-P\-Tokener@{org.\-json.\-H\-T\-T\-P\-Tokener}}
+}
+Inheritance diagram for org.\-json.\-H\-T\-T\-P\-Tokener\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classorg_1_1json_1_1_h_t_t_p_tokener}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1json_1_1_h_t_t_p_tokener_a60475c4923ebf3ec28ed708bb0e4a6bc}{H\-T\-T\-P\-Tokener} (String string)
+\item 
+String \hyperlink{classorg_1_1json_1_1_h_t_t_p_tokener_a7189a17298ad2e09dce28e52bd5ccd07}{next\-Token} ()  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classorg_1_1json_1_1_h_t_t_p_tokener}{H\-T\-T\-P\-Tokener} extends the \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener}{J\-S\-O\-N\-Tokener} to provide additional methods for the parsing of \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} headers. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2012-\/11-\/13 
+\end{DoxyVersion}
+
+
+Definition at line 33 of file H\-T\-T\-P\-Tokener.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1json_1_1_h_t_t_p_tokener_a60475c4923ebf3ec28ed708bb0e4a6bc}{\index{org\-::json\-::\-H\-T\-T\-P\-Tokener@{org\-::json\-::\-H\-T\-T\-P\-Tokener}!H\-T\-T\-P\-Tokener@{H\-T\-T\-P\-Tokener}}
+\index{H\-T\-T\-P\-Tokener@{H\-T\-T\-P\-Tokener}!org::json::HTTPTokener@{org\-::json\-::\-H\-T\-T\-P\-Tokener}}
+\subsubsection[{H\-T\-T\-P\-Tokener}]{\setlength{\rightskip}{0pt plus 5cm}org.\-json.\-H\-T\-T\-P\-Tokener.\-H\-T\-T\-P\-Tokener (
+\begin{DoxyParamCaption}
+\item[{String}]{string}
+\end{DoxyParamCaption}
+)}}\label{classorg_1_1json_1_1_h_t_t_p_tokener_a60475c4923ebf3ec28ed708bb0e4a6bc}
+Construct an \hyperlink{classorg_1_1json_1_1_h_t_t_p_tokener}{H\-T\-T\-P\-Tokener} from a string. 
+\begin{DoxyParams}{Parameters}
+{\em string} & A source string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file H\-T\-T\-P\-Tokener.\-java.
+
+
+\begin{DoxyCode}
+39                                       \{
+40         super(\textcolor{keywordtype}{string});
+41     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_h_t_t_p_tokener_a7189a17298ad2e09dce28e52bd5ccd07}{\index{org\-::json\-::\-H\-T\-T\-P\-Tokener@{org\-::json\-::\-H\-T\-T\-P\-Tokener}!next\-Token@{next\-Token}}
+\index{next\-Token@{next\-Token}!org::json::HTTPTokener@{org\-::json\-::\-H\-T\-T\-P\-Tokener}}
+\subsubsection[{next\-Token}]{\setlength{\rightskip}{0pt plus 5cm}String org.\-json.\-H\-T\-T\-P\-Tokener.\-next\-Token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}}}\label{classorg_1_1json_1_1_h_t_t_p_tokener_a7189a17298ad2e09dce28e52bd5ccd07}
+Get the next token or string. This is used in parsing \hyperlink{classorg_1_1json_1_1_h_t_t_p}{H\-T\-T\-P} headers. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A String. 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file H\-T\-T\-P\-Tokener.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Tokener.\-next(), and org.\-json.\-J\-S\-O\-N\-Tokener.\-syntax\-Error().
+
+
+
+Referenced by org.\-json.\-H\-T\-T\-P.\-to\-J\-S\-O\-N\-Object().
+
+
+\begin{DoxyCode}
+49                                                    \{
+50         \textcolor{keywordtype}{char} c;
+51         \textcolor{keywordtype}{char} q;
+52         StringBuffer sb = \textcolor{keyword}{new} StringBuffer();
+53         \textcolor{keywordflow}{do} \{
+54             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+55         \} \textcolor{keywordflow}{while} (Character.isWhitespace(c));
+56         \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'"'} || c == \textcolor{charliteral}{'\(\backslash\)''}) \{
+57             q = c;
+58             \textcolor{keywordflow}{for} (;;) \{
+59                 c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+60                 \textcolor{keywordflow}{if} (c < \textcolor{charliteral}{' '}) \{
+61                     \textcolor{keywordflow}{throw} \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_a467f559950c039f28394ce3a0d2659ca}{syntaxError}(\textcolor{stringliteral}{"Unterminated string."});
+62                 \}
+63                 \textcolor{keywordflow}{if} (c == q) \{
+64                     \textcolor{keywordflow}{return} sb.toString();
+65                 \}
+66                 sb.append(c);
+67             \}
+68         \}
+69         \textcolor{keywordflow}{for} (;;) \{
+70             \textcolor{keywordflow}{if} (c == 0 || Character.isWhitespace(c)) \{
+71                 \textcolor{keywordflow}{return} sb.toString();
+72             \}
+73             sb.append(c);
+74             c = \hyperlink{classorg_1_1json_1_1_j_s_o_n_tokener_ae129753dbe43ea50aa34e3c06773fdfb}{next}();
+75         \}
+76     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_h_t_t_p_tokener_8java}{H\-T\-T\-P\-Tokener.\-java}\end{DoxyCompactItemize}

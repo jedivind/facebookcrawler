@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-sources.jar"/>
 	<classpathentry kind="lib" path="/usr/bin/myjars/commons-io-2.4/commons-io-2.4-test-sources.jar"/>
@@ -17,5 +21,8 @@
 	<classpathentry kind="lib" path="/usr/bin/myjars/jsoup/jsoup-1.7.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="/usr/bin/myjars/jsoup/jsoup-1.7.2-sources.jar"/>
 	<classpathentry kind="lib" path="/usr/bin/myjars/jsoup/jsoup-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/Users/jedivind/facebookcrawler/external_jars/commons-lang-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/jedivind/facebookcrawler/external_jars/commons-lang-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/jedivind/facebookcrawler/external_jars/commons-lang-2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

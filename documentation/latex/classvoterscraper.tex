@@ -1,0 +1,144 @@
+\hypertarget{classvoterscraper}{\section{voterscraper Class Reference}
+\label{classvoterscraper}\index{voterscraper@{voterscraper}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classvoterscraper_aeecedbce32c06fabc0078f1da6b05a51}{main} (String args\mbox{[}$\,$\mbox{]})  throws Exception
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file voterscraper.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classvoterscraper_aeecedbce32c06fabc0078f1da6b05a51}{\index{voterscraper@{voterscraper}!main@{main}}
+\index{main@{main}!voterscraper@{voterscraper}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void voterscraper.\-main (
+\begin{DoxyParamCaption}
+\item[{String}]{args\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) throws Exception\hspace{0.3cm}{\ttfamily [static]}}}\label{classvoterscraper_aeecedbce32c06fabc0078f1da6b05a51}
+System.\-out.\-println(\char`\"{}names are after split\char`\"{}); 
+
+Definition at line 20 of file voterscraper.\-java.
+
+
+\begin{DoxyCode}
+20                                                            \{
+21 
+22     
+23     Connection conn = null;
+24     
+25     \textcolor{keywordflow}{try}\{
+26         String userName = \textcolor{stringliteral}{"root"};
+27         String password = \textcolor{stringliteral}{"root"};
+28         String url = \textcolor{stringliteral}{"jdbc:mysql://127.0.0.1:3306/facebook"};
+29             Class.forName(\textcolor{stringliteral}{"com.mysql.jdbc.Driver"}).newInstance();
+30             conn = DriverManager.getConnection(url,userName,password);
+31             System.out.println(\textcolor{stringliteral}{"DB conn established"});
+32 
+33     \}
+34 
+35     \textcolor{keywordflow}{catch}(Exception e)
+36     \{
+37         System.err.println(\textcolor{stringliteral}{"Cannot connect to DB"});
+38     \}
+39     
+40     
+41     Statement s;
+42     
+43     s = conn.createStatement();
+44     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}=1;
+45     ResultSet rs = s.executeQuery(\textcolor{stringliteral}{"SELECT first\_name, last\_name from user where hometown like '%washington'
+       or location like '%washington'"});
+46     \textcolor{keywordtype}{int} x=0,y=0;
+47     String farray [] = \textcolor{keyword}{new} String [100000];
+48     String larray [] = \textcolor{keyword}{new} String [100000];
+49     \textcolor{keywordflow}{while}(rs.next())\{
+50     farray [x] = rs.getString(1);
+51     larray [x++] = rs.getString(2);
+52     \}
+53     
+54     
+55     \textcolor{keywordflow}{for}(y=0; y<x; y++)\{
+56     Document doc = Jsoup.connect(\textcolor{stringliteral}{"
+      http://usefulwork.com/cgi-bin/wavoterdb.cgi?county=All+Counties&fulldisplay=1&statewide=1&block=&predir=&street=&type=&postdir=&last="}+larray[y]+\textcolor{stringliteral}{"&first="}+farray[y]+\textcolor{stringliteral}{"
+      &sortby=prename&submitName=Search+by+Name"}).get();
+57     Elements rows2 = doc.getElementsByTag(\textcolor{stringliteral}{"body"});
+58     Elements rows3 = doc.getElementsByTag(\textcolor{stringliteral}{"font"});
+59     \textcolor{comment}{/*if(doc.getElementsByTag("tr").hasAttr("bgcolor"))\{}
+60 \textcolor{comment}{    Elements last = doc.getElementsByTag("tr");}
+61 \textcolor{comment}{    for(Element lt : last)\{}
+62 \textcolor{comment}{        System.out.println(lt);}
+63 \textcolor{comment}{    \}}
+64 \textcolor{comment}{    \}*/}
+65     \textcolor{keywordtype}{int} k=0,i=0;
+66     String array\_of\_names[] = \textcolor{keyword}{new} String[50];
+67     String array\_of\_values[] = \textcolor{keyword}{new} String[50];
+68     \textcolor{keywordflow}{for}(Element row : rows3)\{
+69         \textcolor{keywordflow}{if}(k<15)\{
+70         array\_of\_names[k] = row.ownText();
+71         k++;\}
+72         \textcolor{keywordflow}{else}\{
+73             \textcolor{comment}{//System.out.println("row is");}
+74             \textcolor{comment}{//System.out.println(i);}
+75             \textcolor{comment}{//System.out.println(row.ownText());}
+76             k++;
+77             \textcolor{keywordflow}{if}(i==2)
+78             \{
+79                     \textcolor{comment}{//System.out.println("HERE");}
+80                 String names[] = row.ownText().split(\textcolor{stringliteral}{" "});
+82                 \textcolor{comment}{//System.out.println(names[0]);}
+83                 \textcolor{keywordflow}{if}(names.length>1)\{
+84                     \textcolor{keywordtype}{int} o = i;
+85                     \textcolor{comment}{//System.out.println(names[1]);}
+86             array\_of\_values[i] = names[0];
+87             i = i +1;
+88             array\_of\_values[i] = names[1];
+89             \textcolor{comment}{//System.out.println("Starts from here");}
+90             \textcolor{comment}{//System.out.println(array\_of\_values[o]);}
+91             \textcolor{comment}{//System.out.println(array\_of\_values[o++]);}
+92             \textcolor{comment}{//System.out.println("endds here");}
+93             \}
+94                 \textcolor{keywordflow}{else}\{
+95                     array\_of\_values[i] = names[0];
+96                     i = i + 1;
+97                     array\_of\_values[i] = \textcolor{stringliteral}{" "};
+98                 \}
+99             i++;
+100             \}
+101             \textcolor{keywordflow}{else}\{
+102             array\_of\_values[i] = row.ownText();
+103             \textcolor{comment}{//System.out.println(array\_of\_values[i]);}
+104             i++;\}
+105         \}
+106         \textcolor{keywordflow}{if}((k%15==0 || i%16==0) && i>1)\{
+107             \textcolor{keywordtype}{int} m;
+108             \textcolor{keywordflow}{for}(m=0;m<=15;m++)
+109             \{
+110                 System.out.println(array\_of\_values[m]);
+111             \}
+112             i=0;
+113             \textcolor{comment}{//System.out.println("NEW");}
+114             \textcolor{comment}{//write update query here;}
+115         
+116         s.executeUpdate(\textcolor{stringliteral}{"INSERT into voter\_db\_wa VALUES('"}+\textcolor{keywordtype}{id}+\textcolor{stringliteral}{"','"}+array\_of\_values[0]+\textcolor{stringliteral}{"','"}+
+      array\_of\_values[1]+\textcolor{stringliteral}{"','"}+array\_of\_values[2]+\textcolor{stringliteral}{"','"}+array\_of\_values[3]+\textcolor{stringliteral}{"','"}+array\_of\_values[4]+\textcolor{stringliteral}{"','"}+array\_of\_values[5]+\textcolor{stringliteral}{"
+      ','"}+array\_of\_values[6]+\textcolor{stringliteral}{"','"}+array\_of\_values[7]+\textcolor{stringliteral}{"','"}+array\_of\_values[8]+\textcolor{stringliteral}{"','"}+array\_of\_values[9]+\textcolor{stringliteral}{"','"}+
+      array\_of\_values[10]+\textcolor{stringliteral}{"','"}+array\_of\_values[11]+\textcolor{stringliteral}{"','"}+array\_of\_values[12]+\textcolor{stringliteral}{"','"}+array\_of\_values[13]+\textcolor{stringliteral}{"','"}+
+      array\_of\_values[14]+\textcolor{stringliteral}{"','"}+array\_of\_values[15]+\textcolor{stringliteral}{"')"});
+117         \textcolor{keywordtype}{id}++;\}
+118     \}
+119     \}
+120     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{voterscraper_8java}{voterscraper.\-java}\end{DoxyCompactItemize}

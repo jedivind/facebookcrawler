@@ -1,0 +1,113 @@
+\hypertarget{classorg_1_1json_1_1_property}{\section{org.\-json.\-Property Class Reference}
+\label{classorg_1_1json_1_1_property}\index{org.\-json.\-Property@{org.\-json.\-Property}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \hyperlink{classorg_1_1json_1_1_property_aaf04335208523a4f7b41eb9edf3939fb}{to\-J\-S\-O\-N\-Object} (java.\-util.\-Properties properties)  throws J\-S\-O\-N\-Exception 
+\item 
+static Properties \hyperlink{classorg_1_1json_1_1_property_adbaf75a2454e0563ba90f9adc2822850}{to\-Properties} (\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} jo)  throws J\-S\-O\-N\-Exception 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Converts a \hyperlink{classorg_1_1json_1_1_property}{Property} file data into \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} and back. \begin{DoxyAuthor}{Author}
+J\-S\-O\-N.\-org 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2013-\/05-\/23 
+\end{DoxyVersion}
+
+
+Definition at line 36 of file Property.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1json_1_1_property_aaf04335208523a4f7b41eb9edf3939fb}{\index{org\-::json\-::\-Property@{org\-::json\-::\-Property}!to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}}
+\index{to\-J\-S\-O\-N\-Object@{to\-J\-S\-O\-N\-Object}!org::json::Property@{org\-::json\-::\-Property}}
+\subsubsection[{to\-J\-S\-O\-N\-Object}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf J\-S\-O\-N\-Object} org.\-json.\-Property.\-to\-J\-S\-O\-N\-Object (
+\begin{DoxyParamCaption}
+\item[{java.\-util.\-Properties}]{properties}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_property_aaf04335208523a4f7b41eb9edf3939fb}
+Converts a property file object into a \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object}. The property file object is a table of name value pairs. 
+\begin{DoxyParams}{Parameters}
+{\em properties} & java.\-util.\-Properties \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 43 of file Property.\-java.
+
+
+
+References org.\-json.\-J\-S\-O\-N\-Object.\-put().
+
+
+\begin{DoxyCode}
+43                                                                                                 \{
+44         JSONObject jo = \textcolor{keyword}{new} JSONObject();
+45         \textcolor{keywordflow}{if} (properties != null && !properties.isEmpty()) \{
+46             Enumeration enumProperties = properties.propertyNames();
+47             \textcolor{keywordflow}{while}(enumProperties.hasMoreElements()) \{
+48                 String name = (String)enumProperties.nextElement();
+49                 jo.put(name, properties.getProperty(name));
+50             \}
+51         \}
+52         \textcolor{keywordflow}{return} jo;
+53 
+54     \}
+\end{DoxyCode}
+\hypertarget{classorg_1_1json_1_1_property_adbaf75a2454e0563ba90f9adc2822850}{\index{org\-::json\-::\-Property@{org\-::json\-::\-Property}!to\-Properties@{to\-Properties}}
+\index{to\-Properties@{to\-Properties}!org::json::Property@{org\-::json\-::\-Property}}
+\subsubsection[{to\-Properties}]{\setlength{\rightskip}{0pt plus 5cm}static Properties org.\-json.\-Property.\-to\-Properties (
+\begin{DoxyParamCaption}
+\item[{{\bf J\-S\-O\-N\-Object}}]{jo}
+\end{DoxyParamCaption}
+) throws {\bf J\-S\-O\-N\-Exception}\hspace{0.3cm}{\ttfamily [static]}}}\label{classorg_1_1json_1_1_property_adbaf75a2454e0563ba90f9adc2822850}
+Converts the \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} into a property file object. 
+\begin{DoxyParams}{Parameters}
+{\em jo} & \hyperlink{classorg_1_1json_1_1_j_s_o_n_object}{J\-S\-O\-N\-Object} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+java.\-util.\-Properties 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classorg_1_1json_1_1_j_s_o_n_exception}{J\-S\-O\-N\-Exception}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 62 of file Property.\-java.
+
+
+\begin{DoxyCode}
+62                                                                                \{
+63         Properties  properties = \textcolor{keyword}{new} Properties();
+64         \textcolor{keywordflow}{if} (jo != null) \{
+65             Iterator keys = jo.keys();
+66 
+67             \textcolor{keywordflow}{while} (keys.hasNext()) \{
+68                 String name = keys.next().toString();
+69                 properties.put(name, jo.getString(name));
+70             \}
+71         \}
+72         \textcolor{keywordflow}{return} properties;
+73     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+org/json/\hyperlink{_property_8java}{Property.\-java}\end{DoxyCompactItemize}
