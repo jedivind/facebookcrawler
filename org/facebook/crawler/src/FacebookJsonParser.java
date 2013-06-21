@@ -1,7 +1,6 @@
-/*
-*   Facebook Graph API JSON parser.
-*   Navigate to Facebook graph pages, parse JSON objects and insert into database.
-*
+/*  Facebook Graph API JSON parser.
+*   
+*   @description Navigate to Facebook graph pages, parse JSON objects and insert into database.
 *   @author Vinay Bharadwaj (vbharadwaj6@cc.gatech.edu)
 */
 package org.facebook.crawler;
@@ -220,7 +219,7 @@ class FacebookJsonParser {
 
             }
 
-        this.db.executeQuery(ID , MemberDataFieldsArray , GroupID , IDIndex );
+        this.db.executeInsertQuery(ID , MemberDataFieldsArray , GroupID , IDIndex );
     }
 
 	public void crawlJson( CrawlOptions op ) throws IOException, JSONException, SQLException {

@@ -35,7 +35,15 @@ public class FacebookDatabase {
 		return true;
 	}
 
-	public int executeQuery( String UserID , String [] arry , String [] GroupID , int Index ){
+	public ResultSet executeSelectQuery( String Query ) throws SQLException{
+		return this.statement.executeQuery( Query );
+	}
+	
+	public int executeUpdateQuery( String Query ) throws SQLException{
+		return this.statement.executeUpdate( Query );
+	}
+	
+	public int executeInsertQuery( String UserID , String [] arry , String [] GroupID , int Index ){
 
 		int count = 0;
 		try {
@@ -51,7 +59,7 @@ public class FacebookDatabase {
                 		arry[13]+"','"+arry[14]+"','"+arry[15]+"','"+arry[16]+"','"+arry[17]+"','"+arry[18]+"')");
                 */
 
-                count = this.statement.executeUpdate( this.createQueryString( "INSERT" , "user" , arry ) );
+                count = this.statement.executeUpdate( this.createInsertQueryString( "INSERT" , "user" , arry ) );
             }
 
             if( Index != -1 )
@@ -64,7 +72,7 @@ public class FacebookDatabase {
 		return count;
 	}
 
-	public String createQueryString( String SQLCommand , String tableName , String [] Values ){
+	private String createInsertQueryString( String SQLCommand , String tableName , String [] Values ){
 		String queryString = "";
 		String queryVals = "";
 			if( tableName != null )
