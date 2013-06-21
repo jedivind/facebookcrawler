@@ -1,3 +1,8 @@
+/* Facebook Database Parameters Class.
+ * 
+ * @description Holds database connection parameters. Used by FacebookDatabase class to initiate database connection.
+ * @author Vinay Bharadwaj (vbharadwaj6@gatech.edu)
+ */
 package org.facebook.crawler;
 
 public class FacebookDBParams {
@@ -10,8 +15,8 @@ public class FacebookDBParams {
 	private String dbHostAddr; // IP Address of host
 	private String dbPort; // Port where db listens
 
-	public FacebookDBParams( String hostAddr , String dbUser , String dbPass , String dbName , String adapter
-							, String dbType , String dbPort){
+	public FacebookDBParams( String hostAddr, String dbUser, String dbPass, String dbName, String adapter
+							, String dbType, String dbPort){
 
 		this.dbUserName = dbUser;
 		this.dbPassword = dbPass;

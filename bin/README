@@ -1,9 +1,0 @@
-FACEBOOK CRAWLER 
-Vinay Bharadwaj (vind.1989@gatech.edu)
-
-Contents:
-1) JSON scraper - Parse information from Facebook Graph API using org.json and insert into database.
-
-2) Core scraper - Log into Facebook and scrape additional information from user profiles and groups.
-
-3) Voter database scraper - Query voter details from voter database and store in local database
