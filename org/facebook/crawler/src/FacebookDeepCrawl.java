@@ -156,94 +156,94 @@ public class FacebookDeepCrawl {
 					for (Element data : otherdata){
 						switch( data.ownText() ){
 							case "Favorite Athletes":  athletes = data.siblingElements();
-													    for( Element newathlete : athletes ){
-													    	temp = newathlete.getElementsByClass("mediaPageName").text();
-													    	temp = temp.replace('\'', ' ');
-													    	temp = temp.replace('\\',' ');
-													    	arry[3] = temp;
-													    	System.out.println(temp);
-													    }
-													    break;
+										   for( Element newathlete : athletes ){
+										   	temp = newathlete.getElementsByClass("mediaPageName").text();
+										   	temp = temp.replace('\'', ' ');
+										   	temp = temp.replace('\\',' ');
+										   	arry[3] = temp;
+										   	System.out.println(temp);
+										   }
+										   break;
 
 							case "Favorite Quotations": quotes = data.siblingElements();
-													    for( Element newquote : quotes ){
-													    	temp = newquote.getElementsByClass("data").text();
-													    	temp = temp.replace('\'', ' ');
-													    	temp = temp.replace('\\',' ');
-													    	System.out.println(temp);
-													    	this.db.executeUpdateQuery("UPDATE user SET quotes='"+temp+"' WHERE id='" + idArray[idIndex] + "'");
-													    	}
-													    break;
+										    for( Element newquote : quotes ){
+											temp = newquote.getElementsByClass("data").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											System.out.println(temp);
+											this.db.executeUpdateQuery("UPDATE user SET quotes='"+temp+"' WHERE id='" + idArray[idIndex] + "'");
+										    }
+										    break;			    
 
-							case "Music":				musicall = data.siblingElements();
-														for( Element newmusic : musicall ){
-															temp = newmusic.getElementsByClass( "mediaPageName" ).text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															arry[1]=temp;
-															System.out.println(temp);
-														}
-														break;
+							case "Music":		    musicall = data.siblingElements();
+										    for( Element newmusic : musicall ){
+											temp = newmusic.getElementsByClass( "mediaPageName" ).text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											arry[1]=temp;
+											System.out.println(temp);
+										    }
+										    break;
 
-							case "Books":				booksall = data.siblingElements();
-														for( Element newbook : booksall ){
-															temp = newbook.getElementsByClass("mediaPageName").text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															arry[2]=temp;
-															System.out.println(temp);
-														}
-														break;
+							case "Books":		    booksall = data.siblingElements();
+										    for( Element newbook : booksall ){
+											temp = newbook.getElementsByClass("mediaPageName").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											arry[2]=temp;
+											System.out.println(temp);
+										    }
+										    break;
 
-							case "Movies":				moviesall = data.siblingElements();
-														for( Element newmovie : moviesall ){
-															temp = newmovie.getElementsByClass("mediaPageName").text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															arry[4]=temp;
-															System.out.println(temp);
-														}
-														break;
+							case "Movies":		    moviesall = data.siblingElements();
+										    for( Element newmovie : moviesall ){
+											temp = newmovie.getElementsByClass("mediaPageName").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											arry[4]=temp;
+											System.out.println(temp);
+										    }
+										    break;
 
-							case "Activities":			activitiesall = data.siblingElements();
-														for( Element newactivity : activitiesall ){
-															temp =newactivity.getElementsByClass("fwb").text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															arry[5]=temp;
-															System.out.println(temp);
-														}
-														break;
+							case "Activities":	    activitiesall = data.siblingElements();
+										    for( Element newactivity : activitiesall ){
+											temp =newactivity.getElementsByClass("fwb").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											arry[5]=temp;
+											System.out.println(temp);
+										    }
+										    break;
 
-							case "About":				activitiesall = data.siblingElements();
-														for(Element newactivity : activitiesall){
-															temp = newactivity.getElementsByClass("data").text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															System.out.println(temp);
-															this.db.executeUpdateQuery("UPDATE user SET bio='" + temp + "' WHERE id='" + idArray[idIndex] + "'");
-														}
-														break;
+							case "About":		    activitiesall = data.siblingElements();
+										    for(Element newactivity : activitiesall){
+											temp = newactivity.getElementsByClass("data").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											System.out.println(temp);
+											this.db.executeUpdateQuery("UPDATE user SET bio='" + temp + "' WHERE id='" + idArray[idIndex] + "'");
+										    }
+										    break;
 
-							case "Interested In":    	activitiesall = data.siblingElements();
-														for( Element newactivity : activitiesall ){
-															temp = newactivity.getElementsByClass("data").text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															arry[6] = temp;
-															System.out.println(temp);
-														}
-														break;
+							case "Interested In":       activitiesall = data.siblingElements();
+										    for( Element newactivity : activitiesall ){
+											temp = newactivity.getElementsByClass("data").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											arry[6] = temp;
+											System.out.println(temp);
+										    }
+										    break;
 
 							case "Relationship Status": activitiesall = data.siblingElements();
-														for(Element newactivity : activitiesall){
-															temp = newactivity.getElementsByClass("data").text();
-															temp = temp.replace('\'', ' ');
-															temp = temp.replace('\\',' ');
-															System.out.println(temp);
-															this.db.executeUpdateQuery("UPDATE user SET relationship_status='"+ temp +"' WHERE id='" + idArray[idIndex] + "'");
-														}
-														break;
+										    for(Element newactivity : activitiesall){
+											temp = newactivity.getElementsByClass("data").text();
+											temp = temp.replace('\'', ' ');
+											temp = temp.replace('\\',' ');
+											System.out.println(temp);
+											this.db.executeUpdateQuery("UPDATE user SET relationship_status='"+ temp +"' WHERE id='" + idArray[idIndex] + "'");
+										    }
+										    break;
 						}
 						this.db.executeUpdateQuery("INSERT into user_misc_data (id,music,books,athletes,movies,activities,interested_in) VALUES " +
 								"('"+arry[0]+"','"+arry[1]+"','"+arry[2]+"','"+arry[3]+"','"+arry[4]+"','"+arry[5]+"','"+arry[6]+"')");

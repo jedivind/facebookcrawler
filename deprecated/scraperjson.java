@@ -72,7 +72,7 @@ class JsonReader {
 		
 		try{
 			String userName = "root";
-			String password = "AlphaCanisMajoris";
+			String password = "root";
 			String url = "jdbc:mysql://127.0.0.1:3306/facebook";
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(url,userName,password);

@@ -1,9 +1,17 @@
 FACEBOOK CRAWLER 
 Vinay Bharadwaj (vind.1989@gatech.edu)
 
-Contents:
-1) JSON scraper - Parse information from Facebook Graph API using org.json and insert into database.
+DISCLAIMER: USE AT OWN RISK. I AM NOT RESPONSIBLE FOR THE CONSEQUENCES IF YOU USE THIS TO MASS CRAWL FACEBOOK!
 
-2) Core scraper - Log into Facebook and scrape additional information from user profiles and groups.
+PACKAGE org.facebook.crawler Contents:
+1) JSON scraper (org.facebook.crawler.FacebookJsonParser) - Parse information from Facebook Graph API using org.json and insert into database.
 
-3) Voter database scraper - Query voter details from voter database and store in local database
+2) Core scraper (org.facebook.crawler.FacebookDeepCrawl) - Log into Facebook and scrape additional information from user profiles and groups.
+
+3) Voter database scraper (Not in updated package. Use deprecated version)- Query voter details from voter database and store in local database
+
+4) Client Example (org.facebook.crawler.CrawlerClient)
+
+OTHER CLASSES
+1) org.facebook.crawler.FacebookDatabase - Database methods (INSERT, UPDATE)
+2) org.facebook.crawler.FacebookDBParams - Database connection state
